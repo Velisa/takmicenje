@@ -2,4 +2,3 @@
 
 Контакт:
 Новак Петровић (Novak Petrovic) npetrovic@gmail.com
-ЈУ СШЦ "Михајло Пупин" Дервента
