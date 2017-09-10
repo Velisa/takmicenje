@@ -1,3 +1,5 @@
+/* Copyright (c) Novak Petrovic GNU General Public License v3.0 */
+
 #include <iostream>
 #include <cstdlib>
 #include <stdio.h>

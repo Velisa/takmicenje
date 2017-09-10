@@ -1,3 +1,5 @@
+/* Copyright (c) Novak Petrovic GNU General Public License v3.0 */
+
 /* igraonica: Imamo N klijenata i K kablova razlicite duzine. Od tih K 
 kablova treba isjeci n kablova potpuno iste, ali najvece moguce duzine. 
 Ovaj program odredjuje tu duzinu. */
