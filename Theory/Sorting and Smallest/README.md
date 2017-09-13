@@ -1,5 +1,5 @@
 # Sorting algorithms
-Some sorting algorithms here.
+Some sorting algorithms can be found here.
 
 There is a cool illustration of some of the most used sorting algorithms here:
 
