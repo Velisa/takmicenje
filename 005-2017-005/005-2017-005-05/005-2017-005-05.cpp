@@ -111,11 +111,11 @@ int main() {
     // gdje su upitnici. Prolazimo kroz sve moguce binarne brojeve sa zadatim
     for (int j=0; j<n; ++j) {
       if (jeUpitnik(rijec[j])) {
-				pomocna[j]=binarni[i][m];
-				++m;
+        pomocna[j]=binarni[i][m];
+        ++m;
       }
       else {
-				pomocna[j]=rijec[j];		
+        pomocna[j]=rijec[j];		
       }
     }	
     pomocna[n]='\0';
@@ -126,19 +126,19 @@ int main() {
       kombinacije = 1;
       // Ovdje prolazimo kroz sva slova u rijeci koja zadovoljava uslov
       for (int i=0; i<n; ++i)
-				// Ako je slovo samoglasnik (genericko 0) imamo 5 mogucih opcija
-				// samoglasnika
-				if (pomocna[i]=='0')
-	  			kombinacije=((kombinacije%djelilac)*5)%djelilac;
-				// Ako je slovo suglasnik (genericko 1) imamo 21 mogucu opciju
-				// suglasnika
-				else if (pomocna[i]=='1')
-	  			kombinacije=((kombinacije%djelilac)*21)%djelilac;
-			  // Sabiremo kombinacije koje smo gore izracunali
-			  ukupno=((ukupno%djelilac)+(kombinacije%djelilac))%djelilac;
+        // Ako je slovo samoglasnik (genericko 0) imamo 5 mogucih opcija
+        // samoglasnika
+        if (pomocna[i]=='0')
+          kombinacije=((kombinacije%djelilac)*5)%djelilac;
+        // Ako je slovo suglasnik (genericko 1) imamo 21 mogucu opciju
+        // suglasnika
+        else if (pomocna[i]=='1')
+          kombinacije=((kombinacije%djelilac)*21)%djelilac;
+        // Sabiremo kombinacije koje smo gore izracunali
+        ukupno=((ukupno%djelilac)+(kombinacije%djelilac))%djelilac;
 		    // TODO: Provjeriti da li je ovo najbolji nacin da se konacan rezultat
-    	  // prikaze kao % djelilac (ovo radi ispravno)
-	      //if (ukupno > djelilac) ukupno = ukupno % djelilac;
+        // prikaze kao % djelilac (ovo radi ispravno)
+        //if (ukupno > djelilac) ukupno = ukupno % djelilac;
     }
   }
   // Ispisi broj mogucih kombinacija (konacan odgovor)
