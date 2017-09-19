@@ -59,7 +59,8 @@ bool jeSamoglasnik(char c) {
   return c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c=='0';
 }
 
-// Da li izabrana kombinacija samoglasnika i suglasnika zadovoljava zadati uslov
+// Provjerava da li izabrana kombinacija samoglasnika i suglasnika zadovoljava
+// zadati uslov
 bool zadovoljava(char *rijec, int n, int k) {
   int sagl=0;
   int sugl=0;
@@ -139,9 +140,6 @@ int main() {
         // Sabiremo kombinacije koje smo gore izracunali
         // Pazi na koristenje posebnih jednacina za %
         ukupno=((ukupno%djelilac)+(kombinacije%djelilac))%djelilac;
-		    // TODO: Provjeriti da li je ovo najbolji nacin da se konacan rezultat
-        // prikaze kao % djelilac (ovo radi ispravno)
-        //if (ukupno > djelilac) ukupno = ukupno % djelilac;
     }
   }
   // Ispisi broj mogucih kombinacija (konacan odgovor)
