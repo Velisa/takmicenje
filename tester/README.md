@@ -12,6 +12,6 @@
 
 # Јунит тестинг фрејмворк
 
-Јунит тестинг фрејмворк (Unit Testing Framework) је фрејворк који тренутно испитујемо за подобност за кориштење у овом пројекту.
+Јунит тестинг фрејмворк (Unit Testing Framework) је фрејмворк који тренутно испитујемо за подобност за кориштење у овом пројекту.
 
 A modern, C++-native, header-only, test framework for unit-tests, TDD and BDD - using C++98, C++03, C++11, C++14 and later http://catch-lib.net
