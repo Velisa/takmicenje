@@ -6,6 +6,14 @@
 //
 // Za koristenje % za velike brojeve korisno je vidjeti
 // http://www.geeksforgeeks.org/modulo-1097-1000000007/
+//
+// Koristimo:
+// ( a + b) % c = ( ( a % c ) + ( b % c ) ) % c
+// ( a * b) % c = ( ( a % c ) * ( b % c ) ) % c
+// ( a – b) % c = ( ( a % c ) – ( b % c ) ) % c
+//
+// ali ne i:
+// ( a / b ) % c = ( ( a % c ) / ( b % c ) ) % c
 
 #include <math.h>
 #include <vector>
