@@ -129,12 +129,15 @@ int main() {
         // Ako je slovo samoglasnik (genericko 0) imamo 5 mogucih opcija
         // samoglasnika
         if (pomocna[i]=='0')
+          // Pazi na koristenje posebnih jednacina za %
           kombinacije=((kombinacije%djelilac)*5)%djelilac;
         // Ako je slovo suglasnik (genericko 1) imamo 21 mogucu opciju
         // suglasnika
         else if (pomocna[i]=='1')
+          // Pazi na koristenje posebnih jednacina za %
           kombinacije=((kombinacije%djelilac)*21)%djelilac;
         // Sabiremo kombinacije koje smo gore izracunali
+        // Pazi na koristenje posebnih jednacina za %
         ukupno=((ukupno%djelilac)+(kombinacije%djelilac))%djelilac;
 		    // TODO: Provjeriti da li je ovo najbolji nacin da se konacan rezultat
         // prikaze kao % djelilac (ovo radi ispravno)
