@@ -9,3 +9,9 @@
 * Копирати **tester.sh** из tester директорије у директорију **005-2017-005-05**
 * Извршити **./tester.sh 005-2017-005-05**
 * По завршетку тестирања избрисати **tester.sh** из директорије **005-2017-005-05**
+
+# Јунит тестинг фрејмворк
+
+Јунит тестинг фрејмворк (Unit Testing Framework) је фрејворк који тренутно испитујемо за подобност за кориштење у овом пројекту.
+
+A modern, C++-native, header-only, test framework for unit-tests, TDD and BDD - using C++98, C++03, C++11, C++14 and later http://catch-lib.net
