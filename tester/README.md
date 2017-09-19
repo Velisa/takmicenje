@@ -12,6 +12,6 @@
 
 # Јунит тестинг фрејмворк
 
-Јунит тестинг фрејмворк (Unit Testing Framework) је фрејмворк који тренутно испитујемо за подобност за кориштење у овом пројекту.
+Јунит тестинг фрејмворк (Unit Testing Framework) коју користимо је Кеч (Catch): [https://github.com/philsquared/Catch](https://github.com/philsquared/Catch).
 
-A modern, C++-native, header-only, test framework for unit-tests, TDD and BDD - using C++98, C++03, C++11, C++14 and later http://catch-lib.net
+Catch is a modern, C++-native, header-only, test framework for unit-tests, TDD and BDD - using C++98, C++03, C++11, C++14 and later.
