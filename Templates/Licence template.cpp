@@ -1,1 +1,2 @@
-/* Copyright (c) Novak Petrovic GNU General Public License v3.0 */
+// Copyright (c) Novak Petrovic
+// Released under GNU General Public License v3.0
