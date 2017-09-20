@@ -9,3 +9,9 @@
 * Копирати **tester.sh** из tester директорије у директорију **005-2017-005-05**
 * Извршити **./tester.sh 005-2017-005-05**
 * По завршетку тестирања избрисати **tester.sh** из директорије **005-2017-005-05**
+
+# Јунит тестинг фрејмворк
+
+Јунит тестинг фрејмворк (Unit Testing Framework) коју користимо је Кеч (Catch): [https://github.com/philsquared/Catch](https://github.com/philsquared/Catch).
+
+Catch is a modern, C++-native, header-only, test framework for unit-tests, TDD and BDD - using C++98, C++03, C++11, C++14 and later.
