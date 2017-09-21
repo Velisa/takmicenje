@@ -3,102 +3,94 @@
 
 #define BROJ_SAMOGLASNIKA 5
 #define BROJ_SUGLASNIKA 21
-#define MAX_BOX_BROJ 100
+#define DJELILAC 1000000007
 
 typedef unsigned int uint;
 
-bool jeUpitnik(char c){
-  return c=='?';
+bool je_samoglasnik(const char& c){
+  return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 }
 
-bool jeSamoglasnik(char c){
-  return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
-}
-
-uint prebrojFalse(bool* b, uint n){
-  uint c = 0;
+bool su_svi_true(bool* niz, const int& n){
   for(uint i = 0; i < n; i++){
-    if(b[i])c++;
-  }
-  return n - c;
-}
-
-void povecajZa1(bool* b, uint n){
-  for(n-=1; n >= 0; n--){
-    if(b[n]){
-      b[n] = false;
-    }else{
-      b[n] = true;
-      break;
-    }
-  }
-}
-
-void printajArray(bool* b, uint n){
-  for(uint i = 0; i < n; i++){
-    std::cout << b[i] << ',';
-  }
-  std::cout << std::endl;
-}
-
-bool suSviTrue(bool* b, uint n){
-  for(uint i = 0; i < n; i++){
-    if(!b[i]) return false;
+    if(!niz[i]) return false;
   }
   return true;
 }
 
-uint64_t box_pow(uint b1, uint b2){
-  uint64_t rezultat = 1;
-  for(uint i = 0; i < b2; i++){
-    rezultat *= b1;
+uint prebroj_true(bool* niz, const int& n){
+  uint brojac = 0;
+  for(uint i = 0; i < n; i++){
+    if(niz[i]) brojac++;
+  }
+  return brojac;
+}
+
+void povecaj_za_1(bool* niz,const int& n){
+  for(int i = n-1; i >= 0; i--){
+    if(!niz[i]){
+      niz[i] = true;
+      return;
+    }else{
+      niz[i] = false;
+    }
+  }
+}
+
+unsigned long long box_pow(uint n1, uint n2){
+  unsigned long long rezultat = 1;
+  for(uint i = 0; i < n2; i++){
+    rezultat *= n1;
+    rezultat = rezultat % DJELILAC;
   }
   return rezultat;
 }
 
 int main(){
-  uint n, k;
+  int n, k;
   std::cout << "Unesite n i k > ";
   std::cin >> n >> k;
-  std::cout << "Unesite rijec > ";
-  char *rjec = new char[n+1];
   std::cin.ignore();
-  std::cin.getline(rjec, n+1);
-  unsigned int  sam = 0,
-                sug = 0,
-                upi = 0;
-  //Prebroj samoglasnike, suglasnike i upitnike
+  char *rjec = new char[n + 1];
+  std::cout << "Unesite rijec > ";
+  std::cin.getline(rjec, n + 1);
+  //Prebroj upitnike, samoglasnike i suglasnike
+  uint upit = 0, samo = 0, sugl = 0;
   for(uint i = 0; i < n; i++){
-    char slovo = rjec[i];
-    if(jeUpitnik(slovo)){
-      upi++;
-      continue;
-    }else if(jeSamoglasnik(slovo)){
-      sam++;
-      continue;
+    if(rjec[i] == '?'){
+      upit++;
+    }else if(je_samoglasnik(rjec[i])){
+      samo++;
     }else{
-      sug++;
-      continue;
+      sugl++;
     }
   }
-  uint64_t rezultat = 0;
-  bool *upitnici = new bool[upi];//false - samoglasnik, true - suglasnik
-  for(uint i = 0; i < upi; i++){
-    upitnici[i] = false;
+  //Prodji kroz sve varijacije
+  bool * varijacije = new bool[upit];
+  for(uint i = 0; i < upit; i++){
+    varijacije[i] = false;
   }
+  unsigned long long rezultat = 0;
   while(true){
-    uint brojUpitSam = prebrojFalse(upitnici, upi);
-    uint brojUpitSug = upi - brojUpitSam;
-    if(abs((sam + brojUpitSam) - (sug + brojUpitSug)) <= k){
-      rezultat += box_pow(BROJ_SAMOGLASNIKA, brojUpitSam) * box_pow(BROJ_SUGLASNIKA, brojUpitSug);//Promjeniti
+    /**
+    for(uint i = 0; i < upit; i++){
+      std::cout << varijacije[i] << ',';
     }
-    if(suSviTrue(upitnici, upi)){
+    std::cout << std::endl;
+    /**/
+    int uSamo = prebroj_true(varijacije, upit);
+    int uSug = upit - uSamo;
+    if(abs((int)(uSamo + samo) - (int)(sugl + uSug)) <= k){
+      rezultat += box_pow(BROJ_SAMOGLASNIKA, uSamo) * box_pow(BROJ_SUGLASNIKA, uSug);
+      rezultat = rezultat % DJELILAC;
+    }
+    if(su_svi_true(varijacije, upit)){
       break;
     }
-    povecajZa1(upitnici, upi);
+    povecaj_za_1(varijacije, upit);
   }
-
-  std::cout << "Rezultat: " << rezultat % (box_pow(10, 9) + 7) << std::endl;//Dodati modulo
-  delete[] upitnici;
+  std::cout << DJELILAC << std::endl;
+  std::cout << rezultat << std::endl;
   delete[] rjec;
+  delete[] varijacije;
 }
