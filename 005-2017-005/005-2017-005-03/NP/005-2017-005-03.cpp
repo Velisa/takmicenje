@@ -2,7 +2,6 @@
  * Released under GNU General Public License v3.0 */
 
 // Za zadate test primjere, int tipovi su dovoljni
-
 #include <iostream>
 using namespace std;
 typedef unsigned int uint;
