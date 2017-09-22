@@ -3,102 +3,113 @@
 
 #define BROJ_SAMOGLASNIKA 5
 #define BROJ_SUGLASNIKA 21
-#define MAX_BOX_BROJ 100
+#define DJELILAC 1000000007
 
 typedef unsigned int uint;
 
-bool jeUpitnik(char c){
-  return c=='?';
+bool je_samoglasnik(const char& c){
+  return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 }
 
-bool jeSamoglasnik(char c){
-  return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
-}
-
-uint prebrojFalse(bool* b, uint n){
-  uint c = 0;
+bool su_svi_true(bool* niz, const int& n){
   for(uint i = 0; i < n; i++){
-    if(b[i])c++;
-  }
-  return n - c;
-}
-
-void povecajZa1(bool* b, uint n){
-  for(n-=1; n >= 0; n--){
-    if(b[n]){
-      b[n] = false;
-    }else{
-      b[n] = true;
-      break;
-    }
-  }
-}
-
-void printajArray(bool* b, uint n){
-  for(uint i = 0; i < n; i++){
-    std::cout << b[i] << ',';
-  }
-  std::cout << std::endl;
-}
-
-bool suSviTrue(bool* b, uint n){
-  for(uint i = 0; i < n; i++){
-    if(!b[i]) return false;
+    if(!niz[i]) return false;
   }
   return true;
 }
 
-uint64_t box_pow(uint b1, uint b2){
-  uint64_t rezultat = 1;
-  for(uint i = 0; i < b2; i++){
-    rezultat *= b1;
+uint prebroj_true(bool* niz, const int& n){
+  uint brojac = 0;
+  for(uint i = 0; i < n; i++){
+    if(niz[i]) brojac++;
+  }
+  return brojac;
+}
+
+/*
+  Nizom boolean vrijednosti smo predstavili binarni broj. Nas cilj je da prodjemo kroz sve moguce kombinacije. To mozemo uraditi
+  jednostavnim brojanjem u binarnom. Povecavanjem binarnog broja za 1 sve dok svi clanovi niza ne budu 1 osigurava da cemo proci
+  kroz sve moguce kombinacije 1 i 0 u datom nizu(Pokusajte sami). Povecavamo broj tako sto pronadjemo 0 koja je najdalje u
+  desno, promjenimo je u 1, sve vrijednosni desno od nje pretvorimo iz 1 u 0. To se najjednostavnije radi na sledeci nacin.
+*/
+void povecaj_za_1(bool* niz,const int& n){
+  for(int i = n-1; i >= 0; i--){//Krecemo od zada
+    if(niz[i]){
+      niz[i] = false;//Sve true pretvaramo u false
+    }else{
+      niz[i] = true;//Cim naidjemo na false, pretvorimo ga u true i izadjemo iz funkcije
+      return;
+    }
+  }
+}
+
+/*
+  Zbog nepreciznosti funkcije pow(double, double), koristimo nasu sopstvenu funkciju za stepenovanje. Ona jednostavno
+  pomnozi bazu(n1) samu sa sobom n1(stepen) puta, sto je u sustini za cijele stepene definicija stepenovanja.
+*/
+unsigned long long box_pow(uint n1, uint n2){
+  unsigned long long rezultat = 1;
+  for(uint i = 0; i < n2; i++){
+    rezultat *= n1;
+    rezultat = rezultat % DJELILAC;
+    /*
+      Matematicki je dokazano da je (a*b)%c=((a%b)*(b%c))%c. Kako nam ne bi doslo do overflowa* mi odma moduliramo sa 10^9 + 7
+      kao sto je navedeno u zadatku.
+    */
   }
   return rezultat;
 }
+/*
+  *overflow
+    Predpostavimo da koristimo "unsigned int" za neku varijablu. Nas kompajler treba da odvoji odredjen dio RAM-a kako bi
+    mogao da sacuva nasu varijablu. U slucaju sa "unsignedint", kompajler odvaja 4 bajta memorije(Taj broj mozete dobiti funkcijom
+    sizeof(tip)). 4 bajta = 32 bit-a. Tako da unsigned int moze da cuva vrijednosti izmedju 0 i 2^32. Kada su nam, kao na primjer
+    u ovom zadatku, koristimo brojeve vece ili jednake 2^32, brojac u racunaru se vrati na pocetak(tako da je u "unsigned int" 
+    2^32 = 0)  
+  */
 
 int main(){
-  uint n, k;
+  int n, k;
   std::cout << "Unesite n i k > ";
   std::cin >> n >> k;
-  std::cout << "Unesite rijec > ";
-  char *rjec = new char[n+1];
   std::cin.ignore();
-  std::cin.getline(rjec, n+1);
-  unsigned int  sam = 0,
-                sug = 0,
-                upi = 0;
-  //Prebroj samoglasnike, suglasnike i upitnike
+  char *rjec = new char[n + 1];
+  std::cout << "Unesite rijec > ";
+  std::cin.getline(rjec, n + 1);
+  //Prebroj upitnike, samoglasnike i suglasnike
+  uint upit = 0, samo = 0, sugl = 0;
   for(uint i = 0; i < n; i++){
-    char slovo = rjec[i];
-    if(jeUpitnik(slovo)){
-      upi++;
-      continue;
-    }else if(jeSamoglasnik(slovo)){
-      sam++;
-      continue;
+    if(rjec[i] == '?'){
+      upit++;
+    }else if(je_samoglasnik(rjec[i])){
+      samo++;
     }else{
-      sug++;
-      continue;
+      sugl++;
     }
   }
-  uint64_t rezultat = 0;
-  bool *upitnici = new bool[upi];//false - samoglasnik, true - suglasnik
-  for(uint i = 0; i < upi; i++){
-    upitnici[i] = false;
+  //Prodji kroz sve varijacije
+  bool * kombinacije = new bool[upit];
+  /*
+    U ovom slucaju moramo da provjerimo sve moguce kombinacije samoglasnik-suglasnik u nizu duzine "upit". Ovu informaciju
+    mozemo predstaviti binarno (0-suglasnik, 1-samoglasnik).
+  */
+  for(uint i = 0; i < upit; i++){
+    kombinacije[i] = false;
   }
+  unsigned long long rezultat = 0;
   while(true){
-    uint brojUpitSam = prebrojFalse(upitnici, upi);
-    uint brojUpitSug = upi - brojUpitSam;
-    if(abs((sam + brojUpitSam) - (sug + brojUpitSug)) <= k){
-      rezultat += box_pow(BROJ_SAMOGLASNIKA, brojUpitSam) * box_pow(BROJ_SUGLASNIKA, brojUpitSug);//Promjeniti
+    int uSamo = prebroj_true(kombinacije, upit);
+    int uSug = upit - uSamo;
+    if(abs((int)(uSamo + samo) - (int)(sugl + uSug)) <= k){
+      rezultat += box_pow(BROJ_SAMOGLASNIKA, uSamo) * box_pow(BROJ_SUGLASNIKA, uSug);
+      rezultat = rezultat % DJELILAC;//Pogledajte objasnjenje u opisu funkcije box_pow(int, int)
     }
-    if(suSviTrue(upitnici, upi)){
+    if(su_svi_true(kombinacije, upit)){//U sistemu koji smo napravili, kada su sve vrijednosti niza "kombinacije" true znaci da smo pregledali sve moguce kombinacije
       break;
     }
-    povecajZa1(upitnici, upi);
+    povecaj_za_1(kombinacije, upit);//Pogledajte opis iznad
   }
-
-  std::cout << "Rezultat: " << rezultat % (box_pow(10, 9) + 7) << std::endl;//Dodati modulo
-  delete[] upitnici;
+  std::cout << rezultat << std::endl;
   delete[] rjec;
+  delete[] varijacije;
 }

@@ -15,6 +15,7 @@ int veciOd(int i1, int i2){
 }
 
 int main(){
+    //Objasnjenje i pojednostavljenje dolaze uskoro
     int64_t x1, x2, x3, y1, y2, y3;
     std::cout << "Unesite koordinate triju tacaka >";
     std::cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
