@@ -1,49 +1,46 @@
-/* Copyright (c) Novak Petrovic GNU General Public License v3.0 */
+/* Copyright (c) Novak Petrovic
+ * Released under GNU General Public License v3.0 */
+
+// Napomena: Ne smije postojati <Enter> znak na ulazu
 
 #include <iostream>
-
 using namespace std;
 
 int main() {
-	//
 	// Zadatak ne precizira koliko ce biti znakova uneseno sa tastature,
 	// mi pretpostavljamo da uneseni tekst nece biti duzi od 1000 znakova.
-	int N = 1000;
+	int N=1000;
 	char tekst[N];
-	//
 	// i je pomocna varijabla
 	int i;
-	//
 	// Ovo su deklaracije brojaca
-	int brojSamoglasnika = 0;
-	int brojSuglasnika = 0;
-	int brojPraznina = 0;
-	//
+	int brojSamoglasnika=0;
+	int brojSuglasnika=0;
+	int brojPraznina=0;
 	// Zadatak ne zahtijeva brojanje ostalih znakova, 
 	// ali mi cemo dodati i tu opciju 
-	int brojOstalih = 0;
-	//
+	int brojOstalih=0;
 	// Unosimo tekst
-	cout << "Unesite tekst: ";
-	cin.getline(tekst, sizeof(tekst));
-	//
+	cin.getline(tekst,sizeof(tekst));
 	// Prolazimo kroz sve znakove teksta i odredjujemo kojoj grupi pripadaju
-	// Znamo da zvjezdica oznacava kraj teksta tako da idemo kroz tekst sve dok ne dodjemo do *
-	i = 0;
+	// Znamo da zvjezdica oznacava kraj teksta tako da idemo kroz tekst sve dok
+	// ne dodjemo do znaka *
+	i=0;
 	while (tekst[i] != '*') {
 		switch (tekst[i]) {
-			//			
 			// Provjera za prazninu
 			case ' ':
 				brojPraznina++;
 				break;			
-			//
 			// Uzeli smo da su sva slova engleskog alfabeta validna
 			// Prvo brojimo samoglasnike
-			case 'a': case 'A': case 'e': case 'E': case 'i': case 'I': case 'o': case 'O': case 'u': case 'U':
+			case 'a': case 'A':
+			case 'e': case 'E':
+			case 'i': case 'I':
+			case 'o': case 'O':
+			case 'u': case 'U':
 				brojSamoglasnika++;
 				break;
-			//
 			// Zatim brojimo suglasnike
 			case 'b': case 'B':
 			case 'c': case 'C':
@@ -68,20 +65,15 @@ int main() {
 			case 'z': case 'Z':
 				brojSuglasnika++;
 				break;
-			//
 			// Na kraju brojimo sve sto nije niti slovo niti praznina
 			default:
 				brojOstalih++;
 		}
-		i++;
+		++i;
 	}
-	//
 	// Ispis rezultata
-	cout << "Broj samoglasnika je: " << brojSamoglasnika << "\n";
-	cout << "Broj suglasnika je: " << brojSuglasnika << "\n";
-	cout << "Broj praznina je: " << brojPraznina << "\n";
-	//cout << "Broj ostalih znakova je: " << brojOstalih << "\n";
-	//
-	// Izlaz bez greske
+	cout << "Broj samoglasnika je: " << brojSamoglasnika << endl;
+	cout << "Broj suglasnika je: " << brojSuglasnika << endl;
+	cout << "Broj praznina je: " << brojPraznina << endl;
 	return 0;
 }
