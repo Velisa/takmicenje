@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-int main (void) { 
+int main() { 
 	int N,M,k,l;
 	int suma=0;
 	//cout << "Unesite broj redova, N (N <= 5): ";
@@ -24,7 +24,7 @@ int main (void) {
 	cin >> l;
 	for (int n=0; n<N; ++n) {
 		for (int m=0; m<M; ++m) {
-			// Ne sabiramo izabrani element
+			// Ne sabiremo izabrani element
 			if (n != (k-1) &&  m != (l-1)) {
 				// Ako je element na glavnoj dijagonali
 				if (k == l) {
@@ -33,12 +33,17 @@ int main (void) {
 					}
 				}
 				// Ako element nije na glavnoj dijagonali
+				// Ovaj uslov identifikuje sve elemente na dijagonali
+				// koja ide od lijevo gore do desno dole
 				else {
 					if ((k-1)-(l-1) == (n-m)) {
 						suma += matrica[n][m];
 					}	
 				}
 				// Ovaj uslov vazi za oba prethodna uslova
+				// Ovaj uslov identifikuje sve elemente na dijagonali
+				// koja ide od lijevo dole do desno gore 
+				// (bez obzira da li je na glavnoj dijagonali ili ne)
 				if ((n+m) == ((k-1)+(l-1))) {
 						suma += matrica[n][m];
 				}
@@ -47,5 +52,6 @@ int main (void) {
 	}
 	//cout << "Zbir dijagonala je: " << suma << endl;
 	cout << suma << endl;
+	cout << endl;
   return 0;
 }
