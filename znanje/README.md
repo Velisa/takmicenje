@@ -21,24 +21,40 @@
 * `if-else` наредба
 * `for` петља
 * Наредбе `break` и `continue`
-### `while` петља
+### Вајл петља
 ```
 while (uslov) {
-   izraz;
-   ...
-   izraz;
+  iskaz(i);
 }
 ```
 Да би се изрази унутар петље извршиле, услов мора бити тачан.
-### `do while` петља
+### Ду-вајл петља
 ```
 do {
-   izraz;
-   ...
-   izraz;
+  iskaz(i);
 } while (uslov);
 ```
-Тијело петље се извршава најмање једном.
+Тијело петље се извршава најмање једном. Да би се петља извршила више него једном, услов мора бити тачан.
+### Свич исказ
+```
+switch (izraz) {
+  case konstantni-izraz:
+    iskaz(i);
+    break; // opcionalno
+  case konstantni-izraz:
+    iskaz(i);
+    break; // opcionalno
+  ...
+  // Moze postojati bilo koji broj case iskaza
+  ...
+  default: // opcionalno
+    iskaz(i);
+}
+
+```
+Сљедећа правила важе за свич исказ:
+* 
+
 ## Кориштење функција
 * `sizeof()`
 * `sqrt()`
