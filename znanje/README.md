@@ -20,6 +20,13 @@
 * `if-else` наредба
 * `for` петља
 * Наредбе `break` и `continue`
+### `while` петља
+`while (uslov) {
+   izraz;
+   ...
+   izraz;
+}
+`
 ## Кориштење функција
 * `sizeof()`
 * `sqrt()`
