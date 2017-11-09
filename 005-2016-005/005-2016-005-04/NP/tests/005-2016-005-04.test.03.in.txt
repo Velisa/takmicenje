@@ -1,0 +1,12 @@
+10
+Trebinje
+Melburn-Sarajevo
+Sarajevo-Mostar
+Mostar-Trebinje
+Trebinje-Dubrovnik
+Dubrovnik-Sangaj
+Pert-Melburn
+Sangaj-Peking
+Peking-Moskva
+Moskva-Sidnej
+Sidnej-Pert

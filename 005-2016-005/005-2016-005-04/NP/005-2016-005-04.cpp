@@ -6,24 +6,34 @@ using namespace std;
 
 int main() {
 	int N, crta;
-	string rezultat = "";
-	string grad, pocetak, kraj, sljedeci;
+	string odgovor = "";
+	bool krajputa = false;
+	string rodnigrad, trenutni, ishodiste, odrediste;
 	
 	cin >> N;
-	cin >> grad;
+	cin >> rodnigrad;
 	string karte[N];
-	for (int i=0; i < N; ++i)
+	for (int i=0; i < N; ++i) {
 		cin >> karte[i];
-	rezultat += grad;
-	sljedeci = grad;
-	while (true) {
+	}
+	trenutni = rodnigrad;
+	odgovor += trenutni;
+	while (!krajputa) {
 		for (int i=0; i < N; ++i) {
 			crta = karte[i].find('-');
-			pocetak = karte[i].substr(0,crta) << endl;
-			kraj = karte[i].substr(crta+1, karte[i].length()) << endl;
-			
+			ishodiste = karte[i].substr(0,crta);
+			odrediste = karte[i].substr(crta+1, karte[i].length());
+			if (trenutni == ishodiste) {
+				trenutni = odrediste;
+				odgovor += "-" + trenutni;
+				if (odrediste == rodnigrad) {
+					krajputa = true;
+				}
+			}
 		}
 	}
-
+	cout << odgovor << endl;
 	return 0;
 }
+
+
