@@ -25,9 +25,9 @@
 ## Кориштење функција
 ### Дефинисано у `<cmath>`
 * `sqrt`
-** [http://en.cppreference.com/w/cpp/numeric/math/sqrt](http://en.cppreference.com/w/cpp/numeric/math/sqrt)
+    * [http://en.cppreference.com/w/cpp/numeric/math/sqrt](http://en.cppreference.com/w/cpp/numeric/math/sqrt)
 * `round`
-** [http://en.cppreference.com/w/cpp/numeric/math/round](http://en.cppreference.com/w/cpp/numeric/math/round)
+    * [http://en.cppreference.com/w/cpp/numeric/math/round](http://en.cppreference.com/w/cpp/numeric/math/round)
 # Задаци
 ## Петље
 ### Наредба `break`
