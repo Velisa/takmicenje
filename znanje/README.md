@@ -1,4 +1,8 @@
 # Шта треба знати за додатну наставу (основни концепти)
+## Увод
+Користимо стандарде C++14 (пожељно) или C++11 (ако C++14 није подржано).
+Референтни извор информација је [https://en.cppreference.com](https://en.cppreference.com).
+
 ## Теорија
 * Типови података
   * int
@@ -7,7 +11,7 @@
   * float
   * string
   * double
-* Кориштење `signed`, `unsigned`, `short`, `long`  
+* Кориштење `signed`, `unsigned`, `short`, `long`, `sizeof`  
 ## Синтакса
 ### Уопште
 * Кориштење библиотека
@@ -18,53 +22,69 @@
 * Кориштење `cin` и `cout`
 * Аритметички оператори
 * Логички оператори
-* `if-else` наредба
+### Гранање
+* `if-else` исказ
+* `switch` исказ
+### Петље
 * `for` петља
-* Наредбе `break` и `continue`
-### Вајл петља
-```
-while (uslov) {
-  iskaz(i);
-}
-```
-Да би се изрази унутар петље извршиле, услов мора бити тачан.
-### Ду-вајл петља
-```
-do {
-  iskaz(i);
-} while (uslov);
-```
-Тијело петље се извршава најмање једном. Да би се петља извршила више него једном, услов мора бити тачан.
-### Свич исказ
-```
-switch (izraz) {
-  case konstantni-izraz:
-    iskaz(i);
-    break; // opcionalno
-  case konstantni-izraz:
-    iskaz(i);
-    break; // opcionalno
-  ...
-  // Moze postojati bilo koji broj kejs (case) iskaza
-  ...
-  default: // opcionalno
-    iskaz(i);
-}
-
-```
-Сљедећа правила важе за свич исказе:
-* Израз у `switch (izraz)` мора бити цјелобројног или набројивог типа, или бити типа такве класе која има једну функцију за претварање у цјелобројни или набројиви тип.
-* `konstantni-izraz` мора бити истог типа као и промјенљива (израз) унутар `switch (izraz)`, и мора бити или константа или литерал.
-* When the variable being switched on is equal to a case, the statements following that case will execute until a break statement is reached.
-* When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.
-* Not every case needs to contain a break. If no break appears, the flow of control will fall through to subsequent cases until a break is reached.
-* A switch statement can have an optional default case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No break is needed in the default case.
-
+* `while` петља
+* `do-while` петља
+* Наредба `break`
+* Наредба `continue`
 ## Кориштење функција
-* `sizeof()`
+### Дефинисано у <cmath>
 * `sqrt()`
-## Задаци
-### Низови - Један низ
+# Задаци
+## Петље
+### Наредба `break`
+#### Задатак 1
+Шта ће исписати сљедећи програм?
+````
+#include <iostream>
+using namespace std; 
+int main() {
+    for (int i=0; i < 2; ++i) {
+        for (int j=0; j < 5; ++j) {
+            if (j == 2) 
+                break;
+            cout << i << j << " ";
+        }
+    }
+    return 0;    
+}
+````
+### Наредба `continue`
+#### Задатак 1
+Шта ће исписати сљедећи програм?
+````
+#include <iostream>
+using namespace std; 
+int main() {
+    for (int i=0; i < 10; ++i) {
+        if (i != 5)
+            continue;
+        cout << i << " ";
+    }
+    return 0;
+}
+````
+#### Задатак 2
+Шта ће исписати сљедећи програм?
+````
+#include <iostream>
+using namespace std; 
+int main() {
+    for (int i=0; i < 2; ++i) {
+        for (int j=0; j < 5; ++j) {
+            if (j == 3)
+                continue;
+            cout << i << j << " ";
+        }
+    }
+    return 0;
+}
+````
+## Низови - Један низ
 1. Учитати низ А од М чланова, затим исписати чланове низа. (ЖГ)
 1. Учитати низ и исписати само позитивне чланове низа. (ЖГ)
 1. Учитати низ и израчунати суму свих чланова низа. (ЖГ)
