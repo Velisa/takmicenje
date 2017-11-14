@@ -20,7 +20,7 @@
 * `do-while` петља
 * Наредба `break`
 * Наредба `continue`
-## Кориштење функција
+## Кориштење функција и оператора
 ### Дефинисане у `<cmath>`
 * `sqrt`
     * [http://en.cppreference.com/w/cpp/numeric/math/sqrt](http://en.cppreference.com/w/cpp/numeric/math/sqrt)
