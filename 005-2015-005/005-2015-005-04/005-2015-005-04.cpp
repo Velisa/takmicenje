@@ -1,3 +1,6 @@
+/* Copyright (c) Novak Petrovic
+ * Released under GNU General Public License v3.0 */
+
 #include <cmath>
 #include <iostream>
 using namespace std;
