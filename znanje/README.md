@@ -22,10 +22,12 @@
 * Наредба `continue`
 ## Кориштење функција и оператора
 ### Дефинисане у `<cmath>`
-* `sqrt`
-    * [http://en.cppreference.com/w/cpp/numeric/math/sqrt](http://en.cppreference.com/w/cpp/numeric/math/sqrt)
 * `round`
     * [http://en.cppreference.com/w/cpp/numeric/math/round](http://en.cppreference.com/w/cpp/numeric/math/round)
+* `sqrt`
+    * [http://en.cppreference.com/w/cpp/numeric/math/sqrt](http://en.cppreference.com/w/cpp/numeric/math/sqrt)
+* `trunc`
+    * [http://en.cppreference.com/w/cpp/numeric/math/trunc](http://en.cppreference.com/w/cpp/numeric/math/trunc)
 ### Дефинисане у `<string>`
 [http://en.cppreference.com/w/cpp/string/basic_string](http://en.cppreference.com/w/cpp/string/basic_string)
 * `operator []`
