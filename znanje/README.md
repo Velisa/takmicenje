@@ -28,43 +28,28 @@
     * [http://en.cppreference.com/w/cpp/numeric/math/round](http://en.cppreference.com/w/cpp/numeric/math/round)
 ### Дефинисане у `<string>`
 [http://en.cppreference.com/w/cpp/string/basic_string](http://en.cppreference.com/w/cpp/string/basic_string)
-* `empty`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/empty](http://en.cppreference.com/w/cpp/string/basic_string/empty)
-* `find`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/find](http://en.cppreference.com/w/cpp/string/basic_string/find)
-* `isdigit`
-    * [http://en.cppreference.com/w/cpp/string/byte/isdigit](http://en.cppreference.com/w/cpp/string/byte/isdigit)
-* `length` и `size`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/size](http://en.cppreference.com/w/cpp/string/basic_string/size)
 * `operator []`
     * [http://en.cppreference.com/w/cpp/string/basic_string/operator_at](http://en.cppreference.com/w/cpp/string/basic_string/operator_at)
+* `empty`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/empty](http://en.cppreference.com/w/cpp/string/basic_string/empty)
+* `size` и `length`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/size](http://en.cppreference.com/w/cpp/string/basic_string/size)
 * `operator +=`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D](http://en.cppreference.com/w/cpp/string/basic_string
-/operator%2B%3D)
+    * [http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D](http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D)
+* `substr`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/substr](http://en.cppreference.com/w/cpp/string/basic_string/substr)
+* `find`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/find](http://en.cppreference.com/w/cpp/string/basic_string/find)
 * `stoi`
     * [http://en.cppreference.com/w/cpp/string/basic_string/stol](http://en.cppreference.com/w/cpp/string/basic_string/stol)
 * `stof`
     * [http://en.cppreference.com/w/cpp/string/basic_string/stof](http://en.cppreference.com/w/cpp/string/basic_string/stof)
-* `substr`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/substr](http://en.cppreference.com/w/cpp/string/basic_string/substr)
 * `to_string`
     * [http://en.cppreference.com/w/cpp/string/basic_string/to_string](http://en.cppreference.com/w/cpp/string/basic_string/to_string)
 # Задаци
+## Основни концепти
+### Улаз и излаз
 ## Гранање
-### `if-else` исказ
-#### Задатак 1
-За који `if` исказ је везан `else` исказ у сљедећем блоку кода? Код је узет из задатка [005-2015-005-03](https://github.com/novakpetrovic/takmicenje/blob/master/005-2015-005/005-2015-005-03/NP/005-2015-005-03.cpp).
-````
-if (brojRedova == N)
-	for (int i=0; i < N; ++i)
-		if (ignorisati[i] == false) {
-			for (int j=0; j < M; ++j)
-				cout << A[i][j] << "\t";
-			cout << endl;
-      		}
-else
-	cout << "Ne postoji matrica koja zadovoljava postavljeni ulov!";
-````
 ## Петље
 ### Наредба `break`
 #### Задатак 1
@@ -114,9 +99,10 @@ int main() {
     return 0;
 }
 ````
-## Кориштење функција
-### `round`
-#### Задатак 1
+## Кориштење функција и оператора
+### Дефинисане у `<cmath>`
+#### `round`
+##### Задатак 1
 Шта ће исписати сљедећи програм?
 ````
 #include <iostream>
@@ -134,8 +120,19 @@ int main() {
   return 0;
 }
 ````
-#### Задатак 2
+##### Задатак 2
 Корисник уноси сљедеће бројеве: 3.14159265359, 1.61803398875, 2.71828. Напиши програм који исписује први број заокружен на 1 децимално мјесто, други број заокружен на 2 децимална мјеста, и трећи број заокружен на 3 децимална мјеста.
+### Дефинисане у `<string>`
+#### Задатак 1
+Корисник уноси неки износ користећи децимални зарез. Испиши на којој позицији се налази зарез.
+#### Задатак 2
+Корисник уноси неки износ користећи децимални зарез. Испиши све унесене цифре прије децималног зареза.
+#### Задатак 3
+Корисник уноси неки износ користећи децимални зарез. Испиши све унесене цифре послије децималног зареза.
+#### Задатак 4
+Корисник уноси неки износ користећи децимални зарез. Испиши тај износ користећи децималну тачку.
+#### Задатак 5
+Корисник уноси неку ријеч, користећи само мала слова. Испиши колико има самогласника у унесеној ријечи. Уради задатак користећи if-else исказ, па затим користећи switch исказ.
 ## Низови - Један низ
 1. Учитати низ А од М чланова, затим исписати чланове низа. (ЖГ)
 1. Учитати низ и исписати само позитивне чланове низа. (ЖГ)
