@@ -28,22 +28,25 @@
     * [http://en.cppreference.com/w/cpp/numeric/math/round](http://en.cppreference.com/w/cpp/numeric/math/round)
 ### Дефинисане у `<string>`
 [http://en.cppreference.com/w/cpp/string/basic_string](http://en.cppreference.com/w/cpp/string/basic_string)
-* `operator []`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/operator_at](http://en.cppreference.com/w/cpp/string/basic_string/operator_at)
 * `empty`
     * [http://en.cppreference.com/w/cpp/string/basic_string/empty](http://en.cppreference.com/w/cpp/string/basic_string/empty)
-* `size` и `length`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/size](http://en.cppreference.com/w/cpp/string/basic_string/size)
-* `operator +=`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D](http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D)
-* `substr`
-    * [http://en.cppreference.com/w/cpp/string/basic_string/substr](http://en.cppreference.com/w/cpp/string/basic_string/substr)
 * `find`
     * [http://en.cppreference.com/w/cpp/string/basic_string/find](http://en.cppreference.com/w/cpp/string/basic_string/find)
+* `isdigit`
+    * [http://en.cppreference.com/w/cpp/string/byte/isdigit](http://en.cppreference.com/w/cpp/string/byte/isdigit)
+* `length` и `size`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/size](http://en.cppreference.com/w/cpp/string/basic_string/size)
+* `operator []`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/operator_at](http://en.cppreference.com/w/cpp/string/basic_string/operator_at)
+* `operator +=`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D](http://en.cppreference.com/w/cpp/string/basic_string
+/operator%2B%3D)
 * `stoi`
     * [http://en.cppreference.com/w/cpp/string/basic_string/stol](http://en.cppreference.com/w/cpp/string/basic_string/stol)
 * `stof`
     * [http://en.cppreference.com/w/cpp/string/basic_string/stof](http://en.cppreference.com/w/cpp/string/basic_string/stof)
+* `substr`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/substr](http://en.cppreference.com/w/cpp/string/basic_string/substr)
 * `to_string`
     * [http://en.cppreference.com/w/cpp/string/basic_string/to_string](http://en.cppreference.com/w/cpp/string/basic_string/to_string)
 # Задаци
