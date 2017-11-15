@@ -50,8 +50,21 @@
 * `to_string`
     * [http://en.cppreference.com/w/cpp/string/basic_string/to_string](http://en.cppreference.com/w/cpp/string/basic_string/to_string)
 # Задаци
-## Основни концепти
-### Улаз и излаз
+## Гранање
+### `if-else` исказ
+#### Задатак 1
+За који `if` исказ је везан `else` исказ у сљедећем блоку кода? Код је узет из задатка [https://github.com/novakpetrovic/takmicenje/blob/master/005-2015-005/005-2015-005-03/NP/005-2015-005-03.cpp](005-2015-005-03).
+````
+if (brojRedova == N)
+   for (int i=0; i < N; ++i)
+      if (ignorisati[i] == false) {
+         for (int j=0; j < M; ++j)
+            cout << A[i][j] << "\t";
+         cout << endl;
+      }
+else
+		cout << "Ne postoji matrica koja zadovoljava postavljeni ulov!";
+````
 ## Петље
 ### Наредба `break`
 #### Задатак 1
