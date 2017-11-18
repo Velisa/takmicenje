@@ -15,9 +15,7 @@ int main() {
 	int pogodaka = 5;
 	int x[takmicara][pogodaka], y[takmicara][pogodaka];
 	
-	for (int t=0; t < takmicara; ++t) {
-	
-	
+	for (int t=0; t < takmicara; ++t) {	
 		int kraj = pogoci[t].length();
 		string sub = pogoci[t].substr(0, kraj);
 		int brojac = 0;
@@ -39,7 +37,7 @@ int main() {
 		}
 		bodovi = 0;
 		for (int i=0; i < pogodaka; ++i) {
-			polupr = sqrt(pow(x[t][i],2)+pow(y[t][i],2));
+			polupr = sqrt(pow(x[t][i], 2)+pow(y[t][i], 2));
 			if (polupr <= 1.0)
 				bodovi += 10;
 			else if (polupr > 1.0 && polupr <= 2.0)
@@ -61,9 +59,7 @@ int main() {
 			else if (polupr > 9.0 && polupr <= 10.0)
 				bodovi += 1;
 		}
-		cout << bodovi << endl;
+		cout << t+1 << ". takmicar " << bodovi << " bodova" << endl;
 	}
-	
-	
 	return 0;
 }
