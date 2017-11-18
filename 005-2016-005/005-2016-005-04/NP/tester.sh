@@ -78,7 +78,7 @@ fi
 # Compile
 echo "Compiling..."
 #echo "Compiling..." >> $myfile.tests.report.txt
-g++ $myfile.cpp -o $myfile.exe 2> $myfile.cpp.compiler.txt
+g++ -std=c++14 $myfile.cpp -o $myfile.exe 2> $myfile.cpp.compiler.txt
 #
 # Check if there have been errors during compilation
 numlines=$(wc -l < "$myfile.cpp.compiler.txt")
