@@ -27,6 +27,7 @@ int main(void) {
 				odgovor += "-" + trenutni;
 				if (odrediste == rodnigrad) {
 					krajputa = true;
+          // Treci test slucaj nece proci ukoliko ovdje nemamo break!
           break;
 				}
 			}
