@@ -5,7 +5,7 @@
 #include <math.h>
 using namespace std;
 
-int main() {
+int main(void) {
   const int D = 5;
 	int matrica[D][D];
 	int posjeceni[D*D];
