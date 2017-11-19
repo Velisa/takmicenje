@@ -5,9 +5,8 @@
 #include <math.h>
 using namespace std;
 
-#define D 5
-
 int main() {
+  const int D = 5;
 	int matrica[D][D];
 	int posjeceni[D*D];
 	int i = 0;
@@ -16,11 +15,11 @@ int main() {
 	int sred, skol;
 	bool nadjeno = false;
 	bool ukradeno = false;
-
-	for (int i=0; i < D; ++i)
-		for (int j=0; j < D; ++j)
+	for (int i=0; i < D; ++i) {
+		for (int j=0; j < D; ++j) {
 			cin >> matrica[i][j];
-
+    }
+  }
 	while (!nadjeno && !ukradeno) {
 		posjeceni[i] = 10*red + kol;
 		++i;
@@ -41,8 +40,9 @@ int main() {
 			cout << "blago je u " << red+1 << " " << kol+1 << endl;
 			nadjeno = true;	
 		}
-		if (!nadjeno && !ukradeno)	
+		if (!nadjeno && !ukradeno) {
 			cout << "posjetili " << sred+1 << " " << skol+1 << endl;
+    }
 		red = sred;
 		kol = skol;
 	}
