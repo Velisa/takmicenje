@@ -3,4 +3,4 @@ Testing 01
 Testing 02
 ........................TEST 02: PASS
 Testing 03
-........................TEST 03: FAIL
+........................TEST 03: PASS

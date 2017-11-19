@@ -4,12 +4,11 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main(void) {
 	int N, crta;
 	string odgovor = "";
 	bool krajputa = false;
-	string rodnigrad, trenutni, ishodiste, odrediste;
-	
+	string rodnigrad, trenutni, ishodiste, odrediste;	
 	cin >> N;
 	cin >> rodnigrad;
 	string karte[N];
@@ -28,11 +27,12 @@ int main() {
 				odgovor += "-" + trenutni;
 				if (odrediste == rodnigrad) {
 					krajputa = true;
+          break;
 				}
 			}
 		}
 	}
-	cout << odgovor << endl;
+	cout << odgovor;
 	return 0;
 }
 
