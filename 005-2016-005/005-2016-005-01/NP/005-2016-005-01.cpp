@@ -1,19 +1,16 @@
-/* Copyright (c) Novak Petrovic GNU General Public License v3.0 */
+/* Copyright (c) Novak Petrovic
+ * Released under GNU General Public License v3.0 */
 
-#include <iostream>
 #include <cstdlib>
-
+#include <iostream>
 using namespace std;
 
 int main(void) {
 	int N = 1000;
 	char unesen_broj[N];
-	//
 	cin.getline(unesen_broj, N+1);
-	//
-	string broj = "";
-	//
 	int i = 0;
+  string broj = "";
 	bool magican = true;
 	while (unesen_broj[i] != '\0') {
 		broj = broj + unesen_broj[i];
@@ -22,11 +19,11 @@ int main(void) {
 		}
 		i++;
 	}
-	//
 	if (magican == true) {
-		cout << "Broj je magican!" << endl;
+		cout << "Broj je magican!";
 	}
 	else {
-		cout << "Broj nije magican!" << endl;
+		cout << "Broj nije magican!";
 	}
+  return 0;
 }
