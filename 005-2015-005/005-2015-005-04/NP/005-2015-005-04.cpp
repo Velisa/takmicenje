@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main(void) {
 	// Deklaracije
 	const int N = 8;
 	const int K = 3;

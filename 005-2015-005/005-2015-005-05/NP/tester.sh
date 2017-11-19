@@ -5,6 +5,10 @@ myfile=$1
 #
 # END USER INPUT
 #
+# Format code
+echo "Formatting code..."
+clang-format.exe -i -style=google ./$myfile.cpp
+#
 # Check that for each input file, there is also the solution file
 # (for each in.txt there is a sol.txt file)
 #

@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main(void) {
 	int N, M, najmanji;
 	int brojRedova = 0;
   cin >> N;
