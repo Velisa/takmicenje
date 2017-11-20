@@ -99,7 +99,7 @@ if [ $numlines -eq 0 ]; then
       echo "Testing "${array[idx]}
       echo "Testing "${array[idx]} >> $myfile.tests.report.txt
       ./$myfile.exe < ./tests/$myfile.test.${array[idx]}.in.txt > ./tests/$myfile.test.${array[idx]}.out.txt
-      if diff ./tests/$myfile.test.${array[idx]}.sol.txt ./tests/$myfile.test.${array[idx]}.out.txt; then
+      if diff ./tests/$myfile.test.${array[idx]}.out.txt ./tests/$myfile.test.${array[idx]}.sol.txt; then
         echo "........................TEST "${array[idx]}": PASS"
         echo "........................TEST "${array[idx]}": PASS" >> $myfile.tests.report.txt
       else

@@ -10,21 +10,21 @@ int main(void) {
   int niz[N];
   cin >> A;
   cin >> B;
-  for (int i=0; i < N; ++i) {
+  for (int i = 0; i < N; ++i) {
     cin >> niz[i];
   }
   int najveci;
   int najmanji;
   bool nadjen = false;
-  for (int i=0; i < N; ++i) {
-    if (niz[i] > A && niz[i] < B ) {
+  for (int i = 0; i < N; ++i) {
+    if (niz[i] > A && niz[i] < B) {
       najmanji = niz[i];
       najveci = niz[i];
       nadjen = true;
     }
   }
   if (nadjen) {
-    for (int i=1; i < N; ++i) {
+    for (int i = 1; i < N; ++i) {
       if (niz[i] > A && niz[i] < B && niz[i] < najmanji) {
         najmanji = niz[i];
       }
@@ -34,12 +34,9 @@ int main(void) {
     }
     cout << "Najmanji element: " << najmanji << endl;
     cout << "Najveci element: " << najveci;
-  }
-  else {
+  } else {
     cout << "Najmanji element: Ne postoji!" << endl;
     cout << "Najveci element: Ne postoji!";
   }
-	return 0;
+  return 0;
 }
-
-
