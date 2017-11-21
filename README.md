@@ -92,18 +92,18 @@
 Сви фајлови за тестирање се налазе у поддиректорији **tests** и то у сљедећим форматима:
 
 Улаз:
-**KKK-YYYY-LLL-MM-{A}.test.ZZ.in.txt**
+**KKK-YYYY-LLL-MM-{A}.test.ZZ.in.tst**
 
 Излаз:
-**KKK-YYYY-LLL-MM-{A}.test.ZZ.out.txt**
+**KKK-YYYY-LLL-MM-{A}.test.ZZ.out.tst**
 
 Рјешење:
-**KKK-YYYY-LLL-MM-{A}.test.ZZ.sol.txt**
+**KKK-YYYY-LLL-MM-{A}.test.ZZ.sol.tst**
 
 гдје **ZZ** представља редни број теста (01, 02, ... 10, 11, ... 16, ... 87, ...).
 
 У самој директорији гдје је задатак и рјешење налази се само тест извјештај који садржи информације да ли је сваки тест прошао или не. Име тог фајла је:
-**KKK-YYYY-LLL-MM-{A}.tests.report.txt**
+**KKK-YYYY-LLL-MM-{A}.tests.report.tst**
 
 ## Контакт
 Сва питања и приједлоге упутити на:
