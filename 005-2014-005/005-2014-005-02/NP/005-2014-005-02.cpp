@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   int R, K;
   cin >> R;
   cin >> K;

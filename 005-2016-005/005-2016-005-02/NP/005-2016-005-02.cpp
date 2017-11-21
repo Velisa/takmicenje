@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   int r, k;
   cin >> r;
   cin >> k;

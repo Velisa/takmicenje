@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   int dan, mjesec, godina;
   int prethodniDan, prethodniMjesec, prethodnaGodina;
   int sljedeciDan, sljedeciMjesec, sljedecaGodina;

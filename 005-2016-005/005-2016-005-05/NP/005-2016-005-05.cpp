@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   int N, A, B;
   cin >> N;
   int niz[N];

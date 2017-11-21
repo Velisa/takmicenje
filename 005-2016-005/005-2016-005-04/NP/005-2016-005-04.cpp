@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   int N, crta;
   string odgovor = "";
   bool krajputa = false;

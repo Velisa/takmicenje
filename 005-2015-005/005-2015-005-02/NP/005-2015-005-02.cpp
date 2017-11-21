@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   string recenica, trazena, zamjena, prije, poslije;
   string novaRecenica = "";
   getline(cin, recenica);

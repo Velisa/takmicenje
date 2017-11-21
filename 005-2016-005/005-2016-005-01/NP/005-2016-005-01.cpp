@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   int N = 1000;
   char unesen_broj[N];
   cin.getline(unesen_broj, N + 1);

@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   const int D = 5;
   int matrica[D][D];
   int posjeceni[D * D];
