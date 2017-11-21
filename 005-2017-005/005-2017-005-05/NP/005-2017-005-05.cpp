@@ -13,7 +13,7 @@ Koristimo:
 ( a - b) % c = ( ( a % c ) - ( b % c ) ) % c
 
 ali ne i:
-( a / b ) % c != ( ( a % c ) / ( b % c ) ) % c 
+( a / b ) % c != ( ( a % c ) / ( b % c ) ) % c
 */
 #include <cmath>
 #include <iostream>
