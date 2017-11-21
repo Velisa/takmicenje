@@ -1,8 +1,11 @@
+/* Copyright (c) Novak Petrovic
+ * GNU General Public License v3.0
+ */
 #include <cmath>
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   int N;
   int jovan = 0;
   int marko = 0;

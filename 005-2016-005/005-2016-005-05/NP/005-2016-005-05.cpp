@@ -1,6 +1,6 @@
 /* Copyright (c) Novak Petrovic
- * Released under GNU General Public License v3.0 */
-
+ * GNU General Public License v3.0
+ */
 #include <iostream>
 using namespace std;
 
@@ -38,5 +38,5 @@ int main(void) {
     cout << "Najmanji element: Ne postoji!" << endl;
     cout << "Najveci element: Ne postoji!";
   }
-  return 0;
+  return EXIT_SUCCESS;
 }

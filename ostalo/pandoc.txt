@@ -1,0 +1,5 @@
+C:\Users\novak\AppData\Local\Pandoc
+
+pandoc -f odt -t markdown_github 005-2017-005-01.odt -o README.md -s
+
+pandoc -f odt -t markdown_github 005-2017-005-04-ZAD4.odt -o README.md -s

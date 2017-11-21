@@ -1,8 +1,11 @@
+/* Copyright (c) Novak Petrovic
+ * GNU General Public License v3.0
+ */
 #include <cmath>
 #include <iostream>
 using namespace std;
 
-int main(void) {
+int main() {
   float x, y, z, q;
   int vrijemePolijetanja;
   int vrijemePrizemljenja;

@@ -1,11 +1,13 @@
-#include <math.h>
+/* Copyright (c) Novak Petrovic
+ * GNU General Public License v3.0
+ */
+#include <cmath>
 #include <iostream>
 using namespace std;
 
 int main(void) {
   int N, M;
-  cin >> N;
-  cin >> M;
+  cin >> N >> M;
   int A[N][M];
   for (int i = 0; i < N; ++i) {
     for (int j = 0; j < M; ++j) {

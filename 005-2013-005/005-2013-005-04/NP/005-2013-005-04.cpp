@@ -1,26 +1,21 @@
 /* Copyright (c) Novak Petrovic
- * GNU General Public License v3.0 */
-
+ * GNU General Public License v3.0
+ */
 #include <iostream>
 using namespace std;
 
 int main() {
   int N, M, k, l;
   int suma = 0;
-  // cout << "Unesite broj redova, N (N <= 5): ";
   cin >> N;
-  // cout << "Unesite broj kolona, M (M <= 5): ";
   cin >> M;
   int matrica[N][M];
   for (int n = 0; n < N; ++n) {
     for (int m = 0; m < M; ++m) {
-      // cout << "Unesite " << (n+1)*(m+1) << ". element matrice: ";
       cin >> matrica[n][m];
     }
   }
-  // cout << "Unesite broj reda, k (k <= 5): ";
   cin >> k;
-  // cout << "Unesite broj kolone, l (l <= 5): ";
   cin >> l;
   for (int n = 0; n < N; ++n) {
     for (int m = 0; m < M; ++m) {
@@ -50,8 +45,6 @@ int main() {
       }
     }
   }
-  // cout << "Zbir dijagonala je: " << suma << endl;
-  cout << suma << endl;
-  cout << endl;
-  return 0;
+  cout << suma;
+  return EXIT_SUCCESS;
 }

@@ -1,3 +1,6 @@
+/* Copyright (c) Novak Petrovic
+ * GNU General Public License v3.0
+ */
 #include <cmath>
 #include <iomanip>
 #include <iostream>

@@ -1,39 +1,23 @@
 /* Copyright (c) Novak Petrovic
- * Released under GNU General Public License v3.0 */
-
-// Napomena: Ne smije postojati <Enter> znak na ulazu
-
+ * GNU General Public License v3.0
+ */
 #include <iostream>
 using namespace std;
 
 int main() {
-  // Zadatak ne precizira koliko ce biti znakova uneseno sa tastature,
-  // mi pretpostavljamo da uneseni tekst nece biti duzi od 1000 znakova.
   int N = 1000;
   char tekst[N];
-  // i je pomocna varijabla
-  int i;
-  // Ovo su deklaracije brojaca
-  int brojSamoglasnika = 0;
-  int brojSuglasnika = 0;
-  int brojPraznina = 0;
-  // Zadatak ne zahtijeva brojanje ostalih znakova,
-  // ali mi cemo dodati i tu opciju
   int brojOstalih = 0;
-  // Unosimo tekst
+  int brojPraznina = 0;
+  int brojSuglasnika = 0;
+  int brojSamoglasnika = 0;
   cin.getline(tekst, sizeof(tekst));
-  // Prolazimo kroz sve znakove teksta i odredjujemo kojoj grupi pripadaju
-  // Znamo da zvjezdica oznacava kraj teksta tako da idemo kroz tekst sve dok
-  // ne dodjemo do znaka *
-  i = 0;
+  int i = 0;
   while (tekst[i] != '*') {
     switch (tekst[i]) {
-      // Provjera za prazninu
       case ' ':
         brojPraznina++;
         break;
-      // Uzeli smo da su sva slova engleskog alfabeta validna
-      // Prvo brojimo samoglasnike
       case 'a':
       case 'A':
       case 'e':
@@ -46,7 +30,6 @@ int main() {
       case 'U':
         brojSamoglasnika++;
         break;
-      // Zatim brojimo suglasnike
       case 'b':
       case 'B':
       case 'c':
@@ -91,15 +74,13 @@ int main() {
       case 'Z':
         brojSuglasnika++;
         break;
-      // Na kraju brojimo sve sto nije niti slovo niti praznina
       default:
         brojOstalih++;
     }
     ++i;
   }
-  // Ispis rezultata
   cout << "Broj samoglasnika je: " << brojSamoglasnika << endl;
   cout << "Broj suglasnika je: " << brojSuglasnika << endl;
-  cout << "Broj praznina je: " << brojPraznina << endl;
-  return 0;
+  cout << "Broj praznina je: " << brojPraznina;
+  return EXIT_SUCCESS;
 }

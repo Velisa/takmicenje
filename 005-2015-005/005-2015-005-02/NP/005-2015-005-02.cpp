@@ -1,3 +1,6 @@
+/* Copyright (c) Novak Petrovic
+ * GNU General Public License v3.0
+ */
 #include <iostream>
 using namespace std;
 
@@ -18,5 +21,5 @@ int main(void) {
     cout << "recenica glasi" << endl;
     cout << recenica;
   }
-  return 0;
+  return EXIT_SUCCESS;
 }

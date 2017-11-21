@@ -1,6 +1,6 @@
 /* Copyright (c) Novak Petrovic
- * Released under GNU General Public License v3.0 */
-
+ * GNU General Public License v3.0
+ */
 #include <iostream>
 using namespace std;
 
@@ -19,4 +19,5 @@ int main() {
   // Ispisujemo sve brojeve VECE od kontrolnog broja
   for (int i = 1; i < n; ++i)
     if (niz[i] > kb) cout << niz[i] << ' ';
+  return EXIT_SUCCESS;
 }

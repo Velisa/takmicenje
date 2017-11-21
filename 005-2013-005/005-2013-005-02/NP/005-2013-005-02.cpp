@@ -1,7 +1,7 @@
 /* Copyright (c) Novak Petrovic
- * GNU General Public License v3.0 */
-
-#include <math.h>
+ * GNU General Public License v3.0
+ */
+#include <cmath>
 #include <iomanip>
 #include <iostream>
 using namespace std;
@@ -11,8 +11,8 @@ int main() {
   int K;             // Broj kablova
   int broj_kablova;  // Koliko cijelih kablova mozemo napraviti
   bool nadjeno = false;
-  float duzina;         //  ovoj promjenjljivoj je odgovori
-  float kablovi[5000];  // vo je niz duzina kablovai
+  float duzina;         // U ovoj promjenjljivoj je odgovori
+  float kablovi[5000];  // Ovo je niz duzina kablovai
   float ukupnaDuzina = 0.0;
   cin >> N >> K;
   for (int i = 0; i < K; ++i) {
@@ -28,12 +28,13 @@ int main() {
     for (int i = 0; i < K; ++i) {
       broj_kablova += (int)floor(kablovi[i] / duzina);
     }
-    if (broj_kablova == N)
+    if (broj_kablova == N) {
       nadjeno = true;
-    else
+    } else {
       /* Veca preciznost je potrebna za neke primjere */
       duzina -= 0.001;
+    }
   }
-  cout << fixed << setprecision(2) << duzina << endl;
-  return 0;
+  cout << fixed << setprecision(2) << duzina;
+  return EXIT_SUCCESS;
 }

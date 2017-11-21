@@ -1,32 +1,32 @@
-// Copyright (c) Novak Petrovic
-// GNU General Public License v3.0
-//
-// Rjesenje 5. zadatka
-// Regionalno takmicenje iz informatike, Republika Srpska, 2017.
-//
-// Za koristenje % za velike brojeve korisno je vidjeti
-// http://www.geeksforgeeks.org/modulo-1097-1000000007/
-//
-// Koristimo:
-// ( a + b) % c = ( ( a % c ) + ( b % c ) ) % c
-// ( a * b) % c = ( ( a % c ) * ( b % c ) ) % c
-// ( a - b) % c = ( ( a % c ) - ( b % c ) ) % c
-//
-// ali ne i:
-// ( a / b ) % c != ( ( a % c ) / ( b % c ) ) % c
+/* Copyright (c) Novak Petrovic
+ * GNU General Public License v3.0
 
-#include <math.h>
+Rjesenje 5. zadatka
+Regionalno takmicenje iz informatike, Republika Srpska, 2017.
+
+Za koristenje % za velike brojeve korisno je vidjeti
+http://www.geeksforgeeks.org/modulo-1097-1000000007/
+
+Koristimo:
+( a + b) % c = ( ( a % c ) + ( b % c ) ) % c
+( a * b) % c = ( ( a % c ) * ( b % c ) ) % c
+( a - b) % c = ( ( a % c ) - ( b % c ) ) % c
+
+ali ne i:
+( a / b ) % c != ( ( a % c ) / ( b % c ) ) % c 
+*/
+#include <cmath>
 #include <iostream>
 #include <iterator>
 #include <string>
 #include <vector>
 using namespace std;
 
-// Generise niz binarnih brojeva (stringova) sa odredjenim brojem bitova n
-// Binarni brojevi se koriste za predstavljanje mogucih kombinacija
-// samoglasnik-suglasnik
-// TODO: Promijeniti funkciju tako da ne koristi vektore
-// (jer znamo koliko elementa ce biti za svaki broj bitova n)
+/* Generise niz binarnih brojeva (stringova) sa odredjenim brojem bitova n
+Binarni brojevi se koriste za predstavljanje mogucih kombinacija
+samoglasnik-suglasnik
+TODO: Promijeniti funkciju tako da ne koristi vektore
+(jer znamo koliko elementa ce biti za svaki broj bitova n) */
 vector<string> getBitStrings(unsigned int n) {
   vector<string> result;
   if (n <= 1) {
@@ -43,21 +43,21 @@ vector<string> getBitStrings(unsigned int n) {
   return result;
 }
 
-// Provjerava da li je karakter upitnik
+/* Provjerava da li je karakter upitnik */
 bool jeUpitnik(char c) { return c == '?'; }
 
-// Provjerava da li je karakter samoglasnik
-// Pazi:
-//	* '0' se koristi za predstavljanje bilo kog samoglasnika
-//	* '1' se koristi za predstavljanje bilo kog suglasnika
-// (Zato se kompletna moguca kombinacija samoglasnika i suglasnika
-// moze predstaviti kao binarni broj sa odredjenim brojem bitova)
+/* Provjerava da li je karakter samoglasnik
+Pazi:
+ * '0' se koristi za predstavljanje bilo kog samoglasnika
+ * '1' se koristi za predstavljanje bilo kog suglasnika
+(Zato se kompletna moguca kombinacija samoglasnika i suglasnika
+moze predstaviti kao binarni broj sa odredjenim brojem bitova) */
 bool jeSamoglasnik(char c) {
   return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == '0';
 }
 
-// Provjerava da li izabrana kombinacija samoglasnika i suglasnika zadovoljava
-// zadati uslov
+/* Provjerava da li izabrana kombinacija samoglasnika i suglasnika zadovoljava
+zadati uslov */
 bool zadovoljava(char *rijec, int n, int k) {
   int sagl = 0;
   int sugl = 0;
@@ -138,5 +138,6 @@ int main() {
     }
   }
   // Ispisi broj mogucih kombinacija (konacan odgovor)
-  cout << ukupno << endl;
+  cout << ukupno;
+  return EXIT_SUCCESS;
 }

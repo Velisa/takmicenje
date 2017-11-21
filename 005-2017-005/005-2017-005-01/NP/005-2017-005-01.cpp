@@ -1,6 +1,6 @@
 /* Copyright (c) Novak Petrovic
- * Released under GNU General Public License v3.0 */
-
+ * GNU General Public License v3.0
+ */
 #include <math.h>
 #include <iostream>
 using namespace std;
@@ -15,4 +15,5 @@ int main() {
     cout << "Krugovi se preklapaju" << endl;
   else
     cout << "Krugovi se ne preklapaju" << endl;
+  return EXIT_SUCCESS;
 }

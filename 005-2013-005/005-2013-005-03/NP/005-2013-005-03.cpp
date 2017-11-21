@@ -1,4 +1,7 @@
-#include <math.h>
+/* Copyright (c) Novak Petrovic
+ * GNU General Public License v3.0
+ */
+#include <cmath>
 #include <iostream>
 using namespace std;
 
@@ -7,16 +10,19 @@ int main() {
   int n = 0;
   cin >> K;
   int al[K], bl[K], cl[K];
-  for (int a = 1; a <= K; ++a)
-    for (int b = 1; b <= K; ++b)
-      for (int c = 1; c <= K; ++c)
+  for (int a = 1; a <= K; ++a) {
+    for (int b = 1; b <= K; ++b) {
+      for (int c = 1; c <= K; ++c) {
         if (pow(a, 2) + pow(b, 2) == pow(c, 2)) {
           al[n] = a;
           bl[n] = b;
           cl[n] = c;
           ++n;
         }
-  // Sortiraj elemente unutar trojke (a, b, c)
+      }
+    }
+  }
+  // Sortiraj elemente unutar trojke (a, b, c),
   // da mozemo identifikovati trojke koje se ponavljaju
   for (int i = 0; i < n; ++i) {
     // Nista ne treba mijenjati
@@ -117,5 +123,6 @@ int main() {
       cout << al[i] << " " << bl[i] << " " << cl[i] << endl;
     ++i;
   }
-  cout << al[i] << " " << bl[i] << " " << cl[i] << endl;
+  cout << al[i] << " " << bl[i] << " " << cl[i];
+  return EXIT_SUCCESS;
 }

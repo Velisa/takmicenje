@@ -1,8 +1,6 @@
 /* Copyright (c) Novak Petrovic
- * Released under GNU General Public License v3.0 */
-
-// Za zadate test primjere, int tipovi su dovoljni
-//
+ * GNU General Public License v3.0
+ */
 #include <iostream>
 using namespace std;
 typedef unsigned int uint;
@@ -63,4 +61,5 @@ int main() {
     // Kada nema zajednickih koordinata
     cout << 3 << endl;
   }
+  return EXIT_SUCCESS;
 }
