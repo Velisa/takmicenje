@@ -1,3 +1,13 @@
+cd ~/takmicenje/005-2012-005/005-2012-005-01/NP
+~/takmicenje/005-2012-005/005-2012-005-01/NP/test.sh
+cd ~/takmicenje/005-2012-005/005-2012-005-02/NP
+~/takmicenje/005-2012-005/005-2012-005-02/NP/test.sh
+cd ~/takmicenje/005-2012-005/005-2012-005-03/NP
+~/takmicenje/005-2012-005/005-2012-005-03/NP/test.sh
+cd ~/takmicenje/005-2012-005/005-2012-005-04/NP
+~/takmicenje/005-2012-005/005-2012-005-04/NP/test.sh
+cd ~/takmicenje/005-2012-005/005-2012-005-05/NP
+~/takmicenje/005-2012-005/005-2012-005-05/NP/test.sh
 cd ~/takmicenje/005-2013-005/005-2013-005-01/NP
 ~/takmicenje/005-2013-005/005-2013-005-01/NP/test.sh
 cd ~/takmicenje/005-2013-005/005-2013-005-02/NP
