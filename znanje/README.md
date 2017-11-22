@@ -2,6 +2,8 @@
 ## Увод
 Користимо стандарде C++14 (пожељно) или C++11 (ако C++14 није подржано).
 
+Сва рјешења су урађена и тестирана у [https://www.cygwin.com/](Cygwin) окружењу са GCC компајлером.
+
 Референтни извор информација је [https://en.cppreference.com](https://en.cppreference.com).
 ## Основни концепти
 * Типови података: int, char, bool, float, string, double
