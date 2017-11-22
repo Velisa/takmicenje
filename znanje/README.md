@@ -5,7 +5,7 @@
 Референтни извор информација је [https://en.cppreference.com](https://en.cppreference.com).
 ## Основни концепти
 * Типови података: int, char, bool, float, string, double
-* Кориштење `signed`, `unsigned`, `short`, `long`, `sizeof`
+* Кориштење `signed`, `unsigned`, `short`, `long`, `sizeof()`
 * Кориштење библиотека
 * Декларација: промјенљивих, константи, функција, низова, стрингова
 * Иницијализација: промјенљивих, низова, стрингова
@@ -22,32 +22,47 @@
 * Наредба `continue`
 ## Кориштење функција и оператора
 ### Дефинисане у `<cmath>`
-* `round`
+* `round()`
     * [http://en.cppreference.com/w/cpp/numeric/math/round](http://en.cppreference.com/w/cpp/numeric/math/round)
-* `sqrt`
+* `sqrt()`
     * [http://en.cppreference.com/w/cpp/numeric/math/sqrt](http://en.cppreference.com/w/cpp/numeric/math/sqrt)
-* `trunc`
+* `trunc()`
     * [http://en.cppreference.com/w/cpp/numeric/math/trunc](http://en.cppreference.com/w/cpp/numeric/math/trunc)
 ### Дефинисане у `<string>`
 [http://en.cppreference.com/w/cpp/string/basic_string](http://en.cppreference.com/w/cpp/string/basic_string)
 * `operator []`
     * [http://en.cppreference.com/w/cpp/string/basic_string/operator_at](http://en.cppreference.com/w/cpp/string/basic_string/operator_at)
-* `empty`
+* `empty()`
     * [http://en.cppreference.com/w/cpp/string/basic_string/empty](http://en.cppreference.com/w/cpp/string/basic_string/empty)
 * `size` и `length`
     * [http://en.cppreference.com/w/cpp/string/basic_string/size](http://en.cppreference.com/w/cpp/string/basic_string/size)
 * `operator +=`
     * [http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D](http://en.cppreference.com/w/cpp/string/basic_string/operator%2B%3D)
-* `substr`
+* `substr()`
     * [http://en.cppreference.com/w/cpp/string/basic_string/substr](http://en.cppreference.com/w/cpp/string/basic_string/substr)
-* `find`
+* `find()`
     * [http://en.cppreference.com/w/cpp/string/basic_string/find](http://en.cppreference.com/w/cpp/string/basic_string/find)
-* `stoi`
+* `stoi()`
     * [http://en.cppreference.com/w/cpp/string/basic_string/stol](http://en.cppreference.com/w/cpp/string/basic_string/stol)
-* `stof`
+* `stof()`
     * [http://en.cppreference.com/w/cpp/string/basic_string/stof](http://en.cppreference.com/w/cpp/string/basic_string/stof)
-* `to_string`
+* `to_string()`
     * [http://en.cppreference.com/w/cpp/string/basic_string/to_string](http://en.cppreference.com/w/cpp/string/basic_string/to_string)
+### Дефинисане у `<iomanip>`
+* `setprecision()`
+    * [http://en.cppreference.com/w/cpp/io/manip/setprecision](http://en.cppreference.com/w/cpp/io/manip/setprecision)
+### Дефинисане у `<ios>`
+* `fixed`
+    * [http://en.cppreference.com/w/cpp/io/manip/fixed](http://en.cppreference.com/w/cpp/io/manip/fixed)
+### Остале функције за компатибилност са старијим С++ стандардима
+* `аtoi()` из `<cstdlib>`
+    * [http://en.cppreference.com/w/cpp/string/byte/atoi](http://en.cppreference.com/w/cpp/string/byte/atoi)
+* `аtof()` из `<cstdlib>`
+    * [http://en.cppreference.com/w/cpp/string/byte/atof](http://en.cppreference.com/w/cpp/string/byte/atof)
+* `c_str()`
+    * [http://en.cppreference.com/w/cpp/string/basic_string/c_str](http://en.cppreference.com/w/cpp/string/basic_string/c_str)
+* `roundf()`
+   * [http://en.cppreference.com/w/c/numeric/math/round](http://en.cppreference.com/w/c/numeric/math/round)
 # Задаци
 ## Основни концепти
 ### Улаз и излаз
