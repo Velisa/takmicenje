@@ -61,7 +61,9 @@
     * [http://en.cppreference.com/w/cpp/string/byte/atof](http://en.cppreference.com/w/cpp/string/byte/atof)
 * `c_str()`
     * [http://en.cppreference.com/w/cpp/string/basic_string/c_str](http://en.cppreference.com/w/cpp/string/basic_string/c_str)
-* `roundf()`
+* `printf()` из `<cstdio>`
+    * [http://en.cppreference.com/w/cpp/io/c/fprintf](http://en.cppreference.com/w/cpp/io/c/fprintf)
+* `roundf()` из `<math.h>`
    * [http://en.cppreference.com/w/c/numeric/math/round](http://en.cppreference.com/w/c/numeric/math/round)
 # Задаци
 ## Основни концепти
