@@ -11,10 +11,10 @@ Testing 05
 Testing 06
 ........................TEST 06: PASS
 Testing 07
-........................TEST 07: FAIL
+........................TEST 07: PASS
 Testing 08
 ........................TEST 08: PASS
 Testing 09
 ........................TEST 09: PASS
 Testing 10
-........................TEST 10: FAIL
+........................TEST 10: PASS

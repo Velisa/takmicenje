@@ -44,17 +44,18 @@ int main() {
     }
     for (int j = 0; j < M; ++j) {
       for (int i = 0; i < N; ++i) {
-        if (niz[i][j] == 0 && nule_redovi[i] <= K) {
+        // Ovdje je vazno smanjiti broj poteza
+        if (niz[i][j] == 0 && nule_redovi[i] <= K - kk) {
           ++nule_kolone[j];
         }
       }
     }
     // Pronaci kolonu sa najvise nula u kvalifikovanim redovima
     kol_maks = 0;
-    for (int i = 0; i < M; ++i) {
-      if (nule_kolone[i] > kol_maks) {
-        kol_maks = nule_kolone[i];
-        indeks_kol_maks = i;
+    for (int j = 0; j < M; ++j) {
+      if (nule_kolone[j] >= kol_maks) {
+        kol_maks = nule_kolone[j];
+        indeks_kol_maks = j;
       }
     }
     // Jedna "akcija" nad kolonom
@@ -81,5 +82,14 @@ int main() {
   }
   // Ispis redova
   cout << redova;
+  /*
+        // Ispis niza (za testiranje)
+        for (int i = 0; i < N; ++i) {
+    for (int j = 0; j < M; ++j) {
+      cout << niz[i][j] << " ";
+    }
+    cout << endl;
+  }
+        */
   return 0;
 }
