@@ -42,7 +42,7 @@ int main() {
         }
       }
     }
-    // Prebrojati nule u kolo	nama ali samo u redovima gdje je
+    // Prebrojati nule u kolonama ali samo u redovima gdje je
     // broj nula manji ili jednak preostalom broju poteza
     for (int i = 0; i < M; ++i) {
       nula_u_kolonama[i] = 0;
