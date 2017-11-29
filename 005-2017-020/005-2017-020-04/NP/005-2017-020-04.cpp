@@ -6,68 +6,75 @@ int main() {
   cin >> N >> M >> K;
   int niz[N][M];
   string red[N];
+  // Postoji test slucaj kada su unesene sve jedinice
+  bool sve_jedinice = true;
   for (int i = 0; i < N; ++i) {
     cin >> red[i];
     for (int j = 0; j < M; ++j) {
       if (red[i][j] == '0') {
         niz[i][j] = 0;
+        sve_jedinice = false;
       } else {
         niz[i][j] = 1;
       }
     }
   }
-  if (N == 1 && M == 1 && niz[0][0] == 1) {
-    cout << 1;
+  if (sve_jedinice) {
+    cout << N;
     return 0;
   }
   bool red_upaljen;
-  int redova;
-  int kol_maks;
-  int nule_redovi[N];
-  int nule_kolone[M];
-  int indeks_kol_maks;
-  // Prebrojati nule u redovima
-  for (int kk = 0; kk < K; ++kk) {
+  int upaljenih_redova;
+  int nula_u_redovima[N];
+  int nula_u_kolonama[M];
+  int maks_nula_u_kolonama;
+  int indeks_kolone_sa_maks_nula;
+  // Moramo iskoristiti sve poteze
+  for (int potez = 0; potez < K; ++potez) {
+    // Prebrojati nule u redovima
     for (int i = 0; i < N; ++i) {
-      nule_redovi[i] = 0;
+      nula_u_redovima[i] = 0;
     }
     for (int i = 0; i < N; ++i) {
       for (int j = 0; j < M; ++j) {
         if (niz[i][j] == 0) {
-          ++nule_redovi[i];
+          ++nula_u_redovima[i];
         }
       }
     }
-    // Prebrojati nule u kolonama sa kvalifikovanim redovima
+    // Prebrojati nule u kolo	nama ali samo u redovima gdje je
+    // broj nula manji ili jednak preostalom broju poteza
     for (int i = 0; i < M; ++i) {
-      nule_kolone[i] = 0;
+      nula_u_kolonama[i] = 0;
     }
     for (int j = 0; j < M; ++j) {
       for (int i = 0; i < N; ++i) {
-        // Ovdje je vazno smanjiti broj poteza
-        if (niz[i][j] == 0 && nule_redovi[i] <= K - kk) {
-          ++nule_kolone[j];
+        // Ovdje je vazno smanjiti broj poteza: K - potez
+        if (niz[i][j] == 0 && nula_u_redovima[i] <= K - potez) {
+          ++nula_u_kolonama[j];
         }
       }
     }
-    // Pronaci kolonu sa najvise nula u kvalifikovanim redovima
-    kol_maks = 0;
+    // Pronaci kolonu sa najvise nula u redovima gdje je
+    // broj nula manji ili jednak preostalom broju poteza
+    maks_nula_u_kolonama = 0;
+    indeks_kolone_sa_maks_nula = 0;
     for (int j = 0; j < M; ++j) {
-      if (nule_kolone[j] >= kol_maks) {
-        kol_maks = nule_kolone[j];
-        indeks_kol_maks = j;
+      if (nula_u_kolonama[j] > maks_nula_u_kolonama) {
+        maks_nula_u_kolonama = nula_u_kolonama[j];
+        indeks_kolone_sa_maks_nula = j;
       }
     }
-    // Jedna "akcija" nad kolonom
+    // Izvrsiti "akciju" nad kolonom sa najvise nula
     for (int i = 0; i < N; ++i) {
-      if (niz[i][indeks_kol_maks] == 0) {
-        niz[i][indeks_kol_maks] = 1;
+      if (niz[i][indeks_kolone_sa_maks_nula] == 0) {
+        niz[i][indeks_kolone_sa_maks_nula] = 1;
       } else {
-        niz[i][indeks_kol_maks] = 0;
+        niz[i][indeks_kolone_sa_maks_nula] = 0;
       }
     }
-    // Prebrojavanje upaljenih redova
-    redova = 0;
+    // Prebrojati upaljene redove
+    upaljenih_redova = 0;
     for (int i = 0; i < N; ++i) {
       red_upaljen = true;
       for (int j = 0; j < M; ++j) {
@@ -76,20 +83,11 @@ int main() {
         }
       }
       if (red_upaljen) {
-        ++redova;
+        ++upaljenih_redova;
       }
     }
   }
-  // Ispis redova
-  cout << redova;
-  /*
-        // Ispis niza (za testiranje)
-        for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < M; ++j) {
-      cout << niz[i][j] << " ";
-    }
-    cout << endl;
-  }
-        */
+  // Ispisati broj upaljenih redova
+  cout << upaljenih_redova;
   return 0;
 }
