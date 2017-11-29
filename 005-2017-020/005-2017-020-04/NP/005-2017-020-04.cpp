@@ -47,7 +47,7 @@ int main() {
       indeks_kol_maks = i;
     }
   }
-	// Jedna "akcija" nad kolonom
+  // Jedna "akcija" nad kolonom
   for (int i = 0; i < N; ++i) {
     if (niz[i][indeks_kol_maks] == 0) {
       niz[i][indeks_kol_maks] = 1;
@@ -55,7 +55,7 @@ int main() {
       niz[i][indeks_kol_maks] = 0;
     }
   }
-	// Prebrojavanje upaljenih redova
+  // Prebrojavanje upaljenih redova
   int redova = 0;
   bool red_upaljen;
   for (int i = 0; i < N; ++i) {
