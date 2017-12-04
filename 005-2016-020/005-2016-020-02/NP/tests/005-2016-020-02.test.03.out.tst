@@ -1,1 +1,1 @@
-100.0
+Ne moze se stici do sljedeceg odredista

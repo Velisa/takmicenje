@@ -5,6 +5,6 @@ Testing 02
 Testing 03
 ........................TEST 03: FAIL
 Testing 04
-........................TEST 04: FAIL
+........................TEST 04: PASS
 Testing 05
 ........................TEST 05: PASS
