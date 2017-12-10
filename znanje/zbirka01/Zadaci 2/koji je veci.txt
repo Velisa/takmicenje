@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+   
+	int x,y;
+	cout << "Program od korisnika zahtjeva unos 2 cijela broja te ispisuje veci od navedenih"<<endl<<endl;
+
+	cout << "Unesite prvi broj"<< endl;
+	cin >> x;
+	cout <<"Unesite drugi broj"<< endl;
+	cin >> y;
+	
+	int vecibroj = (x>y) ? x:y;
+	cout<<endl<<endl<<"Veci broj od unesenih je broj: " << vecibroj<< endl;
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

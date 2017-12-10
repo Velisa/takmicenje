@@ -1,0 +1,27 @@
+//mnozenje dvije matrice uz provjeru da li su ulancane.
+//ulancane znaci: da li je broj kolona A jednaka broju redova B
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	 int a[20],n,i,j;
+    cout<<"Koliko elemenata ima niz:";
+    cin>>n;
+    for (i=1; i<=n; i++)
+    {
+        cout<<"a["<<i<<"]=";
+        cin>>a[i];
+        }
+    for (i=1; i<=n-1; i++)
+        for (j=i+1; j<=n; j++)
+                if (a[i]<a[j]) swap(a[i],a[j]);
+     for (i=1; i<=n; i++)
+     cout<<a[i]<<" "<<endl;
+
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

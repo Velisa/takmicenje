@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+   
+	double pi = 3.14159;
+	string pokusaj;
+	double pokusajd;
+	
+	cout<< "Koja vrijednost odgovara broju PI (5 decimala)"<< endl;
+	getline (cin, pokusaj);
+	pokusajd = stod (pokusaj);
+
+	if (pokusajd == pi )
+		cout << "Odgovor je tacan"<<endl;
+	else 
+		cout<< "pogresan odgovor"<<endl;
+
+	cout << "Velicina unesenog stringa je " << pokusaj.size()<<endl;	
+	cout << "Uneseni string je prazan "<< pokusaj.empty()<<endl;
+	cout<< pokusaj.append(" je vas uneseni broj!")<< endl;
+
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

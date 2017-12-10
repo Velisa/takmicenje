@@ -1,0 +1,59 @@
+8)  Program za ispis proizvoda matrice i skalara:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int A[10][10], i, j, R, K, Broj;
+   
+   cout << "Unesite broj redova matrice: ";
+   cin >> R;
+   cout << "Unesite broj kolona matrice: ";
+   cin >> K;
+
+   for(i=0 ; i<R ;i++)
+   {
+      for(j=0 ; j<K ; j++)
+         {
+            cout<<"A["<<i<<","<<j<<"]=";
+            cin>>A[i][j];
+         }
+   }
+   cout<<endl;
+   
+   for(i=0 ; i<R ; i++)
+      {
+         cout<<endl;
+         for(j=0 ; j<K ; j++)
+         {
+         cout<<" "<<A[i][j];
+         }
+      }
+   
+   cout<<endl;
+
+   cout << "Unesite broj sa kojim zelite pomnoziti matricu: ";
+   cin >> Broj;
+
+   cout<<"Proizvod unesene matrice i datog broja je: "<<endl;
+
+   for(i=0 ; i<R ; i++)
+   {
+      cout<<endl;
+      for(j=0 ; j<K ; j++)
+      {
+         cout<<" "<<A[i][j]*Broj;
+      }
+   }
+
+   cout<<endl;
+
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

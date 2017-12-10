@@ -1,0 +1,49 @@
+
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+// zadatak s aswitchem
+
+int main ()
+
+{
+	
+	int ocjena;
+
+	cout << "unesite ocjenu ;"<< endl;
+	cin >> ocjena ;
+
+
+	switch (ocjena)
+	{
+	case 1:
+	cout << "nedovoljan"<< endl;
+	break;
+	case 2:
+	cout << "dovoljan"<< endl;
+	break;
+	case 3:
+	cout << "dobar"<< endl;
+	break;
+	case 4:
+	cout << "vrlodobar"<< endl;
+	break;
+	case 5:
+	cout << "odlican"<< endl;
+	break;
+	default:
+		cout << "to nije ocjena"<< endl;
+	}
+
+
+
+
+	cout <<endl<< ".... Program je zavrsen...." << endl << endl;
+	system ("pause");
+	return 0;
+
+
+}

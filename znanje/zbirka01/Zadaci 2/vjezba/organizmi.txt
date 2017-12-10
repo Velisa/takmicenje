@@ -1,0 +1,63 @@
+#include <iostream>
+#include <iomanip>
+#include <utility>
+#include <vector>
+#include <iterator>
+
+using namespace std;
+
+const size_t size=20;
+
+char table[size][size];
+
+void table_clear(void){
+    for(int v = 0; v<size; ++v)
+        for(int h = 0; h<size; ++h)
+            table[v][h]='_';
+}
+
+void table_put(pair<int, int> p){
+    int v = p.first;
+    int h = p.second;
+    table[v-1][h-1] = '*';//to zero origin
+}
+
+void table_disp(){
+    cout << "   ";
+    for(int i=0; i<size;++i){
+        cout << setw(3) << i + 1;
+    }
+    cout << "\n" << endl;
+    for(int i=0;i<size;++i){
+        cout << setw(3) << left << i + 1;
+        for(int j=0;j<size;++j){
+            cout << setw(3) << right << table[i][j];
+        }
+        cout << endl;
+    }
+}
+
+int main(){
+    vector<pair<int,int> > v;
+    pair<int, int> end(99,99);
+    pair<int, int> rc;
+
+    cout << "Enter each cell in first colony use row space column Enter format, 3 4, for example.\n";
+    cout << "Enter 99 99 to end entries." << endl;
+    while(true){
+        int row, column;
+        cin >> row;
+        cin >> column;
+        rc = make_pair(row, column);
+        if(rc == end)
+            break;
+        v.push_back(rc);
+    }
+
+    table_clear();
+    for(vector<pair<int,int> >::const_iterator iter = v.begin();iter != v.end(); ++iter ) {
+        table_put(*iter);
+    }
+    table_disp();
+	system("pause");
+}

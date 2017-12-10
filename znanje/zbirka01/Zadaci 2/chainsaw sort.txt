@@ -1,0 +1,103 @@
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+    
+	
+	int niz [20], brclanova;
+	int rastuci [20],opadajuci[20],testera[20];
+
+	unos:
+	cout << "koliko clanova ima niz ";
+	cin >> brclanova;
+
+	if (brclanova > 20){
+		cout <<" Niz mora imati 20 ili manje od 20 clanova!"<<endl;
+	goto unos;
+	}
+	
+	for (int i =0; i < brclanova; i ++)
+	{
+	cout <<"unesite clana...";
+	cin>>niz [i];
+	rastuci[i]=niz[i];
+	opadajuci[i]=niz[i];
+	}
+	cout <<"Vas niz izgleda ovako ..."<<endl;
+	for (int j =0; j < brclanova; j ++)
+	{
+	cout <<niz [j]<<", ";
+	}
+
+	/* da bi smo dobili niz koji je sortiran testerasto kreirat cemo dva pomocna 
+	niza koja su sortirana rastuci i opadajuci. Zatim cemo pozivati clanove rastuceg i opadajuceg niza naizmjenicno 
+	do konacnog broja elemenata niza.*/
+	
+	cout<<endl<<endl<<"Rastuci: ";//kreiranje rastuceg niza od zadanih elemenata
+	for (int i =0; i<brclanova-1; ++i)
+		{
+			for (int j =i+1; j<brclanova; ++j)
+		{
+			if (rastuci [i]> rastuci[j])
+			{
+				swap(rastuci[i], rastuci [j]);
+			}
+		}
+	}
+
+	for (int j =0; j < brclanova; j ++)
+	{
+	cout <<rastuci [j]<<", ";
+	}
+
+	cout<<endl<<endl<<"opadajuci: ";//kreiranje opadajuceg niza od zadanih elemenata
+	for (int i =0; i<brclanova-1; ++i)
+		{
+			for (int j =i+1; j<brclanova; ++j)
+		{
+			if (opadajuci [i]< opadajuci[j])
+			{
+				swap(opadajuci[i], opadajuci [j]);
+			}
+		}
+	}
+
+	for (int j =0; j < brclanova; j ++)
+	{
+	cout <<opadajuci [j]<<", ";
+	}
+
+	cout<<endl<<endl<<"Testerasti: ";//kreiranje testerastog niza od zadanih elemenata
+
+
+
+	int br=0,br1=0; // brojac (uzimamo prvi element iz rastuceg, 
+	//zatim prvi iz opadajuceg,
+	//povecavamo brojac za 1, drugi iz rastuceg , 
+	//drugi iz opadajuceg, sve do kraja testerastog niza) 
+	
+
+	for (int i =0; i<brclanova; ++i){
+		if (i%2==1){
+			
+			testera[i]=rastuci[br];
+			++br;
+		}
+		else {
+		
+		testera[i]=opadajuci[br1];
+		++br1;
+		}
+	}
+	
+	
+	for (int j =0; j < brclanova; ++j )
+	{
+	cout <<testera [j]<<", ";
+	}
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

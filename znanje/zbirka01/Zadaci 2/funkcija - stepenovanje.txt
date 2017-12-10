@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+
+float izracunaj_eksponent (float b, float n){
+
+	return pow(b,n);
+
+}
+
+int main()
+
+{
+	float a,n;
+	cout<<"Unesite bazu i eksponent za koje ce se vrsiti izracunavanje: "<<endl;
+	cin>>a>>n;
+	cout<<endl<<endl;
+	cout <<"Vas rezultat za "<<a<<"^"<<n<<" je: "<<izracunaj_eksponent(a,n)<<endl;
+
+cin.ignore(); 
+cout <<endl<<endl<<endl<< "Program je zavrsen. stisnite enter za izlaz " << endl;
+cin.get();
+return 0;
+}

@@ -1,0 +1,32 @@
+
+
+#include <iostream>
+#include <string>
+#include <fstream> // fstream = (nputfile stream) ifstream + ofstream (output file stream)
+using namespace std;
+int main ()
+
+{
+
+
+
+	ofstream pisiFajl;
+	pisiFajl.open("D:\\mojfajl.txt", ios_base :: app); // ios_base::app nebrise sadrzaj vec ga nadodaje nakon svake iteracije programa ...
+
+	cout << "pocinjem pisanje fajla"<< endl;
+	pisiFajl << "prvi red"<< endl;
+	pisiFajl << "drugi red"<< endl;
+	pisiFajl << "treci red"<< endl;
+	pisiFajl << "cetvrti red"<< endl;
+	pisiFajl << "peti red"<< endl;
+
+	pisiFajl.close();
+
+	cout << "zavrsio sam upisivanje" << endl;
+
+	
+cout<< endl<< endl << "kraj programa"<< endl;
+
+system ("Pause");
+return 0;
+}

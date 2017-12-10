@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+   
+	
+	int nasumican = (rand ()% 100 ) + 1;
+
+	cout << "Nasumicni brojevi: "<< endl<< endl;
+	while (nasumican != 100){
+	cout <<nasumican << ",  " ;
+	nasumican = (rand ()% 100 ) + 1;
+	}
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

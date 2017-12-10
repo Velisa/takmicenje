@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+   
+	string recenica = "Ovo je probna recenica";
+	ofstream upisi ("Semir.txt");
+
+	if ( !upisi){
+	
+	cout<<"Greska pri otvaranju fajla!"<< endl; // provjera fajla
+	return -1;
+	}
+	else {
+	upisi << recenica << endl;
+	upisi.close();
+	}
+
+	ofstream upisi2 ("Semir.txt",ios::app);
+
+	if ( !upisi2){			//append
+	
+	cout<<"Greska pri otvaranju fajla!"<< endl;
+	return -1;
+	}
+	else {
+	upisi2 << "\n Ovo je append! " << endl;
+	upisi2.close();
+	}
+
+	char slovo;
+
+	ifstream citaj ("Semir.txt");
+	if (! citaj){
+	cout << "Greska pri otvaranju fajla !"<<endl;
+	return -1;
+	
+	}else {
+	
+		for (int i=0; !citaj.eof(); i++){
+		
+			citaj.get(slovo);
+			cout<<slovo;
+
+		}
+	cout<<endl;
+	citaj.close();
+	}
+
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

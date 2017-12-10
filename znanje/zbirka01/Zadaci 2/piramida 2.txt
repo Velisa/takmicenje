@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i,j,redovi;
+    cout<<"Unesite broj redova: ";
+    cin>>redovi;
+	int brojac = redovi;
+	cout<< endl;
+    for(i=1;i<=redovi;++i)
+    {
+		for(j=brojac;j>=1;--j)
+        {
+           cout<<" "; 
+        }
+
+	brojac--;
+        for(j=1;j<=i;++j)
+        {
+           cout<<"*";
+        }
+		  for(j=1;j<=i;++j)
+        {
+           cout<<"*";
+        }
+        cout<<"\n";
+    }
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

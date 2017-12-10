@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int main()
+{
+   
+	vector <int> vektor(10);
+	int niz [5] = {1,2,3,4,5};
+	
+	//Ubacivanje niza u vektor
+	vektor.insert(vektor.begin(), niz, niz +5);
+	
+	//ispis vektora
+	cout <<"Sadrzaj vektora je "<<endl;
+	for(int i = 0; i< vektor.size(); ++i){
+		cout<<vektor[i]<<" ,";}
+	cout<<endl<<endl << "Upisana vrijednost na poziciji 3 je "<<vektor.at(3)<< endl;
+
+	//naknadni upis vrijednosti na odredjenu poziciju u vektoru
+
+	vektor.insert(vektor.begin()+8 , 101);
+		for(int i = 0; i< vektor.size(); ++i){
+			cout<<vektor[i]<<" ,";}
+	cout<<endl<<endl << "Upisana vrijednost na poziciji 8 je "<<vektor.at(8)<< endl;
+	
+	// push back, front , prikaz zadnjeg i prvog elementa
+
+	vektor.push_back(10); // unos elementa na zadnjoj poziciji
+	
+	cout <<endl<< "Prvi element je "<<vektor.front()<< endl;
+	cout << "Zadnji element je "<<vektor.back()<< endl;
+	cout<< "Velicina vektora je "<< vektor.size()<< endl;
+
+
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

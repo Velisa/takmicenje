@@ -1,0 +1,36 @@
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+	int A[30][30];
+	int dimenzija, sumaSporednaDijagonala=0;
+
+	cout<<"Unesite dimenziju matrice: "<<endl;
+	cin>>dimenzija;
+	cout<<endl;
+	cout<<"Unesite clanove matrice A: "<<endl;
+	for (int i=0;i<dimenzija; i++)
+	{
+		for (int j=0; j<dimenzija; j++)
+		{ 
+			cout<<"A["<<i+1<<"]["<<j+1<<"]=";
+			cin>>A[i][j];
+		}
+	}
+	for (int i=0; i<dimenzija;i++)
+	{
+		for (int j=0; j<dimenzija; j++)
+		{
+			if (i+j==dimenzija-1)sumaSporednaDijagonala=sumaSporednaDijagonala+A[i][j];
+		}
+	}
+
+	cout<<"Suma sporedne dijagonale matrice A iznosi: "<<sumaSporednaDijagonala<<endl;
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

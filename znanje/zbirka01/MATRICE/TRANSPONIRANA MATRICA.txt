@@ -1,0 +1,43 @@
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+	float A[30][30];
+	float TA[30][30];
+	int dimenzija;
+
+	cout << "Upisi dimenziju kvadratne matrice: ";
+	cin >> dimenzija;
+	cout << endl;
+
+	cout << "Upisite elemente matrice!" << endl << endl;
+	int s, v;
+
+	for (v=0;v<=dimenzija-1;++v) {
+		for (s=0;s<=dimenzija-1;++s) {
+			cout << "A[" << v+1 << "][" << s+1 << "] = ";
+				cin >> A[v][s];
+			}
+}
+	cout << endl;
+
+	for (v=0;v<=dimenzija-1;++v) {
+		for (s=0;s<=dimenzija-1;++s) {
+			TA[v][s] = A[s][v];
+			}
+	}
+	cout << "Transponirana matrica matrice A je:" << endl << endl;
+	for (v=0;v<=dimenzija-1;++v) {
+		for (s=0;s<=dimenzija-1;++s) {
+			cout << setw(3) << TA[v][s];
+		}
+		cout << endl;
+	}
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

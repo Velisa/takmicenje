@@ -1,0 +1,72 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	 int A[10][10];
+    int B[100]; //niz <-- matrica
+    int b[100]; //niz sa vrednostima vecim od srednje
+    int n,m,i,j,max=10;
+    int sredvred=0;    
+    do{
+    printf("\nUnesi broj kolona matrice: ");
+    scanf_s("%d",&n);
+    printf("\nUnesi broj redova matrice: ");
+    scanf_s("%d",&m);
+}while ((n<0 || n>max) && (n<0 || n>max));
+
+    printf("\n\tUnesite elemente matrice: \n");
+    for (i=0;i<n;i++)
+    for (j=0;j<m;j++)
+    {
+           scanf_s("%d",&A[i][j]);
+           sredvred+=A[i][j];       //stedis jednu petlju, odmah ih sabiras!
+    }
+    sredvred/=(n*m);
+
+    printf("Uneta matrica je:\n");
+    for(i=0;i<n;i++)  {
+    for(j=0;j<m;j++)
+    printf("%d ",A[i][j]);
+    printf("\n");     }
+
+    // pretvaranje matrice u niz 
+    for(i=0;i<n;i++)
+        {
+        for (j=0;j<m;j++)
+        B[i*n+j]=A[i][j];  }                   //<------- Greska u tvom kodu, pogledaj index niza B
+
+   // niz sa elementima vecim od srednje vrednosti
+    int brojac=0;
+    for(i=0;i<n;i++)
+        {
+        for (j=0;j<m;j++)
+            if(A[i][j]>sredvred)
+        b[brojac++]=A[i][j];  }
+    //Zamena neparnih elemenata sa nulama
+    for(i=0;i<n;i++)
+        {
+        for (j=0;j<m;j++)
+            if(A[i][j]%2) A[i][j]=0;  }
+
+    printf("Novoformirani niz B od elemenata matrice je: ");
+    for (i=0;i<m*n;i++)
+    printf("%d",B[i]);
+    printf("Novoformirani niz b od elemenata matrice je: ");
+    for (i=0;i<brojac;i++)
+    printf("%d",b[i]);
+
+    printf("Novoformirana matrica je: ");
+    for(i=0;i<n;i++)
+        {
+        for (j=0;j<m;j++)
+            printf("%d",A[i][j]);
+    }
+    printf("\n");
+
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

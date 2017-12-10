@@ -1,0 +1,37 @@
+
+
+
+#include <iostream>
+#include <string>
+#include <fstream> // fstream = (nputfile stream) ifstream + ofstream (output file stream)
+using namespace std;
+int main ()
+
+{
+	string procitaniRed;
+	ifstream ulazniFajl;
+	int brojReda=0;
+	ulazniFajl.open("D:\\upis.txt");
+	if (ulazniFajl.is_open())
+	{
+	while (getline(ulazniFajl,procitaniRed))
+	{
+	
+	cout << brojReda+1<< " ..." << procitaniRed << endl;
+	brojReda ++;
+	}
+	ulazniFajl.close();
+	}
+	else
+
+	
+		cout << "Takav fajl ne postoji!"<< endl;
+
+
+	brojReda > 0 ? cout << "Broj redova je "<< brojReda<< endl : cout << "Nije procitan nijedan red"<< endl;
+	
+cout<< endl<< endl << "kraj programa"<< endl;
+
+system ("Pause");
+return 0;
+}

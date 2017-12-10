@@ -1,0 +1,24 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main()
+
+{
+	// u rasponu od 1 do 20 ispisati 20 ,slucajnih brojeva.
+	srand(time(0)); 
+	int min = 14, max = 29, brojac = 1;
+	int slucajniBroj = rand();
+
+	while (brojac++ <=20)
+	{
+		int slucajniBroj = rand() %(max-min)+min; // za slucajni broj u rasponu
+		cout << slucajniBroj << endl;
+	}
+
+
+	cout << endl << endl<< " Program zavrsen " << endl;
+	system("Pause");
+	return 0;
+
+}

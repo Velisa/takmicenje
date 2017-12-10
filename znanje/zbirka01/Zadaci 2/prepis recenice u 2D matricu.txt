@@ -1,0 +1,60 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <string>
+#include <stdlib.h>
+#include <sstream>
+#include <math.h>
+using namespace std;
+
+int main()
+
+{
+
+
+
+
+	// program prepisuje recenicu u matricu
+	vector<vector<string> > matrica;
+	string k;
+	int brojac=0;
+	double dimenzija;
+
+	cout<<"Unesite recenicu koju zelite da program prepise u matricu "<<endl;
+	getline (cin,k);
+
+	cout<<k<<endl;
+
+	istringstream iss(k);
+	istringstream iss1(k);
+    string rijec;
+
+    while(iss >> rijec) {
+       ++brojac;
+	}
+
+	//odredjujemo velicinu matrice na osnovu unesene recenice
+	dimenzija = ceil(sqrt(brojac)); // ceil ili floor zaokruzivanje
+	cout <<dimenzija<<endl;
+
+
+		for (int i =0;i<dimenzija;i++){
+			matrica.push_back(vector<string>());
+				for (int j=0;j<dimenzija;j++){
+					iss1>>rijec;
+					
+					matrica[i].push_back(rijec);
+				}
+		}
+	cout<<endl<<"Vasa matrica izgleda ovako "<<endl; //ispis matrice
+	for(int i=0;i<dimenzija;i++){
+		for(int j=0;j<dimenzija;j++){
+			cout<< matrica[i][j]<<"\t\t";
+			
+		}cout<<endl;
+	}
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

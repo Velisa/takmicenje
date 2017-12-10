@@ -1,0 +1,36 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int jesteProstBroj = true;
+	int i, m;
+
+	cout << " unesite do kog broja vrsimo provjeru " << endl;
+	cin >> m;
+	
+	for (int n = 1; n <= m; n++)
+	{
+	i = 2;
+	while (i <= sqrt(n))
+	{
+		if (n%i == 0)
+		jesteProstBroj = false;
+		i++;
+	}
+			if (jesteProstBroj)
+			{
+				cout << n << " prost broj" << endl;
+			}
+			else
+			{
+			cout  << n << " NIJE prost broj" << endl;
+			}
+			jesteProstBroj = true;
+		}
+
+	system("PAUSE");
+	return 0;
+}
+

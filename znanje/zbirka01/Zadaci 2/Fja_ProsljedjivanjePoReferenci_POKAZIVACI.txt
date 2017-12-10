@@ -1,0 +1,39 @@
+// Domen vazenja varijabli u funkcijama
+
+#include <iostream>
+#include <utility>
+using namespace std;
+
+void Zamjena(int *a, int *b)
+{
+	cout << "Broj a prije zamjene " << a << ", a broj b prije zamjene " << b << endl;
+	swap(*a,*b);
+	cout << "Izvrsena je zamjena. Sada je a " << a << ", a b je " << b << endl;
+}
+
+int main()
+{
+	cout << "Funkcija vrsi zamjenu vrijednosti" << endl;
+
+	int a, b;
+
+	cout << "Unesite prvi broj: ";
+	cin >> a;
+
+	cout << "Unesite drugi broj: ";
+	cin >> b;
+
+	cout << "Vrijednosti prije zamjene su a: " << a << " i b: " << b << endl;
+
+	cout << endl << "<---- Pozivam funkciju i saljem argumente ---->" << endl;
+
+	Zamjena(&a,&b);
+
+	cout << endl << "<---- Izasao sam iz funkcije i prikazujem stanje ---->" << endl;
+
+	cout << "Vrijednosti NAKON zamjene su a: " << a << " i b: " << b << endl;
+
+	cout << endl;
+	system("Pause");
+	return 0;
+}

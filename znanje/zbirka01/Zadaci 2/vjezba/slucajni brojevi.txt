@@ -1,0 +1,50 @@
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+
+using namespace std;
+
+
+int main ()
+{
+// ISPITNI
+	// korisnik unosi raspon br bslucajnih brojeva i broj kolona u kojima ispisuje te brojeve
+	// kolone su podijeljene sa |
+
+	srand (time (0));
+	int min,max,brojbrojeva,brojkolona,brojac =1;
+
+	do
+	{
+		cout << "unesite donju i gornju granicu raspona";
+		cin >> min >>max;
+
+	} while (min <1 || min > max);
+
+	do
+	{
+		cout << "unesite broj slucajnih brojeva";
+			cin>>brojbrojeva; 
+	} while (brojbrojeva <2);
+
+	do
+	{
+		cout << "unesite broj kolona";
+		cin >> brojkolona; 
+	} while (brojkolona<1);
+
+	while (brojac <= brojbrojeva)
+	{
+	int slucajnibroj = rand() % (max - min)+min;
+	cout << slucajnibroj<< " | ";
+	if (brojac % brojkolona ==0)
+		cout << endl;
+	brojac ++;
+	
+	}
+
+	
+cout << endl<< endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

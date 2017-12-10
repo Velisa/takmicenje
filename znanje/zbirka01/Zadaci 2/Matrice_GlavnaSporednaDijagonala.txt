@@ -1,0 +1,44 @@
+// Ispisati glavnu i sporednu dijagonalu kvadratne matrice
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int A[10][10], n;
+
+	// Unos broja elemenata matrice
+	cout << "Unesite broj elemenata kvadratne matrice: ";
+	cin >> n;
+
+	// Popunjavamo matricu
+	for (int i=0; i < n ; i++)
+		for (int j = 0; j < n; j++)
+		{
+			cout << "Clan [" << i+1 << "," << j+1 << "]="; 
+			cin >> A[i][j];
+		}
+
+	// Ispis nase matrice
+	for (int i=0; i <n ;i++)
+	{
+		cout << endl;
+		for(int j = 0; j < n ; j++)
+			cout << " " << A[i][j];
+	}
+
+	// Ispis dijagonala
+
+	cout << endl << "Glavna dijagonala sadrzi elemente: ";
+	for (int i = 0; i < n ; i++)
+		cout << " " << A[i][i] << endl;
+
+	cout << endl << "Sporedna dijagonala sadrzi elemente: " << endl;
+	for (int i = n - 1; i >=0 ; i--)
+		cout << " " << A[i][n-1-i] << endl;
+
+
+	cout << endl;
+	system("Pause");
+	return 0;
+}

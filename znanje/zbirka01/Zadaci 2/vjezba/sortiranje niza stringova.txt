@@ -1,0 +1,51 @@
+
+
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main ()
+{
+// sortiranje stringa
+
+
+	char ime [50];
+	string niz [4];
+
+	for (int i=0; i < 4;i++)
+	{
+	
+	cout<< "unesite "<<i+1<< " . ime ";
+	cin.getline (ime,50);
+	niz[i]=ime;
+
+	
+	}
+
+	cout << "niz imena prije sortiranja"<< endl;
+	for (int i=0;i<4;i++)
+		cout << niz[i]<< "  ";
+	cout << endl<<endl;
+
+	for (int i=0;i<=2;i++)
+	{
+		for (int j=i+1;j<=3;j++)
+		{
+			if (niz [i] > niz [j])	
+			{
+			swap (niz[i],niz[j]);
+			}
+		}
+	}
+	for (int i=0;i<4;i++)
+		cout << niz[i]<< "  ";
+	cout << endl<<endl;
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}
+

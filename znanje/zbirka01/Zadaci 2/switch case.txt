@@ -1,0 +1,68 @@
+#include <iostream>
+
+using namespace std;
+
+void start()
+{
+    cout << "Zapocinjem igru...";
+	cin.get();
+}
+void ucitaj()
+{
+    cout << "Ucitavam igru...";
+	cin.get();
+}
+void startmultiplayer()
+{
+    cout << "Zapocinjem multiplayer igru...";
+	cin.get();
+}
+void izlaz()
+{
+    cout << "Hvala na igranju !";
+	cin.get();
+}
+void greska()
+{
+    cout << "Greska pri unosu!";
+	cin.get();
+}
+
+	
+int main()
+{
+  int unos;
+  
+  cout<<"1. Start"<<endl;
+  cout<<"2. Ucitaj"<<endl;
+  cout<<"3. Multiplayer"<<endl;
+  cout<<"4. izlaz"<<endl;
+  unos:
+  cout<<endl<<"Izaberi: "<<endl;
+  cin>> unos;
+  switch ( unos ) {
+
+  case 1:            
+    start();
+    break;
+
+  case 2:            
+    ucitaj();
+    break;
+
+  case 3:          
+    startmultiplayer();
+    break;
+
+  case 4:            
+    izlaz();
+    break;
+	
+
+  default:         
+    greska();
+	goto unos;
+	
+  }
+  cin.get();
+}

@@ -1,0 +1,41 @@
+6)  Primjer za uèitavanje i ispis proizvoljne matrice:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int A[10][10], ak,ar, i, j;
+   
+   cout<<"Matrica A -> Unesite broj kolona:";
+   cin>>ak;
+   cout<<"Matrica A -> Unesite broj redova:";
+   cin>>ar;
+   cout<<endl<<"Matrica A -> Unesite clanove matrice:"<<endl;
+   for(i=0;i<ar;i++)
+      {
+      for(j=0;j<ak;j++)
+         {
+            cout << "A[" << i << "," << j << "]=" ;
+            cin >> A[i][j];
+         }
+      }
+
+   cout<<endl<<"Matrica A je oblika: "<<endl;
+   for(i=0;i<ar;i++)
+   {
+      cout<<endl;
+      for(j=0;j<ak;j++)
+         {
+            cout<<" "<<A[i][j];
+         }
+   }
+
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

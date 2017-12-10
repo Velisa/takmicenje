@@ -1,0 +1,48 @@
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+unsigned int m,n;
+int i,j,k;
+float A['m']['n'];
+int main()
+{
+cout<<"Unesite broj redova m = "; cin>>m;
+cout<<"Unesite broj kolona n = "; cin>>n;
+cout<<"Upisi clanove matrice A :"<<endl;
+// Unos elemenata matrice po redovima (za unos po kolonama zamijeniti mjesta indeksima)
+for(i=0; i<m; i++){
+for(j=0; j<n; j++){
+cout<<"A["<<i<<"]["<<j<<"] = "; cin>>A[i][j];
+}}
+cout<<endl;
+cout<<"Upisana je matrica A:"<<endl;
+// Ispis elemenata matrice
+for(i=0; i<m; i++){
+for(j=0; j<n; j++){
+cout<<A[i][j]<<"\t";
+}
+cout<<"\n";
+}
+// Sortirati matricu A['m']['n'] po redovima od najmanjeg do najveceg elemnta
+for(i=0; i<m; i++){
+for(j=0; j<n-1; j++){
+for(k=j+1; k<n; k++){
+if(A[i][k]<A[i][j]){
+float pom=A[i][j];
+A[i][j]=A[i][k];
+A[i][k]=pom;}
+}}}
+// Ispis elemenata matrice
+cout<<"\nMatrica A sortirana po redovima je:\n";
+for(i=0; i<m; i++){
+for(j=0; j<n; j++){
+cout<<A[i][j]<<"\t";
+}
+cout<<"\n";
+}
+	
+
+	cout<<endl<<endl<<"---Program je zavrse---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

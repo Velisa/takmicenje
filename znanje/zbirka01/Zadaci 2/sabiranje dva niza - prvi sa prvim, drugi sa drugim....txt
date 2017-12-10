@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+    
+	int nizA[10],nizB[10],brclanova,brclanova1,duzinazbira,zbir[10],ostatak;
+
+	//sabiranje dva niza
+	unos1://---------------------------------
+	cout << "koliko clanova ima prvi niz ";
+	cin >> brclanova;
+
+	if (brclanova > 10){
+		cout <<" Niz mora imati 10 ili manje od 10 clanova!"<<endl;
+	goto unos1;
+	}
+	for (int i = 0; i < brclanova;++i){
+		cout<<"Element niza...";
+		cin>> nizA[i];
+	}
+
+	unos2://-------------------------------
+	cout << "koliko clanova ima drugi niz ";
+	cin >> brclanova1;
+
+	if (brclanova1 > 10){
+		cout <<" Niz mora imati 10 ili manje od 10 clanova!"<<endl;
+	goto unos1;
+	}
+	for (int i = 0; i < brclanova1;++i)
+		{
+		cout<<"Element niza...";
+		cin>> nizB[i];
+	}
+	
+	//sabiranje
+
+	if (brclanova>brclanova1){
+		duzinazbira= brclanova1;
+		ostatak=brclanova-brclanova1;
+	}
+	else{
+		duzinazbira= brclanova;
+		ostatak=brclanova1-brclanova;
+	}
+	for (int i =0; i< duzinazbira; ++i)
+		zbir [i]= nizA[i]+nizB[i];
+	for (int j =duzinazbira; j<ostatak+duzinazbira;++j){
+		if(brclanova>brclanova1){
+			zbir[j]=nizA[j];
+		}
+		else {
+			zbir [j]=nizB[j];
+		}
+	}
+
+	cout <<"Sabiranje ovih nizova daje "<<endl;
+	for (int k =0; k< duzinazbira+ostatak; ++k){
+	
+		cout<<zbir[k]<<", ";
+	}
+		
+	
+
+
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

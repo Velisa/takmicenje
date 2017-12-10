@@ -1,0 +1,58 @@
+//prikazi koristenje namespace-a
+//Bojan
+
+#include <iostream>
+using namespace std;
+
+
+//definisanje novog namespace-a
+namespace bojan 
+{ int vrijednost = 3; 
+
+//funkcija unutar novog namespace-a
+double kvadriraj (double broj, double exp)
+{
+	double rez=1;
+
+	for (int i = 1; i <=exp; ++i)
+	{
+	rez = rez * broj;
+	}
+
+	return rez;
+}
+
+
+}
+
+
+namespace igor 
+{ int vrijednost = 5; }
+
+
+
+int main()
+{
+
+	double broj, exp;
+
+	cout << "unesite broj " << endl;
+	cin >> broj;
+
+	cout << "unesite exponent" << endl;
+	cin >> exp;
+
+
+	cout << "bojan vrijednost " <<bojan::vrijednost << endl;
+	cout << "igor vrijednost " << igor::vrijednost << endl;
+
+	cout << "kvadriraj koristeci " <<std::pow(broj,exp) << endl;
+
+	//pozivanje funkcije iz definisanog namespace-a
+	cout << "kvadriraj " << bojan::kvadriraj(broj,exp) << endl;
+
+
+	system("pause");
+	return 0;
+
+}

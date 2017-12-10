@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+struct filmovi {
+  string naziv;
+  int godina;
+} mojfilm, tvojfilm;
+
+void ispisifilm (filmovi film);
+
+int main ()
+{
+  string str;
+
+  mojfilm.naziv = "Forest Gump";
+  mojfilm.godina = 1994;
+
+  cout << "Unesite naziv omiljenog filma: ";
+  getline (cin,tvojfilm.naziv);
+  cout << "Unesite godinu: ";
+  getline (cin,str);
+  stringstream(str) >> tvojfilm.godina;
+
+  cout << "Moj omiljeni film je "<<endl;
+  ispisifilm (mojfilm);
+  cout << "A vas omiljeni film je "<<endl;
+  ispisifilm (tvojfilm);
+
+  cin.ignore();
+  cin.get();
+  return 0;
+}
+
+void ispisifilm (filmovi film)
+{
+  cout << film.naziv;
+  cout << " (" << film.godina << ")"<<endl;
+}

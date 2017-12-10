@@ -1,0 +1,170 @@
+//mnozenje dvije matrice uz provjeru da li su ulancane.
+//ulancane znaci: da li je broj kolona A jednaka broju redova B
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	 int a[10][10],b [10][10], c[10][10], i , j , m , k, ak, ar, bk, br;
+
+
+
+    cout << "unesite broj redova za matricu a " ;
+    cin >> ar;
+
+    cout << "unesite broj kolona za matricu a " ;
+    cin >> ak;
+
+
+    cout << "unesite broj redova za matricu b " ;
+    cin >> br;
+
+    cout << "unesite broj kolona za matricu b " ;
+    cin >> bk;
+
+    //provjera da li je broj kolona A jednaka broju redova B
+
+    if (ak!=br)
+    {
+        cout << "Broj kolona matrice a i redova b nije isti!" << endl;
+        cout << "Mnozenje ovih matrica nije moguce." << endl;
+        system("pause");
+        return 1;
+    }
+
+
+    //popunimo matricu a
+
+    cout << "unesite clanove matrice a " << endl ;
+    for (i = 0; i < ar; i++)
+    {
+        for (j = 0; j < ak; j++)
+        {
+            cout << "a["<< i << "," << j << "]=";
+            cin >> a[i][j];
+        }
+
+    }
+
+
+
+    //popunimo matricu b
+    cout << "unesite clanove matrice b " << endl ;
+    for (i = 0; i < br; i++)
+    {
+        for (j = 0; j < bk; j++)
+        {
+            cout << "b["<< i << "," << j << "]=";
+            cin >> b[i][j];
+        }
+
+
+    }
+
+
+    //ispis matrice a
+    cout << endl<< "Matrica a je oblika: " << endl;
+    for (int i = 0; i < ar; ++i)
+    {
+        for (int j = 0; j < ak; ++j)
+        {
+            cout << " " << a[i][j];
+        }
+        cout << endl;
+    }
+
+    //ispis matrice b
+    cout << endl<< "Matrica b je oblika: " << endl;
+    for (int i = 0; i < br; ++i)
+    {
+        for (int j = 0; j < bk; ++j)
+        {
+            cout << " " << b[i][j];
+        }
+        cout << endl;
+    }
+
+    /*
+    mnozenje zadatih matrica
+    ako je A: 2 reda x 3 kolona
+
+    a = 2  4 -3
+        5 -2  1
+
+
+    b = 1  3
+        0 -2
+       -1  4
+
+       =2*1 +  4*0 + -3*-1    2*3 + 4*-2 +  -3*4
+        5*1 + -2*0 +  1*-1    5*3 + -2*-2 + 1*4
+
+       =5  -14
+        4  23
+
+    ako je B: 3 reda x 2 kolone
+    matrica A, 1. red, svi clanovi  *  matrica B, 1. kolona, svi clanovi = prvi red, prva kolona
+    matrica A, 1. red, svi clanovi  *  matrica B, 2. kolona, svi clanovi = prvi red, druga kolona
+    , nakon toga
+    matrica A, 2. red, svi clanovi  *  matrica B, 1. kolona, svi clanovi = drugi red, prva kolona
+    matrica A, 2. red, svi clanovi  *  matrica B, 2. kolona, svi clanovi = drugi red, druga kolona
+    sa: http://rgn.hr/~rrajic/nids_rajnarajic/predavanja-M1.pdf
+    */
+
+    //i oznacava broj redova matrice A
+    for (i = 0; i < ar; i++)
+    {
+        //k oznacava broj kolona matrice B
+        for (k = 0; k < bk; k++)
+        {
+            //pravimo zbir do sada izracunatog
+            m = 0;
+
+            //j odredjuje broj kolona matrice A, i redova matrice B, ova dva broja moraju biti isti,
+            //zato se koristi samo jedan broj
+            for (j = 0; j < br ; j++)
+            {
+
+                /* ukljuciti za detaljan prikaz
+                cout << "i: " << i  <<endl;
+                cout << "k: " << k  <<endl;
+                cout << "j: " << j  <<endl;
+                cout << "a[i][j] " <<a[i][j]  <<endl;
+                cout << "b[j][k] " <<b[j][k]  <<endl;
+                */
+                m = m + a[i][j]*b[j][k];
+                cout << "m: " << m  <<endl;
+                cout << "-----"  <<endl;
+            }
+            
+            //dodijeli vrijednosti u rezultujucu matricu c
+            c[i][k] = m;
+
+        }
+
+    }
+
+
+    //ispis c
+
+    cout << endl << "rezultat mnozenja matrica a i b je " << endl;
+
+    for (i = 0; i < ar ; i++)
+    {
+        cout << endl;
+        for (j = 0; j < bk ; j++)
+        {
+            cout << " " << c[i][j];
+
+        }
+
+    }
+
+    cout << endl;
+
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

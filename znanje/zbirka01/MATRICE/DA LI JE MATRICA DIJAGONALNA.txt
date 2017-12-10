@@ -1,0 +1,87 @@
+9) Naèiniti program za provjeru da li je unesena matrica dijagonalna:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	 const int MAX = 10;
+   int A[MAX][MAX], i, j, M;
+   int brojac = 0;
+   bool DijagonalaNemaNulu;
+
+   cout<<"Unesi broj redova kvadratne matrice: ";
+   cin>>M;
+
+   //Unos matrice
+   for(i=0;i<M;i++)
+      {
+      for(j=0;j<M;j++)
+         {
+            cout<<"A["<<i<<","<<j<<"]=";
+            cin>>A[i][j];
+         }
+      }
+   cout<<endl;
+
+   //Ispisi matricu
+   for(i=0;i<M;i++)
+      {
+         cout<<endl;
+         for(j=0;j<M;j++)
+         {
+         cout<<"  "<<A[i][j];
+         }
+      }
+   cout<<endl;
+
+      //Provjera da li na glavnoj dijagonali postoji elemanat !=0
+   
+   DijagonalaNemaNulu=false; // pretpostavimo da ima
+      
+   for(i=0;i<M;i++)
+      {
+         for(j=0;j<M;j++)
+         {
+            if(i==j && A[i][j]!=0)
+               brojac++;
+         }
+      }
+   
+   if (brojac == M)
+      DijagonalaNemaNulu=true;
+   
+   if (DijagonalaNemaNulu==true) // ako su svi na dijagonali razliciti od 0
+      {    //pita da li su meðu ostalima ima neki razlicit od 0
+         for(i=0;i<M;i++)
+         {
+            for(j=0;j<M;j++)
+            {
+               if(i!=j && A[i][j] != 0 )
+               {
+               cout<<"Matrica nije dijagonalna!" << endl;
+               system("Pause");
+               return 1;
+               }
+            }
+         }
+
+      cout<<"Matrica je dijagonalna!" << endl;
+      system ("Pause");
+      return 0;
+      }
+   else
+   {
+      cout<<"Matrica nije dijagonalna." << endl;
+   }
+
+   cout << endl;
+
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

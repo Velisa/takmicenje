@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[10][10], mult[10][10], r1, c1, s, i, j, k;
+
+    cout << "Unesite broj redova i kolona prve matrice :  ";
+    cin >> r1 >> c1;
+    cout << "Unesite skalar kojim mnozimo matricu : ";
+    cin >> s;
+
+
+    //unos matrice
+    cout << endl << "Unesite lemente matrice " << endl;
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c1; ++j)
+        {
+            cout << "Unesite element a " << i + 1<< " " << j + 1 << " : ";
+            cin >> a[i][j];
+        }
+
+
+    // inicijalizacija
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c1; ++j)
+        {
+            mult[i][j]=0;
+        }
+
+    // mnozenje matrice skalarom
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c1; ++j)
+               mult[i][j] = a[i][j] * s;
+  
+
+
+    cout << endl << "Rezultat je: " << endl<<endl;
+    for(i = 0; i < r1; ++i)
+    for(j = 0; j < c1; ++j)
+    {
+        cout  << mult[i][j]<< "\t\t";
+        if(j == c1-1)
+            cout << endl;
+    }
+
+
+	
+	cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+	system ("Pause");
+    return 0;
+
+}

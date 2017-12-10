@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{    
+    float n1, n2, n3;
+
+    cout << "Unesite tri broja: ";
+    cin >> n1 >> n2 >> n3;
+
+    if(n1 >= n2 && n1 >= n3)
+    {
+        cout << "Najveci broj je: " << n1;
+    }
+
+    if(n2 >= n1 && n2 >= n3)
+    {
+        cout << "Najveci broj je: " << n2;
+    }
+
+    if(n3 >= n1 && n3 >= n2) {
+        cout << "Najveci broj je: " << n3;
+    }
+	cout << endl;
+	system("Pause");
+    return 0;
+}

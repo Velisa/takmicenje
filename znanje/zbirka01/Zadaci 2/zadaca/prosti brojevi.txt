@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+using namespace std;
+int main()
+{
+	// napisati program koji ispisuje sve proste brojeve zadanog broja
+	// prosti brojevi su djeljivi samo sa 1 i sa samim sobom bez ostatka a pri tome su veci od 1
+
+	int prost,marker,brojac=2;
+    cout<<"Unesite broj do koga program pronalazi i ispisuje proste brojeve: ";
+    cin>>prost;
+	cout <<"Prosti brojevi do zadanog broja su: ";
+	while (brojac <= prost){
+		marker=0;
+	for (int i = 2; i<= brojac/2; ++i){
+		
+		if (brojac % i == 0)
+		{
+			marker =1;
+			break;
+		}
+	}
+	if (marker == 0)
+	{
+		cout <<brojac<<", ";
+	}
+	++brojac;
+	}
+
+	
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

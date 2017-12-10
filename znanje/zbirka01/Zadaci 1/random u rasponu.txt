@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+
+
+int main()
+{
+	int n, i,r;
+
+	int max, min, range;
+
+
+	srand(time(NULL));
+
+	cout << " Unesite broj kocki za bacanje ";
+	cin >> n;
+	cout << " Unesite min ";
+	cin >> min;
+	cout << " Unesite max ";
+	cin >> max;
+	for ( i = 1; i <= n; i++)
+	{
+		range = max - min + 1;
+		r = rand() % range + min;
+		cout << r << " ";
+	}
+
+	system("PAUSE");
+	return 0;
+}
+

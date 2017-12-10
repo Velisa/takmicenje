@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <string>
+#include <stdlib.h>
+#include <sstream>
+using namespace std;
+
+int main()
+
+{
+
+
+
+
+	// program cijepa recenicu na rijeci
+
+	string k;
+
+
+	cout<<"Unesite recenicu koju zelite da program podjeli na sastavne rijeci "<<endl;
+	getline (cin,k);
+
+	cout<<k<<endl;
+
+	istringstream iss(k);
+    string rijec;
+    while(iss >> rijec) {
+        
+		cout<<rijec<<endl;
+    }
+	
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

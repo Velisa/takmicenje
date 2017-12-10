@@ -1,0 +1,40 @@
+4)NAÈINITI PROGRAM ZA IZBACIVANJE DUPLIH ÈLANOVA NIZAPRIRODNIH BROJEVA PROIZVOLJNE VELIÈINE:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	 int niz[20], index, BrojClanova;
+
+    cout<<"Koliko clanova ce imati vas niz: ";
+    cin>>BrojClanova;
+
+    cout << "Unesite niz brojeva: ";
+
+    for(index = 0 ; index < BrojClanova; index++)
+        cin >>niz[index];
+            
+    cout<< niz[0] << " ";
+
+   for (int i = 1; i < BrojClanova; i++)
+   {
+      bool PostojiDupli = false;
+      for (int j = 0; j < i && PostojiDupli == false; j++) // svi do posmatranog broja
+      {
+         if (niz[i] == niz[j])
+         PostojiDupli = true; // izlaz iz petlje i ispisati broj
+      }
+
+      if (!PostojiDupli)
+            cout<< niz[i] << " ";
+   }   
+
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

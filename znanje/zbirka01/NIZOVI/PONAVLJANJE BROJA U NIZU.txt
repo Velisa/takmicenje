@@ -1,0 +1,63 @@
+
+//koliko puta se neki broj ponavlja u nizu 
+//Milan R.
+
+#include <iostream>
+#include<vector>
+using namespace std;
+
+vector<int> unosBr(int) ;
+
+
+int main(){
+    int max =100;
+    int broj,nizA[max],nizB[max],index, brojac =0;
+    bool pom ;
+    for(int i = 0; i < max; i++){
+        nizA[i]=0;
+        nizB[i]=0;
+    }
+    
+    
+    do {
+        cout<<"Koliko zelite brojeva: ";
+        cin>> broj;
+    }while(broj<1);
+    
+    vector<int> a = unosBr(broj);
+    for(int i = 0; i <broj; i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<endl;
+    for(int i = 0; i < a.size(); i++){
+        pom=false;
+        index = -1;
+        for(int j = 0; j < max; j++){
+            if(nizA[j] == a[i] ){
+                pom = true;
+                nizB[j] = nizB[j] + 1;
+            }
+        }
+        if(!pom){
+            nizA[brojac] = a[i];
+            nizB[brojac++] = 1;
+            
+        }
+    }
+    for(int i = 0; i < brojac; i++){
+        cout<<nizA[i]<<" = "<<nizB[i]<<endl;
+    }
+    return 0;
+}
+
+vector<int> unosBr(int broj) {
+    vector<int> vrati(broj);
+    cout<<endl;
+    cout << "Unesite elemente vektora: "<<endl;
+    for(int i = 0; i < broj; i++){
+        cout<<i+1<<" = ";
+        cin >> vrati[i];
+    }
+    return vrati;
+    
+}

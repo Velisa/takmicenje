@@ -1,0 +1,37 @@
+// Program racuna zapreminu kvadra (paralelepipeda)
+
+#include <iostream>
+using namespace std;
+
+int Zapremina (int a, int b, int h)
+{
+	int V;
+
+	V = a * b * h;
+
+	return V; // return a * b * h;
+	
+}
+
+int main()
+{
+	
+	int stranicaA = 10, stranicaB, visina, zapreminaTijela;
+
+	cout << "Unesite stranicu A: 10" << endl;
+	cout << "Unesite stranicu B: ";
+	cin >> stranicaB;
+	cout << "Unesite visinu: ";
+	cin >> visina;
+
+	zapreminaTijela = Zapremina(stranicaA, stranicaB, visina);
+
+	cout << "Zapremina je : " << zapreminaTijela << endl;
+
+	cout << "Povecana zapremina je: " << zapreminaTijela + 1000 << endl;
+
+
+	cout << endl;
+	system("Pause");
+	return 0;
+}

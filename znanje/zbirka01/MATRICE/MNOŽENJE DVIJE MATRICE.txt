@@ -1,0 +1,108 @@
+1)NAÈINITI PROGRAM ZA MNOŽENJE DVIJE MATRICE, UZ PROVJERU DA LI SU ULANÈANE:
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int A[10][10], B[10][10], C[10][10], i, j, m, k, ar, ak, br, bk;
+
+	//definisanje matrice A;
+	cout<<"Matrica A-> Unesite broj redova: ";
+	cin>>ar;
+	cout<<"Matrica A-> Unesite broj kolona: ";
+	cin>>ak;
+	cout<<endl<<"Matrica A-> Unesite clanove matrice: "<<endl;
+	
+	// popunjavanje matrice A;
+	for (i=0; i<ar; i++)
+	{
+		for (j=0; j<ak; j++)
+		{
+			cout<<"A["<< i << ","<< j <<"]=";
+			cin>>A[i][j];
+		}
+	}
+	cout<<endl;
+
+	//definisanje matrice B;
+	cout<<"Matrica B-> Unesite broj redova: ";
+	cin>>br;
+	cout<<"Matrica B -> Unesite broj kolona: ";
+	cin>>bk;
+
+	//provjera za broj kolona A i redova B;
+	if( ar!=bk)
+	{
+		cout<<"Broj redova matrice A i broj kolona matrice B nisu isti."<<endl;
+		cout<<"Množenje ove dvije matrice nije moguæe!!"<<endl;
+		system ("Pause");
+			return 1;
+
+	}
+
+	cout<<" Unesite clanove matrice A: ";
+	
+
+	//poponjavanje matrice B;
+	for (i=0; i<br; i++)
+	{
+		for (j=0; j<bk; j++)
+		{
+			cout<<"B["<< i << " , " << j << "]=";
+			cin>>B[i][j];
+		}
+	}
+
+	//ispišemo matricu A;
+	cout<<endl<<"Matrica A je oblika: "<<endl;
+	for (i=0; i<ar; i++)
+	{
+		cout<<endl;
+
+		for (j=0; j<ak; i++)
+		{
+			cout<<A[i][j];
+		}
+	}
+
+	//ispisujemo matricu B;
+	cout<<endl<< "Matrica B je oblika: "<<endl;
+	for (i=0; i<br; i++)
+	{
+		cout<<endl;
+
+		for( j=0; j<bk; j++)
+		{
+			cout<<B[i][j];
+		}
+	}
+
+	//množenje;
+	for (i=0; i<ar; i++)
+	{
+		for (k=0; k<bk; k++)
+		{
+			m=0;
+			for (j=0; j<br; j++)
+			{
+				m=m+A[i][j] * B[i][j];
+			}
+			C[i][j]=m;
+		}
+	}
+	cout<<"Rezultat mnozenja ove dvije matrice je: "<<endl;
+	for (i=0; i<ar; i++)
+	{
+		cout<<endl;
+		for (j=0; j<bk; j++)
+		{
+			cout<< C[i][j];
+		}
+	}
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

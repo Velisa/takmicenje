@@ -1,0 +1,24 @@
+// ovo je komentar
+
+/* ovo je komentar */
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+
+	int a;
+
+	cout << "hello world"<< endl<<endl<<endl;
+	cout<< "najveci int"<< sizeof(a)<< endl; // size of prikazje vrijednost koja predstavlja broj bajtova 
+
+
+
+	system("pause");
+	return 0;
+
+}

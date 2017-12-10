@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main ()
+{
+	string rijec;
+    int razmak=1;
+    cout<<"Unesi rijec ";
+    cin>>rijec;
+    cout<<endl;
+       for(int i=1; i <= 9; i++)
+          {
+           cout<<rijec;
+               for(int j=1;j<=razmak;j++)
+                   cout<<" ";
+            razmak++;
+          }       
+	cout << " ---Program je zavrsen --- " << endl;
+	system("Pause");
+	return 0;
+}

@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+int main()
+{
+   
+	int x = 123;
+	char slovo =  'A';
+
+	cout << "Broj x je "<< x << " i lociran je na memorijskoj adresi "<< &x<< endl;
+	
+	cout << "Velicina podatka tipa int je " << sizeof(x)<<endl;
+	cout << "Velicina podatka tipa char je " << sizeof(slovo)<<endl;
+
+	int* pokazivac = &x;
+
+	cout <<"Pokazivac na lokaciju podatka x je " << pokazivac<<endl;
+	cout << "Vrijednost upisana na prethodnoj lokaciji je "<< *pokazivac<<endl;
+
+	int niz [7]= {1,2,3,4,5,6,7};
+
+	int* pokazivacniza = niz;
+
+	cout << "Ispis prvog elementa niza pomocu pokazivaca "<< *pokazivacniza <<endl;
+
+		for (int i =1; i<7 ;++i){
+		pokazivacniza++;
+		cout << *pokazivacniza<<" ,"<<endl;
+
+	}
+
+
+
+	
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

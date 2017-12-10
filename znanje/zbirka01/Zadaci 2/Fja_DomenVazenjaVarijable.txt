@@ -1,0 +1,29 @@
+// Domen vazenja varijabli u funkcijama
+
+#include <iostream>
+using namespace std;
+
+void MojaFunkcija ()
+{
+	int x = 8;
+	cout << "X u MojaFunkcija() je: " << x << endl;
+	{
+		cout << "X u bloku funkcije je: " << x << endl;
+		x = 9;
+		cout << "X unutar bloka funkcije je :" << x << endl;
+	}
+	cout << "X IZVAN bloka funkcije je :" << x << endl;
+}
+
+int main()
+{
+	int x = 5;
+
+	cout << "X u main() iznosi: " << x << endl;
+	MojaFunkcija();
+	cout << "X u main() NAKON IZVRSENJA FUNKCIJE iznosi: " << x << endl;
+
+	cout << endl;
+	system("Pause");
+	return 0;
+}

@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	    int i,n,p;
+	cout<<"Ispis uzastopnih prirodnih brojeva(opadajuæi) i proizvod pomocu For-petlje"<<endl;
+	cout <<"n=";
+	cin>>n;
+	if(n<1)
+	{
+       cout<<"POGRESAN UNOS!"<<endl;
+    }
+else
+	{
+		cout<<"ISPIS OPADAJUCEG NIZA"<<endl;
+	for(i=n;i>0;i=i-1)
+		cout<<i<<endl;
+		cout<<"PROIZVOD!"<<endl;	
+		p=1;
+	for(i=n;i>0;i=i-1)
+		p=p*i;
+		cout<<"p=";
+		cout<<p<<endl;
+	}
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

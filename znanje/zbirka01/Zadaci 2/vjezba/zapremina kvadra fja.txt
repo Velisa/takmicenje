@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int zapreminaKvadra (int a, int b , int h)
+{
+
+	int v;
+	v= a*b*h;
+	return v;
+
+}
+
+int main()
+{
+   
+	//Dat je kvadar stranica 3,4,5 izracunati njegovu zapreminu
+
+	cout<<"Zapremina za zadani kvadar iznosi: " <<zapreminaKvadra(3,4,5);
+	
+	cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+	system ("Pause");
+    return 0;
+
+}

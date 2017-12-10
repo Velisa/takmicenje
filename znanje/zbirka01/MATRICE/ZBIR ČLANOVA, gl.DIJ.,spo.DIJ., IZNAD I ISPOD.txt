@@ -1,0 +1,37 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	 int n,i,j,zbir=0,a[20][20],zd=0,zi=0,zz=0,sp=0;
+  cout<<"Uneiste dimenziju matrice";
+  cin>>n;
+  for (i=1; i<=n; i++)//unos elemenata matrice
+    for (j=1; j<=n; j++)
+       {
+       cout<<"a["<<i<<","<<j<<"]=";
+        cin>>a[i][j]; 
+        zbir=zbir + a[i][j];//sabiranje svih elemenata matrice
+        if (i==j) zd=zd+a[i][j];//sabiranje elmenata sa glavne dijagonale
+        if (i<j) zi=zi+a[i][j];//sabiranje elmenata iznad glavne dijagonale
+        if (i>j) zz=zz+a[i][j];//sabiranje elmenata ispod glavne dijagonale
+        if ((i+j)==(n+1)) sp=sp+a[i][j];//sabiranje elmenata sa sporedne dijagonale
+        }
+  for (i=1; i<=n; i++)//ispise matrice
+  {
+    for (j=1; j<=n; j++)
+       cout<<a[i][j]<<" ";
+    cout<<endl;
+    }
+cout<<"Zbir svih elemenata matrice je "<<zbir<<endl;
+cout<<" Zbir elemenata glavne dijgonale je "<<zd<<endl;
+cout<<"Zbir elemenata iznad glavne dijagonale je "<<zi<<endl;
+cout<<"Zbir elemenata ispod glavne dijagonale je "<<zz<<endl;
+cout<<"Zbir elemenata sporedne dijagonale je "<<sp<<endl;
+
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

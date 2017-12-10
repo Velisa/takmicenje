@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void Povrsina (int a, int b)
+{
+	int P;
+	P = a * b;
+	cout << "Povrsina pravougaonika je: " << P << endl;
+}
+
+int main()
+{
+	int stranicaA, stranicaB;
+	cout << "Unesite stranicu A: ";
+	cin >> stranicaA;
+	cout << "Unesite stranicu B: ";
+	cin >> stranicaB;
+	Povrsina(stranicaA, stranicaB);
+
+	cout <<"Povratak u main()";
+	cout << endl;
+	system("Pause");
+	return 0;
+}

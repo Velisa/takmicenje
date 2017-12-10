@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cstring>
+ 
+using namespace std;
+
+void ispisiKorisnika( struct korisnik *korisnik );
+
+struct korisnik {
+   char  ime[50];
+   char  prezime[50];
+   long int br_telefona;
+};
+
+ 
+int main( ) {
+   struct korisnik korisnik1;      
+   
+ 
+   // Karakteristika korisnika
+   strcpy( korisnik1.ime, "Semir");
+   strcpy( korisnik1.prezime, "Turkanovic"); 
+   korisnik1.br_telefona = 65896496;
+ 
+   //pozivanje f-je za ispis
+   ispisiKorisnika( &korisnik1 );
+
+   cout<<endl<<"Kraj programa. Stisnite enter za izlaz"<<endl;
+   cin.get();
+   return 0;
+}
+
+// funkcija za ispis
+void ispisiKorisnika( struct korisnik *korisnik ) {
+   cout << "Ime korisnika: : " << korisnik->ime<<endl;
+   cout << "Prezime korisnika : " << korisnik->prezime <<endl;
+   cout << "Tel. br. korisnika : 0" << korisnik->br_telefona<<endl;
+}

@@ -1,0 +1,346 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iomanip>
+#include <tuple>
+using namespace std;
+
+char tabela1 [10][10],tabela2[10][10],pogodak1[10][10],pogodak2[10][10];
+int brojac1=5,brojac2=5,bodovi1=0,bodovi2=0,brpogodaka1=0,brpogodaka2=0;
+
+
+void inicijalizacija_tabele1(void) {
+
+	for(int v = 1; v<=10; ++v)
+        for(int h = 1; h<=10; ++h)
+            tabela1[v][h]='_';
+
+}
+void inicijalizacija_tabele2(void) {
+
+	for(int v = 1; v<=10; ++v)
+        for(int h = 1; h<=10; ++h)
+            tabela2[v][h]='_';
+
+}
+void inicijalizacija_pogodak1(void) {
+
+	for(int v = 1; v<=10; ++v)
+        for(int h = 1; h<=10; ++h)
+            pogodak1[v][h]='_';
+
+}
+void inicijalizacija_pogodak2(void) {
+
+	for(int v = 1; v<=10; ++v)
+        for(int h = 1; h<=10; ++h)
+            pogodak2[v][h]='_';
+
+}
+void unos_broda(tuple<int, int, int> p){
+
+    int v =get<0>(p);
+    int h = get<1>(p);
+	int vh= get<2>(p);
+
+	if (vh==1){
+	for (int i =0;i<brojac1;++i){
+		if (tabela1[v+i][h] == '*' || v+i>10 || h>10){
+		
+		cout <<"Brod se poklapa sa drugim brodom ili je izvan opsega!"<<endl<<endl;;
+		cout <<"Negativni poeni (-1)"<<endl<<endl;
+		brpogodaka1++;
+		}
+    tabela1[v+i][h] = '*';
+	
+	}
+	--brojac1;
+	}
+	else{
+	for (int i =0;i<brojac1;++i){
+		if (tabela1[v][h+i] == '*' || v>10 || h+i>10){
+		
+		cout <<"Brod se poklapa sa drugim brodom ili je izvan opsega!"<<endl<<endl;;
+		cout<<"Negativni poeni (-1)"<<endl<<endl;
+		brpogodaka1++;
+		}
+    tabela1[v][h+i] = '*';
+	}
+	--brojac1;}
+	
+}
+
+void gadjanje1(pair<int, int> gadjanje){
+
+    int v =gadjanje.first;
+    int h = gadjanje.second;
+
+	if (tabela2[v][h] == '*'){
+		pogodak1[v][h]='X';
+		brpogodaka1++;
+		bodovi1++;
+	}
+	else
+	{
+		pogodak1[v][h]='O';
+	}
+}
+
+	
+
+void unos_broda1(tuple<int, int, int> p){
+
+    int v =get<0>(p);
+    int h = get<1>(p);
+	int vh= get<2>(p);
+
+	if (vh==1){
+	for (int i =0;i<brojac2;++i){
+		if (tabela2[v+i][h] == '*' || v+i>10 || h>10){
+		
+		cout <<"Brod se poklapa sa drugim brodom ili je izvan opsega!"<<endl<<endl;;
+		cout <<"Negativni poeni (-1)"<<endl<<endl;
+		brpogodaka2++;
+		}
+    tabela2[v+i][h] = '*';
+	
+	}
+	--brojac2;
+	}
+	else{
+	for (int i =0;i<brojac2;++i){
+		if (tabela2[v][h+i] == '*' || v>10 || h+i>10){
+		
+		cout <<"Brod se poklapa sa drugim brodom ili je izvan opsega!"<<endl<<endl;;
+		cout<<"Negativni poeni (-1)"<<endl<<endl;
+		brpogodaka2++;
+		}
+    tabela2[v][h+i] = '*';
+	}
+	--brojac2;}
+	
+}
+void gadjanje2(pair<int, int> gadjanje){
+
+    int v =gadjanje.first;
+    int h = gadjanje.second;
+
+	if (tabela1[v][h] == '*'){
+		pogodak2[v][h]='X';
+		brpogodaka2++;
+		bodovi2++;
+	}
+	else
+	{
+		pogodak2[v][h]='O';
+	}
+}
+
+void tabela1_prikaz(){
+	int i,j;
+	cout <<"Tabela igraca 1 izgleda ovako: "<<endl<<endl<<endl;
+	cout <<"  ";
+	for(i=1; i<=10;++i){
+		cout << setw(3) << i;
+    }
+	cout<<endl;
+    for(i=1;i<=10;++i)
+    {
+		if(i == 10)
+		cout << i;
+		else
+		cout << " " << i ;
+
+		for(j=1;j<=10;++j)
+        {
+           cout<<setw(3)<<tabela1[i][j]; 
+        }
+		cout<<endl;
+	}
+
+}
+void tabela2_prikaz(){
+	int i,j;
+	cout <<"Tabela igraca 2 izgleda ovako: "<<endl<<endl<<endl;
+	cout <<"  ";
+	for(i=1; i<=10;++i){
+		cout << setw(3) << i;
+    }
+	cout<<endl;
+    for(i=1;i<=10;++i)
+    {
+		if(i == 10)
+		cout << i;
+		else
+		cout << " " << i ;
+
+		for(j=1;j<=10;++j)
+        {
+           cout<<setw(3)<<tabela2[i][j]; 
+        }
+		cout<<endl;
+	}
+
+}
+void pogodak1_prikaz(){
+	int i,j;
+	cout <<"Rezultati gadjanja su: "<<endl<<endl<<endl;
+	cout <<"  ";
+	for(i=1; i<=10;++i){
+		cout << setw(3) << i;
+    }
+	cout<<endl;
+    for(i=1;i<=10;++i)
+    {
+		if(i == 10)
+		cout << i;
+		else
+		cout << " " << i ;
+
+		for(j=1;j<=10;++j)
+        {
+           cout<<setw(3)<<pogodak1[i][j]; 
+        }
+		cout<<endl;
+	}
+
+}
+void pogodak2_prikaz(){
+	int i,j;
+	cout <<"Rezultati gadjanja su: "<<endl<<endl<<endl;
+	cout <<"  ";
+	for(i=1; i<=10;++i){
+		cout << setw(3) << i;
+    }
+	cout<<endl;
+    for(i=1;i<=10;++i)
+    {
+		if(i == 10)
+		cout << i;
+		else
+		cout << " " << i ;
+
+		for(j=1;j<=10;++j)
+        {
+           cout<<setw(3)<<pogodak2[i][j]; 
+        }
+		cout<<endl;
+	}
+
+}
+int main()
+{
+
+	vector <tuple <int, int, int> > kanta; 
+	vector <pair <int, int> > gadjanje;
+	pair <int, int> redkolona;
+	tuple <int, int, int> redkolonavh;
+	int brojac =0;
+
+	cout << "--------------Potapanje brodova--------------"<<endl<<endl;
+	cout <<"Igra zapocinje tako sto svaki igrac unosi pozicije brodova \n na tabli dimenzija 10x10."<<endl<<endl;;
+	cout <<"Igraci pozicioniraju brodove dimenzija 5-4-3-2-1 polja \n u tabeli horizontalno i vertikalno."<<endl<<endl;;
+	cout <<"Prilikom postavljanja brodovi se ne smiju preklapati ili biti izvan table \n (Negativni poeni)."<<endl<<endl;;
+	cout <<"Cilj protivnika je da potopi protivnicki brod."<<endl<<endl;
+
+	cout<<endl<<endl<<"Igrac 1 unosi pozicije 5 brodova (x,y,z)"<<endl;
+	cout<<"koordinate su brojevi od  1 - 10 a orijentacija je 1-verttikalno ili bilo koji broj za horizontalno "<<endl;
+	cout<<"Npr brod sa pozicijama 4 4 1 (4 x osa 4 y osa 1 vertikalno) "<<endl;
+	while( brojac < 5){
+	int red,kolona,vh;
+	cin>>red;
+	cin>>kolona;
+	cin>>vh;
+	redkolonavh  = make_tuple(red,kolona,vh);
+	kanta.push_back(redkolonavh);
+	++brojac;
+	}
+
+	inicijalizacija_tabele1();
+
+	 for(vector<tuple<int,int,int> >::const_iterator iter = kanta.begin();iter != kanta.end(); ++iter ) {
+		 unos_broda(*iter);
+    }
+
+	tabela1_prikaz();
+	kanta.clear();
+	brojac=0;
+
+	cout<<"unos igraca 2: "<<endl<<endl;
+
+	inicijalizacija_tabele2();
+
+	while( brojac < 5){
+	int red,kolona,vh;
+	cin>>red;
+	cin>>kolona;
+	cin>>vh;
+	redkolonavh  = make_tuple(red,kolona,vh);
+	kanta.push_back(redkolonavh);
+	++brojac;
+	}
+
+	for(vector<tuple<int,int,int> >::const_iterator iter = kanta.begin();iter != kanta.end(); ++iter ) {
+		 unos_broda1(*iter);
+    }
+
+	tabela2_prikaz();
+	
+	cout<<"Unos zavrsen"<<endl;
+	inicijalizacija_pogodak1();
+	inicijalizacija_pogodak2();
+
+	while (brpogodaka1!=14 || brpogodaka2!=14){
+	cout<<"Igrac 1 gadja:"<<endl;
+	brojac=0;
+
+
+	while( brojac < 5){
+	int red,kolona;
+	cin>>red;
+	cin>>kolona;
+	redkolona  = make_pair(red,kolona);
+	gadjanje.push_back(redkolona);
+	++brojac;
+	}
+	for(vector<pair<int,int> >::const_iterator iter = gadjanje.begin();iter != gadjanje.end(); ++iter ) {
+		 gadjanje1(*iter);
+    }
+
+	pogodak1_prikaz();
+
+	cout<<"Igrac 2 gadja:"<<endl;
+	brojac=0;
+
+
+	gadjanje.clear();
+
+	while( brojac < 5){
+	int red,kolona;
+	cin>>red;
+	cin>>kolona;
+	redkolona  = make_pair(red,kolona);
+	gadjanje.push_back(redkolona);
+	++brojac;
+	}
+	for(vector<pair<int,int> >::const_iterator iter = gadjanje.begin();iter != gadjanje.end(); ++iter ) {
+		 gadjanje2(*iter);
+    }
+
+	pogodak2_prikaz();
+	}
+	if (brpogodaka1>brpogodaka2){
+		cout<<"Pobjednik je igrac 1 sa "<<bodovi1<<"osvojenih bodova."<<endl;
+		cout<<"Igrac 2 je osvojio "<<bodovi2<<endl;
+	}
+	else{
+	cout<<"Pobjednik je igrac 2 sa "<<bodovi2<<"osvojenih bodova."<<endl;
+		cout<<"Igrac 1 je osvojio "<<bodovi1<<endl;
+	}
+
+	system("pause");
+	cin.ignore();
+	cout<<endl<<"Pritisnite enter za izlaz!"<<endl<<endl;
+
+	cin.get();
+}

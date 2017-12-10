@@ -1,0 +1,47 @@
+Zadatak 2. Naèiniti program za ispis najmanjeg èlana niza:
+#include <iostream>
+#include <utility> // za swap
+#include <vector>
+using namespace std;
+
+int main()
+{
+
+    //deklarisanje i inicijalizacija vektora MojVektor,
+    //sadrzi int varijable u poljima
+    vector<int> MojVektor;
+
+    //deklarisanje i inicijalizacija integera UnesenaVrijednost, suma
+    int UnesenaVrijednost = 0;
+
+
+    //unosimo podatke od korisnika, sve dok ne unese 0 ili neko slovo
+    //(sve dok je unesena vrijednost int, i veca od 0)
+
+    cout << "Unesite clanove vektora, 0 za kraj unosa: " << endl;
+    while (cin >> UnesenaVrijednost && UnesenaVrijednost> 0 )
+    {
+        //dodajemo vrijednosti na kraj vektora koristeci push_back
+        MojVektor.push_back(UnesenaVrijednost);
+    }
+
+
+    int i,j;
+
+    //bubble sort
+    for ( i=0; i<=MojVektor.size()-2 ; i++ )
+    {
+        for (j= i + 1; j<=MojVektor.size()-1 ; j++ )
+        {
+            //zamjena ako je clan sa desne strane manji
+            if (MojVektor[i] > MojVektor[j])
+                swap(MojVektor[i],MojVektor[j]);
+        }
+
+    }
+
+    //ispis najmanjeg clana
+    cout << "Najmanji clan je: " << MojVektor[0] <<endl;
+
+    return 0;
+}

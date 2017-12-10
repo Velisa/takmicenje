@@ -1,0 +1,46 @@
+7) Program za ispis glavne i sporedne dijagonale proizvoljne matrice:
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int A[10][10], i,j,N;
+   cout<<"Unesite veliicnu kvadratne matrice: ";
+   cin>>N;
+   
+   for(i=0;i<N;i++)
+      for(j=0;j<N;j++)
+         {
+         cout << "Clan [" << i << "," << j << "]=" ;
+         cin >> A[i][j];
+         }
+   
+   for(i=0;i<N;i++)
+   {
+      cout<<endl;
+      for(j=0;j<N;j++)
+         {
+         cout<<" "<<A[i][j];
+         }
+   }
+   cout<<endl;
+   
+   cout<<"Glavna dijagonala unesene matrice sadrzi slijedece clanove: "<<endl;
+   for ( i=0; i<N; i++ )
+      cout << "[" << i << "," << i << "] = " << A[i][i] << endl; // ili sa dvije petlje da se „i“ i „j“ povecavaju
+   cout << endl;
+
+   cout << "Sporedna dijagonala unesene matrice sadrzi slijedece clanove: " << endl;
+   for ( i=N-1; i>=0; i-- )
+      cout << "[" << i << "," << i << "] = " << A[i][N-1-i] << endl;   
+   cout<<endl;
+
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

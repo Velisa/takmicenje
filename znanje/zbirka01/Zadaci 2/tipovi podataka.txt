@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	cout<<"Program ispisuje velicine tipova podataka"<<endl<<endl;
+
+   cout << "Velicina tipa char : " <<"\n"<< sizeof(char) <<"byte"<< endl<<endl;
+   cout << "Velicina tipa int : " <<"\n"<< sizeof(int) <<"byte"<< endl<<endl;
+   cout << "Velicina tipa short int : " <<"\n"<< sizeof(short int) <<"byte"<< endl<<endl;
+   cout << "Velicina tipa long int : " <<"\n"<< sizeof(long int) <<"byte"<< endl<<endl;
+   cout << "Velicina tipa float : " <<"\n"<< sizeof(float) <<"byte"<< endl<<endl;
+   cout << "Velicina tipa double : " <<"\n"<< sizeof(double) <<"byte"<< endl<<endl;
+   cout << "Velicina tipa wchar_t : " <<"\n"<< sizeof(wchar_t) <<"byte"<< endl<<endl;
+
+
+   system ("pause");
+   return 0;
+}

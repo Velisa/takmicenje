@@ -1,0 +1,27 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	 int n,i,j,a[50][50],mi=0,mj=0,max=0;
+ cout<<"Unesite dimenzije matrice";
+ cin>>n;
+ for (i=1; i<=n; i++)
+   for (j=1; j<=n; j++)
+      cin>>a[i][j];
+  max=a[1][1]; mi=1;mj=1;  
+  for (i=1; i<=n; i++)
+   for (j=1; j<=n; j++)
+       if (a[i][j]>max) {max=a[i][j]; mi=i; mj=j;}
+  for (i=1; i<=n; i++) {
+   for (j=1; j<=n; j++) 
+    cout<<a[i][j]<<"  ";
+   cout<<endl; }
+  cout<<"Indeks najveceg elementa matrice je "<<"("<<mi<<","<<mj<<")"<<endl;  
+
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

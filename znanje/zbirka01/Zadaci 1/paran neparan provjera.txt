@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+
+    cout << "Unesite broj: ";
+    cin >> n;
+
+    if ( n % 2 == 0)
+        cout << n << " je paran."<< endl;
+    else
+        cout << n << " je neparan." << endl;
+
+	system("Pause");
+    return 0;
+}

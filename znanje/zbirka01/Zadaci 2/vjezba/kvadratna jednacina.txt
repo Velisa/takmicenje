@@ -1,0 +1,90 @@
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+
+//rijesiti polinom axsqr +bx+ c = 0
+
+// za x1,2 = -b +/- sqrroot b2-4ac /2a
+
+
+int main ()
+
+{
+	// ako rijesavamo jednacinu oblika ax2 +bx +c = 0 
+
+	int a,b,c,x1,x2, D, pom;
+	cout << "unesite koeficijente kvadratne jednacine "<< endl ;
+	cout<< "kvadratni koef "<< endl;
+	cin>> a;
+	cout << "linearni koeficijent "<< endl;
+	cin>> b ;
+	cout << "slobodni clan "<< endl;
+	cin>> c ;
+
+
+	if (a == 0 && b == 0 && c == 0)
+	{
+	cout << "svi koef su 0 => jednacina ima beskonacno rijesenja"<< endl;
+	system ("pause");
+	return 0;
+	}
+	if (a==0 && b== 0 && c != 0)
+	{
+	
+	cout << "jednacina je nemoguca"<< endl;
+	system ("pause");
+	return 0;
+	}
+	if (a==0 && b!= 0 && c == 0)
+	{
+	
+	cout << "Oba rjesenja su ista => x1=x2=0"<< endl;
+	system ("pause");
+	return 0;
+	}
+	if (a==0 && b!= 0 && c != 0)
+	{
+	x1=-c/b;
+	cout << "Kvadratni koef je nula pa je jednacina linearna pa je x1 "<< x1 << endl;
+	system ("pause");
+	return 0;
+	}
+
+	D=b*b-4*a*c;
+	pom = 2*a;
+
+	cout <<"diskriminanta je "<<D<<endl;
+
+	if (D==0)
+
+	{
+	x1= -b/pom;
+	cout << "Diskriminanta je 0 => x1=x2=  "<< x1 << endl;
+	}
+	else if ( D<0) // rijesenja su konjugovano kompleksna
+	{
+		float real, img;
+		real = -b/pom;
+		img = sqrt(-D)/pom;
+
+		cout<< "Prvo rijesenje je " << real << "+"<< img << "i"<< endl;
+		cout<< "Drugo rijesenje je " << real << "-"<< img << "i"<< endl;
+
+	}
+	else {
+	
+	x1 = (-b+sqrt(D))/pom;
+	x2 = (-b-sqrt(D))/pom;
+
+	cout<< "Prvo rijesenje je " << x1 << endl;
+	cout<< "Drugo rijesenje je " << x2 << endl;
+	}
+	cout <<endl<< ".... Program je zavrsen...." << endl << endl;
+	system ("pause");
+	return 0;
+
+
+}

@@ -1,0 +1,38 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+ 
+	// napraviti program za dijeljenje dva proizvoljna prirodna broja na 
+	//proizvoljan br decimala ... simulacija rucnog dijeljenja
+
+	int x,y,brojDecimala;
+
+	do
+	{
+		cout << "unesite dva prirodna broja za dijeljenje ";
+		cin >> x >> y ; 
+	} while (x < 1 || y < 1);
+
+	do
+	{
+		cout << "unesite broj decmala ";
+		cin >> brojDecimala; 
+	} while (brojDecimala<1);
+
+	cout << "rezultat dijeljenja je : "<< x/y << ".";
+
+	do
+	{
+	x= x%y*10;
+	cout << x/y;
+	}while(--brojDecimala);
+
+cout << "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}
+ 

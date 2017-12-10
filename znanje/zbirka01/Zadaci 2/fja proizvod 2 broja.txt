@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int mult ( int x, int y );
+
+int main()
+{
+  int x;
+  int y;
+  
+  cout<<"Unesite dva broja za koje elite izrcunati proizvod: ";
+  cin>> x >> y;
+  cin.ignore();
+  cout<<"Proizvod dva broja je "<< mult ( x, y ) <<"\n";
+  cin.get();
+}
+
+int mult ( int x, int y )
+{
+  return x * y;
+}

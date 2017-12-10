@@ -1,0 +1,41 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{	
+	int kolona, redova, matrica[100][100],vektor[30],rezultat[30];
+
+	cout<<"Unesite broj kolona matrice: "<<endl;
+	cin>>kolona;
+	cout<<"Unesite broj redova matrice: "<<endl;
+	cin>>redova;
+
+	for (int i=0;i<redova;i++)
+		for (int j=0;j<kolona; j++)
+		{
+			cout<<"Unesite clanove matrice("<<i<<","<<j<<"):";
+			cin>>matrica[i][j];
+		}
+
+		cout<<endl;
+
+		for (int i=0;i<kolona;i++)
+		{
+			cout<<"Unesite vectorA("<<i<<")";
+			cin>>vektor[i];
+		}
+
+		for (int i=0;i<redova;i++) rezultat[i]=0;
+		for (int i=0; i<redova;i++)
+			for (int j=0; j<kolona;j++)
+				rezultat[i]+=matrica[i][j];
+		cout<<endl;
+
+		for (int i=0; i<redova; i++)
+			cout<<rezultat[i]<<endl;
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

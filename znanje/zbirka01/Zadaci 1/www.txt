@@ -1,0 +1,3 @@
+httpswww.programiz.comcpp-programmingexamples
+
+http://www.inference.phy.cam.ac.uk/teaching/comput/C++/examples/index.shtml

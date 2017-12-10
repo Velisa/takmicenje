@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+
+	ofstream pisiFajl;
+
+	pisiFajl.open("G:\\SKOLA\\2016 2017\\ispisanifajl.txt");
+
+	cout << "pocinjem pisanje u fajl" << endl;
+
+	pisiFajl << "Prvi red" << endl;
+	pisiFajl << "Drugi red" << endl;
+	pisiFajl << "Treci red" << endl;
+	pisiFajl << "Cetvrti red" << endl;
+
+	pisiFajl.close();
+
+	cout << "zavrsio sam pisanje u fajl" << endl;
+
+	cout << endl<< endl<< " Program zavrsen " << endl;
+	system("Pause");
+	return 0;
+}

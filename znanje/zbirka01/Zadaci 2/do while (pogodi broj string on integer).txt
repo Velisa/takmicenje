@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+   
+	
+	string pogodjenibr;
+	int broj = 0;
+
+	do {
+	
+	cout << "Pogadjajte broj izmedju 1 i 10 ";
+	getline (cin, pogodjenibr);
+	broj = stoi (pogodjenibr);
+	cout<< broj<< endl;
+
+	}while (broj != 5);
+	cout<<endl<< "Pogodili ste trazeni broj!"<< endl;
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

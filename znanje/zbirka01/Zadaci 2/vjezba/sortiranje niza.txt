@@ -1,0 +1,44 @@
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+
+//bouble sort / quick sort / selection sort / radix / tramping sort
+
+
+	int brojevi [7];
+
+	for (int i=0 ; i <= 6;i++)
+	{
+	cout << "unesite " << i+1 << " . clana niza";
+		cin >> brojevi [i];
+	}
+
+
+	for (int i =0; i<=5; i++)
+	{
+	for (int j =i+1; j<=6; j++)
+	{
+	if (brojevi [i]> brojevi[j])
+	{
+	swap(brojevi[i], brojevi [j]);
+	}
+	}
+	
+	}
+
+	cout<< " sortirani niz izgleda ovako" <<endl;
+
+	for (int i=0 ; i <= 6;i++)
+	{
+		cout << brojevi[i];
+
+	}
+
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

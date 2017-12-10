@@ -1,0 +1,56 @@
+
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+// zkalkulator
+
+int main ()
+
+{
+	
+	//kalkulator koji kao ulaz ima 5+2 kontrolisati unos 5g7
+
+	int prvibroj,drugibroj;
+	float rezultat;
+	char operacija;
+
+	cout << "unesite izraz koji zelite izracunati"<< endl;
+
+	cin>>prvibroj>>operacija>>drugibroj;
+
+	cout << "rezultat je ";
+
+	switch(operacija)
+	{
+	case '+':
+		rezultat = prvibroj + drugibroj;
+		break;
+
+	case '-':
+		rezultat = prvibroj - drugibroj;
+		break;
+
+	case '*':
+		rezultat = prvibroj * drugibroj;
+		break;
+
+	case '/':
+		rezultat = static_cast <float>(prvibroj)/drugibroj;
+		break;
+
+	default:
+		cout << "program ne prepoznaje tu operaciju "<< endl;
+		exit (0);
+	}
+
+	cout << rezultat << endl;
+
+	cout <<endl<< ".... Program je zavrsen...." << endl << endl;
+	system ("pause");
+	return 0;
+
+
+}

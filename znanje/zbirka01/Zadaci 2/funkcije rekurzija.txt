@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int zbirBrojeva (int x, int y=0){
+
+	int vrijednost = x+y;
+	return vrijednost;
+
+}
+int zbirBrojeva (int x, int y,int z){
+
+	return x+y+z;  
+
+}
+
+int faktorijel (int broj){
+
+	int zbir;
+	if (broj == 1) zbir = 1;
+	else zbir= faktorijel(broj-1)*broj;  // rekurzija
+	return zbir;
+
+}
+
+int main()
+{
+	int x;
+	cout << zbirBrojeva (2)<< endl;
+	cout << zbirBrojeva (1,2,3)<<endl;
+	cout << "Unesite broj za koji zelite izracunati faktorijel "<< endl;
+	cin>>x;
+	cout<<"Faktorijel broja je "<< faktorijel(x)<<endl;
+
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

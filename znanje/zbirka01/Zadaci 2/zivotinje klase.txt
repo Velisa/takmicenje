@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+//kreiranje klase zivotinje
+class zivotinje {
+
+	private: 
+		int visina;
+		int tezina;
+		string naziv;
+
+	static int brojZivotinja;
+
+	public:
+		int fvisina () { return visina; }
+		int ftezina () { return tezina; }
+		string fnaziv () {  return naziv; }
+
+		void postaviVisinu (int cm) { visina = cm; }
+		void postaviTezinu (int kg) { tezina = kg; }
+		void postavinaziv (string n) { naziv = n; }
+
+		zivotinje (int,int, string);
+
+		zivotinje();
+
+
+		static int fbrojZivotinja () { return brojZivotinja; }
+
+		void toString ();
+
+};
+//postavi br zivotinja na 0
+int zivotinje::brojZivotinja=0;
+
+//konstruktor
+zivotinje :: zivotinje (int visina, int tezina, string naziv){
+	this-> visina = visina;
+	this-> tezina = tezina;
+	this-> naziv = naziv;
+	zivotinje::brojZivotinja++;
+}
+
+zivotinje :: zivotinje () { zivotinje :: brojZivotinja++; }
+
+void zivotinje::toString () {
+
+	cout<< this->naziv << " je " << this-> visina << " cm visoka i teska je "<< this-> tezina << " kg."<<endl; 
+}
+
+
+int main()
+{
+   
+	zivotinje pas;
+
+	pas.postavinaziv("Pluton");
+	pas.postaviTezinu (25);
+	pas.postaviVisinu (35);
+
+	cout << pas.fnaziv()<< " je visok "<< pas.fvisina() << " cm i tezak je " << pas.ftezina()<<" kg."<<endl;
+
+	zivotinje macka (20,2,"Cicko");
+	cout << macka.fnaziv()<< " je visok "<< macka.fvisina() << " cm i tezak je " << macka.ftezina()<<" kg."<<endl;
+
+	cout<< "Ukupan broj kreiranih objekata je "<< zivotinje::fbrojZivotinja()<<endl;
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

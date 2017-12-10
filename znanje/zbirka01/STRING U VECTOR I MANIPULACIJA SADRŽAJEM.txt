@@ -1,0 +1,51 @@
+#include<iostream>
+#include <string>
+#include <vector>
+#include <utility>
+using namespace std;
+
+int main()
+{
+	// Unos broja rijeci a zatim unos rijeci u vektor...
+   vector<string> a;
+   int n;
+   string pom;
+
+   cout << "Unesi broj rijeci: ";
+   cin >> n;
+
+   for (int i=0; i < n; i++)
+   {
+      cout << i+1 << ". rijec: ";
+      cin >> pom; // smjestimo u pomocnu
+      a.push_back(pom); // sadrzaj zadnje gurnemo na kraj vektora
+   }
+ 
+   // Sortiranje imena
+   
+   for (size_t i=0;i<(a.size()-1);i++)
+      for (size_t j=i+1;j<a.size();j++)
+         if (a[i]>a[j])
+            swap(a[i],a[j]);
+ 
+   // Ispis prve i zadnje rijeci
+   cout << "Prva rijec je: " << a[0] << " a zadnja " << a[a.size()-1] << endl;
+ 
+   // Ispis svih rijeci
+   cout << endl << "Ispis rijeci: " << endl;
+   a.push_back(""); // posto cemo ispis jedinstvenih raditi prostom metodom poredjenja
+
+   for (size_t i=0, j=0; i<a.size()-1; i++) // posto su sortirane onda su iste rijeci jedna do druge
+   {
+      if ((a[i]!=a[i+1]))
+      {
+         cout << j+1 << ". " << a[i] << endl;
+         j++;
+      }
+   } 
+
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

@@ -1,0 +1,34 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+ 
+//provjeriti da li je broj dobar 
+	// dobar broj je ako zbir cifara u zbiru su vece od cifre na lijevoj strani npr (9620 je dobar)
+
+	int broj,cifra, suma, ok =1;
+
+	cout << "unijeti broj za provjeru "<<endl;
+	cin>>broj;
+
+	suma = broj % 10; // jedinice za pocetni zbir
+	broj /= 10;
+
+	do
+	{
+	cifra = broj %10;
+	ok = cifra > suma;
+	suma += cifra; //suma = suma + cifra 
+	broj /= 10;
+	} while (broj && ok);
+
+	ok ? cout << "broj ispunjava uslov" << endl : cout <<"broj neispunjava uslov"<<endl;
+
+cout << "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

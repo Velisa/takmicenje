@@ -1,0 +1,62 @@
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+#include <vector>
+#include <string>
+#include <fstream> // fstream = (nputfile stream) ifstream + ofstream (output file stream)
+#include <algorithm> 
+#include <map>
+using namespace std;
+int main ()
+
+{
+		/* Napraviti program koji generise niz od 150 slucajnih brojeva izmedju 15 i 28. 
+	Generisane brojeve upisati u fajl a.txt u deset kolona.prebrojati koliko od svake vrijednosti ima, 
+	pa u fajl b.txt upisati rezultat prebrojavanja u formatu 
+
+	broj "15" se pojavljuje : xxx puta
+	broj "16" se pojavljuje : xxx puta
+	...
+	ako se neki broj ne pojavljuje ne pisati taj broj.
+	*/
+	int broj=150,brojac=1;
+	vector<int>vektor (broj);
+	
+	
+	ofstream pisiFajl;
+	pisiFajl.open("D:\\a.txt", ios_base :: app);
+	for(int j=0; j<15;++j){
+		for (int i =0; i<10;++i){
+		vektor.insert(vektor.begin()+i , 15+(rand()%14));
+		pisiFajl<< vektor[i]<<", ";
+		cout <<vektor[i]<<" ";
+		
+		}
+		cout<<endl;
+	}
+	pisiFajl.close();
+
+	sort (vektor.begin(),vektor.begin()+150);
+
+	ofstream pisiFajl1;
+	pisiFajl1.open("D:\\b.txt", ios_base :: app);
+	for(int k=1;k<150; ++k)
+	{
+		
+		if (vektor[k]!=vektor[k+1]){
+		
+			pisiFajl1<<"Broj "<<vektor[k]<< " se ponavlja "<<brojac+1<<" puta"<<endl;
+			brojac = 0;
+		}
+		else {++brojac;
+		}
+	}
+   	pisiFajl.close();
+	cout << "zavrsio sam upisivanje" << endl;
+
+
+cout<< endl<< endl << "kraj programa"<< endl;
+
+system ("Pause");
+return 0;
+}

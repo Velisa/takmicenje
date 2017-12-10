@@ -1,0 +1,47 @@
+12) Otvaranje datoteke primjer.txt i upis teksta:
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	ofstream test;                                   /*deklaracija datoteke test - opcija:upisivanje podataka*/
+	test.open ("primjer.txt");                 /*otvaranje datoteke primjer.txt u radnoj mapi na tvrdom disku*/
+	test << "Ovo je primjer pisanja teksta u datoteku \n";                 /*upis teksta u datoteku*/
+	test.close();                                                                        /*zatvaranje datoteke*/
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}
+13) Ispis (èitanje) sadržaja prethodnim zadatkom kreirane datoteke primjer.txt.
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	string redak;							//deklaracija tekstualne varijable redak;
+	ifstream test ("primjer.txt");			//deklaracija varijable test -> opcija: èitanje podataka iz datoteke;
+	if(test.is_open())						//ispitivanje da li je datoteka ispravno otorena;
+	{
+		while (! test.eof())				//èitaj dok nije kraj datoteke (End Off File);
+		{
+	getline(test,redak);					//uzmi iz datoteke test jedan red teksta i stavi ga u varijablu redak;
+	cout<<redak<<endl;						//ispis teksta redka na konzoli;
+	}
+	test.close();
+	}	
+
+else
+	cout<<"Ne mogu da otvorim datoteku!";	//ispis ukoliko uslov test.is_open(), nije ispunjen;
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

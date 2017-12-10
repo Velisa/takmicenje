@@ -1,0 +1,110 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+
+//unesite dva trocifrena broja i odrediti koji od njih ima veci zbir cifara
+// uraditi ist za broj a i broj b te uporediti ih koji je veci
+
+
+int main ()
+
+{
+	int a,b;
+	int as, ad, aj, asum;
+	int bs,bd,bj,bsum;
+	
+
+	prvi : cout << "unesite prvi trocifren broj "<<endl;
+	cin >> a;
+	drugi: cout << "Unesite drugi broj "<<endl;
+	cin >> b;
+
+	if (a<100 || a>999 || b<100 || b>999)
+	{
+	cout << "uneseni broj nije iz ocekivanog formata 100-999"<<endl;
+	goto prvi;
+	}
+
+
+	aj = a %10;
+	a/=10;
+	ad=a%10;
+	as= a/10;
+	asum = as +ad + aj;
+	
+	bj = b %10;
+	b/=10;
+	bd=b%10;
+	bs= b/10;
+	bsum = bs +bd + bj;
+
+
+	cout << "stotice broja a je "<< as << endl;
+	cout << "desetice broja a je "<< ad << endl;
+	cout << "jedinice broja a je "<< aj << endl;
+	cout << "Suma broja a "<< asum << endl;
+
+	cout << "stotice broja b je "<< bs << endl;
+	cout << "desetice broja b je "<< bd << endl;
+	cout << "jedinice broja b je "<< bj << endl;
+	cout << "Suma broja b "<< bsum << endl;
+
+
+
+
+	if  (asum > bsum){
+		cout << "prvi broj je veci od drugog"<< endl;
+	}
+	else if (bsum >asum )
+		cout << "drugi broj je veci od prvog broja" << endl;
+	else 
+		cout << "brojevi su jednaki" << endl;
+	cout <<endl<< ".... Program je zavrsen...." << endl << endl;
+
+
+	system ("pause");
+	return 0;
+
+
+}
+
+
+//ili sa petljom
+
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+ int suma=0;
+	int broj;
+	
+
+	cout << "unesite broj za izracun zbir cifara";
+	cin >> broj;
+
+	if (broj <=0)
+		cout << "Niste unijeli prirodan broj"<<endl;
+	else 
+	{
+	while (broj)
+	{
+		
+	suma += broj %10;
+	broj /=10;
+	}
+	cout << "Suma unesenih cifara "<< suma <<endl;
+	}
+	
+
+cout << "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+
+
+
+}

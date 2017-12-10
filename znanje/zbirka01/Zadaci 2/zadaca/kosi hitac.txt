@@ -1,0 +1,70 @@
+// Program za izraèunavanje faktorijela
+
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+double StepeniURadijane (double ugao){
+
+	
+	double pi = 3.1415926535897;
+	return (ugao * pi) /180;
+}
+
+int main() 
+{
+   
+	
+	/*---------- Kosi hitac -------------
+
+	horizontalna brzina Vx = V0 cos (alpha)
+	verticalna brzina Vy = V0 sin (alpha)
+	vrijeme do potpunog zaustavljanja po Y osi (max visina) je 0=V0sin (alpha) - g*t 
+	odavde je vrijeme potrebno za dostizanje max visine t = (V0 sin (alpha))/g
+	Visina h= ((V0 sin (alpha))^2)/2g
+	Domet D = V0^2 sin (2alpha)/g
+
+	*/
+	int Vp=0; //pocetna brzina
+	int ugao; // ugao ispaljivanja
+	int D ; //domet
+	int H ; // visina
+	double t; //ukupno vrijeme
+	double t1; // vrijeme potrebno za dostizanje max visine
+	double g = 9.81; //gravitaciona konstanta
+
+	cout<< "Program pravi proracun maksimalne udaljenosti i vremena koje je neophodno da tijelo zavrsi putanju"<<endl;
+	cout<< "Pri tome je otpor vazduha zanemaren"<<endl<<endl<<endl;
+	cout <<"Unesite pocetnu brzinu tijela - Vp(m/s) :"<<endl;
+	cin >> Vp;
+	cout << "Unesite ugao pod kojim je tijelo ispaljeno - ugao(u stepenima):"<<endl;
+	cin>>ugao;
+
+
+	cout<<endl<<"Domet projektila je: "<<endl;
+	D=(pow(Vp,2)* sin(2*StepeniURadijane(ugao)))/g;
+	cout << D << " metara."<<endl<<endl;
+
+
+	cout<<"Vrijeme potrebno za dostizanje max visine je:  "<<endl;
+	t1=(Vp*sin(StepeniURadijane(ugao)))/g;
+	cout << t1 <<" sekundi."<<endl<<endl;
+
+	cout<<"Maksimalna visina koju projektil dostize je :  "<<endl;
+	H=pow(Vp,2)*pow((sin(StepeniURadijane(ugao))),2)/(2*g);
+	cout << H <<" metara."<<endl<<endl;
+
+	cout<<"Vrijeme potrebno za ukupan let je:  "<<endl;
+	t=2*t1;
+	cout << t <<" sekundi."<<endl<<endl;
+
+
+	cout<< endl<< endl << "Kraj prgrama - pritisnite enter za izlaz \n"<< endl;
+	cin.ignore();
+	cin.get();
+
+	
+    return 0;
+
+}

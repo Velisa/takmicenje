@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <algorithm>
+using namespace std;
+
+string KonvertVelika (string zakonvertovanje)
+{
+	for (int i =0; i<zakonvertovanje.length();++i)
+		zakonvertovanje[i]=toupper(zakonvertovanje[i]);
+	return zakonvertovanje;
+}
+
+string SortirajNeopadajuce (string ulaznistring)
+{
+
+sort (ulaznistring.begin(),ulaznistring.end());
+return ulaznistring;
+
+}
+
+int main ()
+
+{
+	//unijeti ime i prezime u jednom nizu , ako ima 5 ili vise znakova onda prebaciti string u velika slova i sortirati ih rastucim redoslijedom, a ako je 
+	//manji od 5 karaktera nedovoljna duzina obavjest,
+	// tretirati i praan string ako korisnik udari enter bez unosa
+	//prebaciti u velika slova i sortirati string u nerastuci redosled
+
+	string imePrezime;
+
+	cout << "Unesite ime i prezime  "<<endl;
+	getline (cin,imePrezime); // upisivanje cijelog reda do kraja bez obzira na razmake
+
+
+	cout << "vi se zovete  "<< imePrezime << endl;
+	
+	if (imePrezime.length() >=5)
+	{
+	cout << "dobre duzine " << endl;
+	cout << "Velikim   "<< KonvertVelika(imePrezime);
+	}
+	else if (imePrezime.length()<5 && imePrezime.length()>=1)
+	{
+	cout << "string je kratak" << endl;
+	
+	}
+	else if (imePrezime.empty()){
+	
+	cout << "korisnik nije unio nista " << endl;
+	}
+
+
+
+
+	cout <<endl<< ".... Program je zavrsen...." << endl << endl;
+	system ("pause");
+	return 0;
+
+
+}

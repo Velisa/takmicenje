@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+   
+	string ImePrezime= "Semir Turkanovic";
+
+	cout<< endl<<"Zdravo"<< ImePrezime;
+	cout<<"U nastavku programa cemo vidjeti kako funkcionishe rad sa podstringovima (substring)"<<endl;
+	
+	string IP = ImePrezime.assign(ImePrezime); // skracen naziv za string ImePrezime
+	cout<< IP<< endl;
+
+
+	string ime = IP.assign(IP,0,5);
+	cout<<"Vase ime je "<<ime<<endl;
+
+	int lokacija = ImePrezime.find("Turkanovic",0);
+	cout<<"lokacija prezimena u stringu je "<< lokacija<<endl;
+	string prezime = ImePrezime.substr(lokacija);
+	cout<<"Vase prezime je  "<<prezime<<endl;
+
+
+
+	cout<< endl<< endl << "kraj prgrama"<< endl;
+	system ("pause");
+    return 0;
+
+}

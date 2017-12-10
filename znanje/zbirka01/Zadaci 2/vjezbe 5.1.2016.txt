@@ -1,0 +1,383 @@
+Ucitati niz n prirodnih brojeva. Izracunati aritmeticku sredinu niza i ispisati one clanove niza koji su veci od aritmeticke sredine.
+
+1. korak - Broj clanova niza.
+2. korak - Unos clanova.
+3. korak - Kontrolni korak, probati ispis clanova.
+4. korak - Izracunaj aritmeticku sredinu.
+5. korak - Poredimo clanove i ispisujemo ih.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int niz[100], brojClanova, suma=0;
+	float aritmetickaSredina;
+
+	do
+	{
+	cout << "Koliko clanova ce imati vas niz?";
+	cin >> brojClanova;
+	} while (brojClanova < 1  || brojClanova > 100);
+
+	for (int i=0 ; i < brojClanova ; i++)
+	{
+		cout << "Unesite " << i+1 << ". clana niza: ";
+		cin >> niz[i];
+		//s = s + niz//ovde hvali red
+		//ovde hvali red
+	}
+
+	cout << "Vas niz izgleda ovako: ";
+	for (int i=0; i < brojClanova ; i++)
+	{
+		cout << " " << niz[i];
+	}
+	cout << endl;
+
+	aritmetickaSredina = static_cast<float>(suma) / brojClanova;
+
+	cout << "Zbir clanova niza iznosi: " << suma << endl;
+	cout << "Aritmeticka sredina niza iznosi: " << aritmetickaSredina << endl;
+	cout << "Clanovi niza koji su veci od aritmeticke sredine su: ";
+	
+	for(int i = 0; i < brojClanova; i++)
+		if (niz[i] > aritmetickaSredina)
+			cout << niz[i];
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system("Pause");
+	return 0;
+}
+
+__________________________________________________________________________________________________
+
+sortiranje niza (bubble sort):
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	
+	int brojevi[7];
+
+	for(int i=0; i < 6; i++)
+	{
+		cout << "Unesite " << i+1 << ". clana: ";
+		cin >> brojevi[i];
+	}
+
+	// sortiranje
+
+	for (int i = 0; i <= 5; i++)
+	{
+		for (int j = i+1; j <=6; j++)
+		{
+			if (brojevi[i] > brojevi[j])
+			{
+			swap(brojevi[i], brojevi[j]);
+			}
+		}
+	}
+	cout << "Sortirani niz izgleda ovako: " << endl;
+
+	for(int i=0; i<=6; i++)
+		cout << " " << brojevi[i];
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system("Pause");
+	return 0;
+}
+
+___________________________________________________________________________________________
+
+sortiranje niza stringa:
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	
+	char ime[50];
+	string niz[4];
+
+	for (int i = 0; i < 4; i++)
+	{
+		cout << "Unesite " << i+1 << ". ime: ";
+		cin.getline(ime, 50);
+		niz[i] = ime;
+	}
+
+	cout << "Niz imena prije sortiranja: " << endl;
+
+	for (int i = 0; i < 4 ; i++)
+		cout << niz[i] << " ";
+
+	cout << endl;
+
+	for (int i = 0; i <= 2; i++)
+	{
+		for (int j = i+1; j <= 3; j++)
+			if(niz[i] > niz[j])
+				swap(niz[i], niz[j]);
+	}
+
+	cout << "Niz imena nakon sortiranja: " << endl;
+
+	for (int i = 0; i < 4; i++)
+		cout << niz[i] << " ";
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system("Pause");
+	return 0;
+}
+
+________________________________________________________________________________________________________
+
+sortiranje nizova stringova 2:
+Unesi niz dok zbir svih clanova ne bude 10 puta prvi clan.Izracunati aritmrticku sredinu niza i prikazati element koji je najblizi aritmetickoj sredini i prikazati ga.
+
+
+1.Unos clanova niza i mjerimo zbir.
+2.
+Izracun aritmeticke sredine.
+3.Pronaci najblizeg clana aritmetickoj sredini.
+4.Ispisati njegovu vrijednost.
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	
+	const int max = 50;
+
+	int niz[max], suma =0, brojac = 0;
+	int aritmetickaSredina, najblizi, pozicija;
+
+	do
+	{
+	cout << "unesite " << brojac+1 << ". clan niza: ";
+	cin >> niz[brojac];
+	suma += niz[brojac]; 
+	brojac++;
+	}while (suma <= 10*niz[0]);
+
+	aritmetickaSredina = suma / brojac;
+
+	cout << "Aritmeticka sredina vrijednosti niza je: " << aritmetickaSredina << endl;
+	
+	najblizi = abs(aritmetickaSredina-niz[0]);
+	pozicija = 0;
+
+	for (int i = 0; i< brojac; i++)
+	{
+		if(najblizi > abs(aritmetickaSredina-niz[i]))
+		{
+		najblizi = abs(aritmetickaSredina-niz[i]);
+		pozicija = i;
+		}
+	}
+
+	cout << "Pozicija broja koji je najblizi prosjeku: " << pozicija+1 << endl;
+	cout << "Vrijednost na toj poziciji je: " << niz[pozicija] << endl;
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system("Pause");
+	return 0;
+}
+
+_______________________________________________________________________________________________________
+
+
+izbacivanje duplih clanova niza
+
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	
+	int niz[20], brojClanova;
+
+	cout << "koliko clanova ce imati vas niz: ";
+	cin >> brojClanova;
+
+	for(int index = 0; index < brojClanova; index++)
+	{
+		cout << "Unesite clana: ";
+		cin >> niz[index];
+	}
+
+	cout << "Niz bez duplikata: " << endl,
+
+		cout << niz[0] << " ";
+
+	for(int i=1; i< brojClanova; i++)
+	{
+		bool postojiDupli = false;
+		for (int j=0; j < i && !postojiDupli == false; j++)
+		{
+			if(niz[i] == niz[j])
+				postojiDupli == true;
+		}
+		if (!postojiDupli)
+			cout << niz[i] << " ";
+	}
+
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system("Pause");
+	return 0;
+}
+
+_______________________________________________________________________________________________
+
+Da unesemo niz, da vratimo srednjeg clana niza, pa da poredimo svakog clana niz sa srednjim i ispisuje rezultat poredjenja.
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	
+	int a[50], n;
+	bool paran = false;
+
+	cout << "Koliko clanova ce imati vas niz: ";
+	cin >> n;
+
+	if (n%2==0)
+	{
+	cout << "Broj clanova niza je paran., pa postoje dva srednja clana.";
+	paran = true;
+	}
+	else
+	{
+	cout << "Broj clanova niza je neparan, pa postoji jedan srednji clan.";
+	}
+
+	for (int i=0; i < n; i++)
+	{
+		cout << "Unesite " << i + 1 << ". clan niza: ";
+		cin >> a[i];
+	}
+
+	int indexSrednjeg = 0;
+
+	if (paran == false)
+	{
+		indexSrednjeg = n/2 + 0.5;
+		cout << "Srednji clan ima poziciju: " << indexSrednjeg + 1 << "i to je clan sa vrijednoscu: " << a[indexSrednjeg] << endl;
+	}
+	else
+	{
+		indexSrednjeg = n/2;
+		cout << "dva srednja clana imaju pozicije: " << indexSrednjeg << " i " << indexSrednjeg+1 << "i vrijednosti su im:: " 
+			<< a[indexSrednjeg-1] << " i " << a[indexSrednjeg] << endl;
+
+	}
+	
+// dio koda nedostaje
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system("Pause");
+	return 0;
+}
+
+
+____________________________________________________________________________________________________________
+
+
+ISPIT NIZOVI:
+
+PREPISIVANJE NIZOVA A U NIZ B
+
+PRONALAŽENJE PLATOA - UZASTOPNIH VRIJEDNOSTI
+
+PRONALAZENJE ISTIH STRINGOVA U NIZU
+
+SABIRANJE CLANOVA DVA NIZA I ISPISIVANJE NA EKRAN
+
+MNOZENJE NIZA SKALAROM
+
+SORTIRANJE NIZA U TESTERASTI RASPORED , SA ZUBOM NA DOLE I SA ZUBOM NA GORE, CHAINSAW SORT.
+
+
+_________________________________________________________________________________________________________________
+
+Matrice:
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	
+	int A[10][10], ak, ar;
+
+	cout << "Unesite broj kolona matrice: ";
+	cin >> ak;
+	
+	cout << "Unesite broj redova matrice: ";
+	cin >> ar;
+	//unos matrice
+	for(int i = 0; i < ar; i++)
+	{
+		for (int j = 0; j < ak; j++)
+		{
+			cout << "clan je na poziciji A["<< i << "," << j << "]=";
+			cin >> A[i][j];
+		}
+	}
+	//ispis matrice na ekran
+
+	for (int i=0; i < ar; i++)
+	{
+		cout << endl;
+		for ( int j = 0; j < ak; j++)
+			cout << " " << A[i][j];
+	}
+
+
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system("Pause");
+	return 0;
+}
+
+__________________________________________________________________________________________________________
+
+dijagonale matrice:
+
+
+
+
+

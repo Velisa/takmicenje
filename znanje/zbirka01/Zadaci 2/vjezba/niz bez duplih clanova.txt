@@ -1,0 +1,48 @@
+
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+
+
+	//izbacivanje duplih elemenata
+	//unija razlika i presjek nizova (sortirati rastuci i izbaciti duple clanove)
+
+
+	int niz [20], brclanova;
+
+	cout << "koliko clanova ima niz ";
+	cin >> brclanova;
+
+	for (int index =0; index < brclanova; index ++)
+	{
+	cout <<"unesite clana...";
+	cin>>niz [index];
+	
+	}
+
+	cout << "niz bez duplikata "<< endl;
+	cout << niz [0]<< " ";
+
+	for (int i =1 ; i< brclanova;i++)
+	{
+	
+	bool postojidupli = false;
+	for (int j =0 ; j< i && postojidupli == false; j++)
+	{
+	if (niz [i]==niz [j])
+		postojidupli=true;
+	
+	}
+	if (!postojidupli)
+		cout << niz [i]<<" ";
+	}
+
+
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

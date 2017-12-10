@@ -1,0 +1,66 @@
+// Program vraæa srednjeg clana niza i njegov index
+// a zatim poredi svakog clana tog niza i ispisuje rezultat
+// poredjenja (je veci, je manji, isti).
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a[50];
+	int n;
+	bool paran = false;
+	
+	// Unosimo broj clanova
+	cout << "Unesite broj clanova niza: ";
+	cin >> n;
+
+	// Provjeravamo da li ih ima parno ili neparno
+	if (n%2 == 0)
+	{
+		cout << "Broj clanova je paran, te niz ima dva srednja clana: ";
+		paran = true;
+	}
+	else
+	{
+		cout << "Broj clanova je neparan i niz ima jednog srednjeg clana: ";
+	}
+
+	// Unosimo clanove niza
+	cout <<"Unesite clanove niza: "<< endl;
+	for (int i = 0; i < n ; i++)
+	{
+		cout << i+1 << ". clan: ";
+		cin >> a[i];
+	}
+
+	// Vracamo srednjeg clana niza i njegov index
+	int indexSrednjeg = 0;
+
+	if (paran == false) // isto kao: if(paran)
+	{
+		indexSrednjeg = n/2 + 0,5;
+		cout << "Srednji clan ima poziciju " << indexSrednjeg + 1 << 
+			" i ima vrijednost " << a[indexSrednjeg] << endl;
+	}
+	else
+	{
+		indexSrednjeg = n/2;
+		cout << "Dva srednja clana imaju indexe " << indexSrednjeg <<
+			" i " << indexSrednjeg+1 << endl;
+		cout << "Njihove vrijednosti su: " << a[indexSrednjeg-1] << " i " <<
+			a [indexSrednjeg] << endl;
+	}
+
+	int x = a[indexSrednjeg];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i] < x) cout << a[i] << " je manji od srednjeg clana." << endl;
+		else if (a[i] == x) cout << a[i] << " je isti kao srednji clan." <<endl;
+		else cout << a[i] << " je veci od srednjeg clana." << endl;
+	}
+
+	system("Pause");
+	return 0;
+}

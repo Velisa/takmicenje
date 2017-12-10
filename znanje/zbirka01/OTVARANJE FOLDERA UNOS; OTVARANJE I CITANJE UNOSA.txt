@@ -1,0 +1,54 @@
+15)  Napišite program koji u radnoj mapi kreira datoteku test1.txt i u nju smješta prvih 100 cijelih brojeva. 
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	FILE *f;
+	int i;
+
+	f=fopen ("test1.txt","w");		//otvaranje datoteke za èitanbje i pisanje;
+	if(f==NULL)						//ispitivanje validnosti otvaranja datoteke;
+	{
+		printf("Greska pri otvaranju datoteke!");
+		exit(1);
+	}
+	for (i=0; i<=100;i++)	//upis podataka u datoteku; for petljom ; brojeva od1-100;
+	fprintf(f, "%d\n",i);			
+	fclose(f);				//zatvaranje datoteke;
+
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}
+
+16)  Napišite program koji æe proèitati sadržaj iz datoteke iz prošlog zadatka i ispisati njezin sadržaj na zaslonu raèunala.
+#include <iostream>
+#include<string>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+	FILE *f;
+	int a;
+
+	f=fopen("test1.txt", "r");		//ponovno otvaranje datoteke;
+	if(f==NULL)
+	{
+		printf("Greska pri otvaranju datoteke!");
+		exit(1);
+	}
+
+		while (! feof (f))			//èitanje iz datoteke-> dok nije kraj "(!feof)";
+		{
+			fscanf(f, "%d\n",&a);
+			printf("\n%d",a);		//ispis na konzolu;
+		}
+		fclose (f);
+	cout << endl << endl << "---Program je zavrsen.---" << endl << endl;
+	system ("Pause");
+	return 0;
+}

@@ -1,0 +1,63 @@
+#include <iostream>
+#include<string>
+#include<algorithm>
+#include<vector>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+	float A[30][30];
+	float B[30][30];
+	float zbir[30][30];
+	int sirina, visina;
+
+	cout<<"Unesite sirinu matrice: ";
+	cin>>sirina;
+	cout<<endl;
+	cout<<"Unesite visinu matrice: ";
+	cin>>visina;
+	cout<<endl<<endl;
+	cout<<"Unesite brojeve matrice A: "<<endl;
+	int s,v;
+	for( int v=0; v<=visina; ++v)
+	{
+		for(int s=0; s<=sirina; ++s)
+		{
+			cout<<"A["<<v+1<<"]["<<s+1<<"]=";
+			cin>>A[v][s];
+		}
+	}
+	cout<<endl<<"Unesite elemente matrice B: "<<endl<<endl;
+
+	for (int v=0; v<=visina; ++v)
+	{
+		for (int s=0; s<=sirina; ++s)
+		{
+			cout<<"B["<<v+1<<"]["<<s+1<<"]=";
+			cin>>B[v][s];
+		}
+	}
+	cout<<endl<<endl;
+	for (int v=0; v<=visina-1; ++v)
+	{
+		for(int s=0; s<=sirina-1; ++s)
+		{
+		zbir[v][s]=A[v][s]+B[v][s];
+		}
+	}
+	cout<<"Zbir matrica A i B je: "<<endl<<endl;
+	for (int v=0; v<=visina-1; ++v)
+	{
+		for (int s=0; s<=sirina-1; ++s)
+		{
+			cout<<setw(3)<<zbir[v][s];
+		}
+		cout<<endl;
+	}
+
+
+	cout<<endl<<endl<<"---Program je zavrsen---"<<endl<<endl;
+	system("Pause");
+	return 0;
+}

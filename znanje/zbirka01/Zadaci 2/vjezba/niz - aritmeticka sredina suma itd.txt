@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+
+// ucitati niz n prirodnih brojeva izracunati aritmeticku sredinu niza i
+//ispisati one clanove nizq koji su veci od aritmeticke sredine
+
+int niz[100], brclanova, suma =0;
+float as;
+
+do
+{
+	cout << "koliko clanova ce imati vas niz";
+	cin >> brclanova ;
+} while (brclanova < 1 || brclanova > 100);
+
+for (int i = 0 ; i< brclanova; i++)
+{
+
+cout << "unesite "<< i+1 << " , clana niza ";
+cin >> niz [i];
+suma += niz[i];
+}
+
+cout << "vas niz izgleda ovako"<< endl;
+for (int i=0; i < brclanova; i++)
+{
+	cout << " "<< niz [i];
+}
+cout << endl;
+
+as = static_cast<float>(suma)/ brclanova;
+cout <<" zbir clanova niza je "<< suma<< endl;
+cout <<" <Aritmeticka sredina niza je  "<< as << endl;
+
+for (int i=0; i<brclanova; i++)
+if (niz[i] > as)
+	cout << "  "<< niz[i];
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

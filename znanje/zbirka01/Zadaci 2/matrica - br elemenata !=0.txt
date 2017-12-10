@@ -1,0 +1,80 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <string>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+
+{
+
+vector<vector<int> > matrica;
+ 
+int k,kol,red;
+
+cout<<"Unesite broj kolona matrice "<<endl;
+	cin>>kol;
+cout<<"Unesite broj kolona matrice "<<endl;
+	cin>>red;
+cout<<"Unesite elemente matrice "<<endl; 
+for (int i =0;i<kol;i++){
+	matrica.push_back(vector<int>());
+	for (int j=0;j<red;j++){
+		cin >> k;
+		matrica[i].push_back(k);
+	}
+}
+	
+
+	system("cls");// ocisti ekran---------------------------------------
+
+
+
+	cout<<endl<<"Vasa matrica izgleda ovako "<<endl; //ispis matrice
+	for(int i=0;i<kol;i++){
+		for(int j=0;j<red;j++){
+			cout<< matrica[i][j]<<"\t";
+			
+		}cout<<endl;
+	}
+	//program ispisuje glavnu dijagonalu
+	cout<<"Program ispisuje elemente glavne dijagonale"<<endl;
+	int brojac=0,brojac1=0;
+	if (kol ==red){
+	for(int i=0;i<kol;++i){
+		for(int j=0;j<red;++j){
+			if (i==j)
+				cout<<string (i,'\t')<< matrica[i][j]<<" ";
+				
+			}cout<<endl;
+		}
+	}
+
+	//program pronalazi nule na glavnoj dijagonali
+	if (kol ==red){
+	for(int i=0;i<kol;++i){
+		for(int j=0;j<red;++j){
+			if (i==j && matrica [i][j]==0)
+				++brojac;
+				
+			}cout<<endl;
+		}
+	}
+	cout<<"Dijagonala sadrzi nulu "<<brojac<<" puta!"<<endl;
+	//program pronalazi broj elemenata koji nisu nule u matrici
+	for(int i=0;i<kol;++i){
+		for(int j=0;j<red;++j){
+			if (matrica [i][j]!=0)
+				++brojac1;
+				
+			}cout<<endl;
+		}
+	cout<<"Broj elemenata koji nisu nule u matrici iznosi "<<brojac1<<endl;
+
+
+
+cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+}

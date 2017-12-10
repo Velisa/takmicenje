@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[10][10], b[10][10], mult[10][10], r1, c1, r2, c2, i, j, k;
+
+    cout << "Unesite broj redova i kolona prve matrice :  ";
+    cin >> r1 >> c1;
+    cout << "Unesite broj redova i kolona druge matrice : ";
+    cin >> r2 >> c2;
+
+    // Ako broj kolona prve matrice nije jednak broju redova druge matrice
+	//korisnik ponovo unosi br kolona i redova
+
+
+    while (c1!=r2)
+    {
+        cout << "Greska! Broj kolona prve matrice nije jednak broju redova druge matrice.";
+
+        cout << "Unesite redove i kolone prve matrice :  ";
+		 cin >> r1 >> c1;
+		cout << "Unesite redove i kolone druge matrice : ";
+		 cin >> r2 >> c2;
+    }
+
+    //unos prve matrice
+    cout << endl << "Unesite lemente prve matrice " << endl;
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c1; ++j)
+        {
+            cout << "Unesite element a " << i + 1<< " " << j + 1 << " : ";
+            cin >> a[i][j];
+        }
+
+    //unos druge matrice
+    cout << endl << "Unesite lemente druge matrice " << endl;
+    for(i = 0; i < r2; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            cout << "Unesite element b " << i + 1 << " " << j + 1 << " : ";
+            cin >> b[i][j];
+        }
+
+    // inicijalizacija
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            mult[i][j]=0;
+        }
+
+    // mnozenje matrica a i b
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+            for(k = 0; k < c1; ++k)
+            {
+                mult[i][j] += a[i][k] * b[k][j];
+            }
+
+
+    cout << endl << "Rezultat je: " << endl<<endl;
+    for(i = 0; i < r1; ++i)
+    for(j = 0; j < c2; ++j)
+    {
+        cout  << mult[i][j]<< "\t\t";
+        if(j == c2-1)
+            cout << endl;
+    }
+
+
+	
+	cout <<endl<<endl<<endl<< "program je zavrsen " << endl;
+	system ("Pause");
+    return 0;
+
+}

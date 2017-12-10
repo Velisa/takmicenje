@@ -1,0 +1,32 @@
+
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+ int n=0, m=0;
+ n=++n;
+ cout << n << "..." << m << endl;
+
+ int a = 0, b=0;
+ a = b++;
+ cout << a << "..." << b << endl;
+
+
+ int x=1, y=1;
+ x=--y;
+ cout << x << "..." << y << endl;
+
+ int r=1, t=1;
+ r= t--;
+ cout << r << "..." << t << endl;
+
+cout << "program je zavrsen " << endl;
+system ("Pause");
+return 0;
+
+
+
+}

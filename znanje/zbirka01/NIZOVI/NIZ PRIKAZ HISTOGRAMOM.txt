@@ -1,0 +1,52 @@
+Zadatak1. : Naèiniti program, koji za  dati niz, prikazuje histogramom ili zvjezdicama, broj ponavljanja, limitirajte niz na 50 clanova.
+
+
+Koristio sam 0 da oznaèim kraj unosa podataka od korisnika.
+
+#include <iostream>
+#include <iomanip> //potrebno za setw
+using namespace std;
+
+int main()
+{
+//deklarisemo niz duzine 11 clanova, navjeci broj (ako posmatramo brojeve --//izmedju 1 i 10), i unesenu vrijednost
+	//prvi clan ima index 0, zadnji 10. koristicemo moj_niz[2] za broj 2.
+	int moj_niz[11]={0}, najveci_broj =10, unesena_vrijednost=0;
+
+
+	// unosenje broja
+	cout << "unesite broj izmedju 1 i 10. Unesite 0 za kraj. " << endl;
+	
+	//unose se brojevi sve dok se unosi integer koji je veci od 0.
+	while (cin >> unesena_vrijednost && unesena_vrijednost > 0)
+	{
+//dodajemo broj ako je u opsegu 1-10. ako korisnik unese broj dva, ----//vrijednost elementa moj_niz[2] se poveca za 1
+		//moglo se koristiti i moj_niz[1] za broj dva.
+		if (unesena_vrijednost > 0  &&  unesena_vrijednost <= najveci_broj)
+			moj_niz[unesena_vrijednost]=moj_niz[unesena_vrijednost]+1;
+		else
+			cout 	<< "Broj nije dodan, jer u opsegu 1 do "
+       << najveci_broj  << endl;
+	}
+
+	//ispisujemo broj
+	for (int i = 1; i <= najveci_broj; i++)
+	{
+		//ispisujemo broj, ostvljena su 2 mjesta za dvocifreni broj
+		cout 	<< "Broj " << setw(2) << i 
+       << " se ponavlja (" << moj_niz[i] << ") puta: "  ;
+
+//ispisujemo zvjezdice, ako je 1 bio 0 puta, onda je moj_niz[1]=0, i ne ispisuje se zvjezdica
+		for (int j = 0; j < moj_niz[i]; j++)
+		{
+			cout <<  "*" ;
+		}
+
+		cout <<  endl;
+	}
+
+
+	system("pause");
+
+
+}	
